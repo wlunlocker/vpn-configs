@@ -1,7 +1,11 @@
 # profile-title: 🏴 WL Stable
 # profile-update-interval: 1
-# Last update: 11.05.2026 15:49 MSK
+# Last update: 11.05.2026 15:55 MSK
 
+vless://70dd39f3-3453-4016-ba1a-745fe762b5fc@166.1.89.21:443?sid=c48c2f35&security=reality&type=tcp&pbk=PxiVEKI3dp1UpqzpgnD31-Wl4MFiHjTI23ylGFn5Slg&sni=www.apple.com&fp=chrome&flow=xtls-rprx-vision&v=227#🇦🇹 WLUnlocker Austria | #1
+vless://4649d681-7f26-4959-a3f2-02eb8866230f@151.243.93.43:9443?flow=xtls-rprx-vision&fp=chrome&pbk=wAYsJ6RJXFy94w_WaTIhp1ZfCePAPoZmP27RarvUqXg&security=reality&sid=2344766a270a6298&sni=yahoo.com&type=tcp#🇦🇹 WLUnlocker Austria | #2
+vless://91577acf-bcef-4d05-ad38-f245b58ad707@185.215.187.73:8443?security=reality&fp=chrome&sid=ea94388edc55e526&pbk=GsNw2Kdjz-8bewcHYY0sMYG_Ry0GsXG_keKzBKy-fjM&flow=xtls-rprx-vision&sni=www.microsoft.com&type=tcp#🇪🇸 WLUnlocker Spain | #1
+vless://8a563b6d-d66f-4fb7-a994-aa73f3f43514@91.214.112.124:443?alpn=h2%2Chttp%2F1.1&encryption=none&security=tls&serviceName=chatservice&sni=hu2.morro-settings.ru&type=grpc#🇪🇸 WLUnlocker Spain | #2
 vless://85df0806-543e-4d68-9436-f4c4dd3437cb@kz2.helper-internet.com:443?flow=xtls-rprx-vision&fp=random&pbk=W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE&security=reality&sid=ff776ff77be48b88&sni=kz2.helper-internet.com&type=tcp#🇫🇷 WLUnlocker France | #1
 vless://91577acf-bcef-4d05-ad38-f245b58ad707@77.110.99.107:8443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=GsNw2Kdjz-8bewcHYY0sMYG_Ry0GsXG_keKzBKy-fjM&sid=ea94388edc55e526&sni=www.microsoft.com&r=9111a7#🇫🇷 WLUnlocker France | #2
 vless://a2a384fc-c0f1-4aae-ab0b-e24eea604e15@ule3.portal-guard.com:8443?flow=xtls-rprx-vision&type=tcp&sid=4326&fp=randomized&pbk=QHkXBS2ENHV0khgY9VBYi8_9bpfqnUYDcfQN4cW5Qg0&sni=ule3.portal-guard.com&security=reality#🇫🇷 WLUnlocker France | #3
@@ -50,5 +54,9 @@ hysteria2://dongtaiwang.com@163.172.113.118:41947?insecure=1&sni=www.microsoft.c
 hysteria2://dongtaiwang.com@163.172.113.118:41947?insecure=1&sni=www.microsoft.com&mport=41283%2C41283%2C40022%2C41000#🇫🇷 WLUnlocker France | #46
 hysteria2://dongtaiwang.com@163.172.113.118:41947?insecure=1&sni=www.microsoft.com&mport=41283%2C41283%2C40022%2C41000-42000#🇫🇷 WLUnlocker France | #47
 hysteria2://dongtaiwang.com@163.172.113.118:41984?insecure=1&sni=www.microsoft.com&mport=41211%2C41283%2C40022%2C41000#🇫🇷 WLUnlocker France | #48
+vless://5e217cdf-9a6e-4ddc-84d2-ccda9e7e16fa@45.141.118.227:7443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&sid=d82fb387&sni=chat.deepseek.com&seq=6849#🇮🇹 WLUnlocker Italy | #1
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?allow_insecure=0&fp=chrome&security=tls&sni=uk1.fromblancwithlove.com#🇮🇹 WLUnlocker Italy | #2
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?allow_insecure=0&host=uk1.fromblancwithlove.com&security=tls&sni=uk1.fromblancwithlove.com#🇮🇹 WLUnlocker Italy | #3
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?allowInsecure=1&encryption=none&security=tls&sni=uk1.fromblancwithlove.com&type=tcp#🇮🇹 WLUnlocker Italy | #4
 vless://2bbd7cc5-aa4b-4ec7-b12c-223fcb49e253@fingopota.unlimited-access.ru:443?type=xhttp&security=reality&fp=chrome&pbk=HyWLL5SIz0ik1ziUvs049CbRwz8pADomc6x-2OeM1i4&sid=7f11ee6d084c91d9&sni=fingopota.unlimited-access.ru&mode=auto#🇳🇱 WLUnlocker Netherlands | #1
 vless://d4e7bb0a-ad2c-4030-b2e0-7bb6840b04f5@f5.steptofreedom.one:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=randomized&pbk=ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk&sid=6d6f13013d3e1d0c&sni=f5.steptofreedom.one#🇳🇱 WLUnlocker Netherlands | #2

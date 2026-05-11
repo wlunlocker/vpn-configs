@@ -1,10 +1,22 @@
 # profile-title: 🏴 WL Full
 # profile-update-interval: 1
-# Last update: 11.05.2026 15:49 MSK
+# Last update: 11.05.2026 15:55 MSK
 
 vless://e31a303c-a8f0-4189-9bdf-2312d15253d2@rusx2.braidx.tech:443?sni=www.google.com&pbk=9mJq2cP3srX_6K1YfMDp1yndvo5CtgL6TEVQ8tm4fVc&security=reality&type=tcp&fp=chrome&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #1
 vless://b1b24586-cccf-458d-b125-d621c3710676@ru.astrocore.cloud:443?flow=xtls-rprx-vision&fp=chrome&spx=/&sni=ru.astrocore.cloud&pbk=X2Sb6CKcI_yEV4gu9KUAmL9mcL-xpC1Ngks06NYIaxw&type=tcp&sid=f129f93e&security=reality&__rand=9e165800#🇷🇺 WLUnlocker Russia | #2
 vless://c30c6850-5651-46a6-a4b6-295a59d5cc13@130.49.189.40:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=telegavpn.com&fp=chrome&pbk=WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA#🇷🇺 WLUnlocker Russia | #3
+vless://70dd39f3-3453-4016-ba1a-745fe762b5fc@166.1.89.21:443?sid=c48c2f35&security=reality&type=tcp&pbk=PxiVEKI3dp1UpqzpgnD31-Wl4MFiHjTI23ylGFn5Slg&sni=www.apple.com&fp=chrome&flow=xtls-rprx-vision&v=227#🇦🇹 WLUnlocker Austria | #1
+vless://4649d681-7f26-4959-a3f2-02eb8866230f@151.243.93.43:9443?flow=xtls-rprx-vision&fp=chrome&pbk=wAYsJ6RJXFy94w_WaTIhp1ZfCePAPoZmP27RarvUqXg&security=reality&sid=2344766a270a6298&sni=yahoo.com&type=tcp#🇦🇹 WLUnlocker Austria | #2
+vless://d511e429-e32b-46a7-ac07-a0fffa9b634c@2.26.3.148:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=ZHEMPjSWslk6_qD2JNQzd5enUPz8nY9mYRRuM6NkZmU&sid=1a&sni=www.deepl.com&_t=167a4fbe#🇦🇹 WLUnlocker Austria | #3
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@116.206.92.109:443/?insecure=1&sni=https%3A%2F%2Ft.me%2FWangCai2%EF%A3%BF%C3%BC%C3%A1%C2%AE%EF%A3%BF%C3%BC%C3%A1%E2%89%A5#🇨🇭 WLUnlocker Switzerland | #1
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@116.206.92.109:443/?insecure=1&sni=https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3#🇨🇭 WLUnlocker Switzerland | #2
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@116.206.92.109:443?headerType=none&encryption=none&insecure=1#🇨🇭 WLUnlocker Switzerland | #3
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@116.206.92.109:443?headerType=none&encryption=none&sni=https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3&insecure=1#🇨🇭 WLUnlocker Switzerland | #4
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@116.206.92.109:443?insecure=1#🇨🇭 WLUnlocker Switzerland | #5
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@116.206.92.109:443?insecure=1&sni=https%3A%2F%2Ft.me%2FWangCai2#🇨🇭 WLUnlocker Switzerland | #6
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-005.fastervpn.world:443?headerType=none&encryption=none&sni=vpn-jp-005.fastervpn.world&insecure=1#🇨🇭 WLUnlocker Switzerland | #7
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-005.fastervpn.world:443?insecure=1&sni=vpn-jp-005.fastervpn.world#🇨🇭 WLUnlocker Switzerland | #8
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@vpn-jp-010.fastervpn.world:443/?insecure=1#🇨🇭 WLUnlocker Switzerland | #9
 trojan://8r%3C%5B9%27l6hAO%238ZQi@172.86.92.100:443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇩🇪 WLUnlocker Germany | #1
 trojan://8r%3C%5B9%27l6hAO%238ZQi@77.221.157.251:2087/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇩🇪 WLUnlocker Germany | #2
 trojan://8r%3C%5B9%27l6hAO%238ZQi@57.129.63.158:8443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇩🇪 WLUnlocker Germany | #3
@@ -15,6 +27,8 @@ trojan://8r%3C%5B9%27l6hAO%238ZQi@135.125.238.202:2053/?type=ws&host=Koma-YT.PAG
 trojan://8r%3C%5B9%27l6hAO%238ZQi@57.129.47.32:8443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇩🇪 WLUnlocker Germany | #8
 trojan://8r%3C%5B9%27l6hAO%238ZQi@57.129.14.93:8443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇩🇪 WLUnlocker Germany | #9
 trojan://8r%3C%5B9%27l6hAO%238ZQi@89.169.55.122:443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇩🇪 WLUnlocker Germany | #10
+vless://91577acf-bcef-4d05-ad38-f245b58ad707@185.215.187.73:8443?security=reality&fp=chrome&sid=ea94388edc55e526&pbk=GsNw2Kdjz-8bewcHYY0sMYG_Ry0GsXG_keKzBKy-fjM&flow=xtls-rprx-vision&sni=www.microsoft.com&type=tcp#🇪🇸 WLUnlocker Spain | #1
+vless://8a563b6d-d66f-4fb7-a994-aa73f3f43514@91.214.112.124:443?alpn=h2%2Chttp%2F1.1&encryption=none&security=tls&serviceName=chatservice&sni=hu2.morro-settings.ru&type=grpc#🇪🇸 WLUnlocker Spain | #2
 vless://85df0806-543e-4d68-9436-f4c4dd3437cb@kz2.helper-internet.com:443?flow=xtls-rprx-vision&fp=random&pbk=W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE&security=reality&sid=ff776ff77be48b88&sni=kz2.helper-internet.com&type=tcp#🇫🇷 WLUnlocker France | #1
 vless://0ead6ff4-4438-4aa5-8b54-db72b6ed6e7a@167.17.176.175:443?type=tcp&headerType=none&security=reality&encryption=none&sni=swordware.ru&fp=chrome&pbk=pWSAxys6zqKRoHvRyE5nZZb-re7De_KQxgsYyJfsHQ0&sid=07b83e&spx=/#🇫🇷 WLUnlocker France | #2
 vless://91577acf-bcef-4d05-ad38-f245b58ad707@77.110.99.107:8443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=GsNw2Kdjz-8bewcHYY0sMYG_Ry0GsXG_keKzBKy-fjM&sid=ea94388edc55e526&sni=www.microsoft.com&r=9111a7#🇫🇷 WLUnlocker France | #3
@@ -85,6 +99,31 @@ trojan://8r%3C%5B9%27l6hAO%238ZQi@213.165.88.177:443/?type=ws&host=Koma-YT.PAGeS
 trojan://8r%3C%5B9%27l6hAO%238ZQi@140.235.74.26:443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇬🇧 WLUnlocker United Kingdom | #8
 trojan://8r%3C%5B9%27l6hAO%238ZQi@146.70.30.53:443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇬🇧 WLUnlocker United Kingdom | #9
 trojan://8r%3C%5B9%27l6hAO%238ZQi@91.149.202.142:443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇬🇧 WLUnlocker United Kingdom | #10
+vless://51887142-8dc0-4aeb-8e81-379c8111c60c@lv.rush-server.com:8443?type=ws&headerType=none&security=tls&encryption=none&sni=huli-nada.com&fp=qq&alpn=h2%2Chttp%2F1.1&path=%2FvwsS9d6&host=huli-nada.com&insecure=0#🇮🇪 WLUnlocker Ireland | #1
+vless://5e217cdf-9a6e-4ddc-84d2-ccda9e7e16fa@45.141.118.227:7443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&sid=d82fb387&sni=chat.deepseek.com&seq=6849#🇮🇹 WLUnlocker Italy | #1
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?allow_insecure=0&fp=chrome&security=tls&sni=uk1.fromblancwithlove.com#🇮🇹 WLUnlocker Italy | #2
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?allow_insecure=0&host=uk1.fromblancwithlove.com&security=tls&sni=uk1.fromblancwithlove.com#🇮🇹 WLUnlocker Italy | #3
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?allowInsecure=1&encryption=none&security=tls&sni=uk1.fromblancwithlove.com&type=tcp#🇮🇹 WLUnlocker Italy | #4
+vless://acf0e570-7061-4c86-8bf9-888f6d524c6d@hiro.kosmojoy.ru:7443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=jpeewxNXhskiQBER8ZMUVQhXRNjwdKwR25moJoeAHTo&sid=550c7020d9&sni=www.intel.com#🇮🇹 WLUnlocker Italy | #5
+vless://f42c35ba-5c83-4130-86e9-9006ef611ada@85.192.38.115:8443?pbk=TjWhQ2kpw-M8NZxPNeU35LbQmJXMuTHA5ZYuQTUVTwI&flow=xtls-rprx-vision&sni=www.oracle.com&security=reality&fp=chrome&sid=c41433f0&spx=/&type=tcp#🇮🇹 WLUnlocker Italy | #6
+trojan://8r%3C%5B9%27l6hAO%238ZQi@211.238.77.167:14430/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #1
+trojan://8r%3C%5B9%27l6hAO%238ZQi@211.51.201.180:11001/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #2
+trojan://8r%3C%5B9%27l6hAO%238ZQi@220.123.86.198:27015/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #3
+trojan://8r%3C%5B9%27l6hAO%238ZQi@59.22.80.192:10443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #4
+trojan://8r%3C%5B9%27l6hAO%238ZQi@118.36.233.194:18000/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #5
+trojan://8r%3C%5B9%27l6hAO%238ZQi@211.228.207.178:18001/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #6
+trojan://8r%3C%5B9%27l6hAO%238ZQi@221.148.219.205:20201/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #7
+trojan://8r%3C%5B9%27l6hAO%238ZQi@221.162.248.38:16923/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #8
+trojan://8r%3C%5B9%27l6hAO%238ZQi@218.152.147.61:18790/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #9
+trojan://8r%3C%5B9%27l6hAO%238ZQi@146.56.138.33:10443/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #10
+trojan://8r%3C%5B9%27l6hAO%238ZQi@14.46.128.84:25010/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #11
+trojan://8r%3C%5B9%27l6hAO%238ZQi@211.197.184.154:10005/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #12
+trojan://8r%3C%5B9%27l6hAO%238ZQi@221.144.70.202:10909/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #13
+trojan://8r%3C%5B9%27l6hAO%238ZQi@222.97.254.167:34599/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #14
+trojan://8r%3C%5B9%27l6hAO%238ZQi@221.162.220.76:13720/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #15
+trojan://8r%3C%5B9%27l6hAO%238ZQi@115.22.181.7:10030/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #16
+trojan://8r%3C%5B9%27l6hAO%238ZQi@112.163.215.224:30005/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #17
+trojan://8r%3C%5B9%27l6hAO%238ZQi@221.166.176.104:10332/?type=ws&host=Koma-YT.PAGeS.Dev&path=%2FtrTelegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2&security=tls&sni=Koma-YT.PAGeS.Dev&allowInsecure=1#🇰🇷 WLUnlocker South Korea | #18
 vless://2bbd7cc5-aa4b-4ec7-b12c-223fcb49e253@fingopota.unlimited-access.ru:443?type=xhttp&security=reality&fp=chrome&pbk=HyWLL5SIz0ik1ziUvs049CbRwz8pADomc6x-2OeM1i4&sid=7f11ee6d084c91d9&sni=fingopota.unlimited-access.ru&mode=auto#🇳🇱 WLUnlocker Netherlands | #1
 vless://d4e7bb0a-ad2c-4030-b2e0-7bb6840b04f5@f5.steptofreedom.one:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=randomized&pbk=ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk&sid=6d6f13013d3e1d0c&sni=f5.steptofreedom.one#🇳🇱 WLUnlocker Netherlands | #2
 vless://3c52e091-6714-4915-949f-2149fe69951b@v2ray.simspeedup.com:80?type=ws&security=none&path=/ws#🇹🇷 WLUnlocker Turkey | #1
