@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '30 * * * *'
-
+    
 permissions:
   contents: write
 
@@ -20,7 +20,6 @@ jobs:
           import re
           from datetime import datetime
 
-          # Список стран, которые мы ОСТАВЛЯЕМ (если хочешь больше - просто добавь код)
           COUNTRIES = {
               "RU": "🇷🇺", "US": "🇺🇸", "DE": "🇩🇪", "NL": "🇳🇱", 
               "GB": "🇬🇧", "FI": "🇫🇮", "TR": "🇹🇷", "KZ": "🇰🇿",
@@ -49,7 +48,6 @@ jobs:
               # Очистка и сортировка
               for item in raw_list:
                   link, name = item.split('#', 1)
-                  # Ищем код страны в названии
                   found_code = None
                   for code in COUNTRIES:
                       if code.lower() in name.lower():
@@ -59,7 +57,6 @@ jobs:
                   if found_code:
                       final_configs.append({'link': link, 'code': found_code, 'orig': name})
 
-              # Сортировка: RU в начало
               final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
 
               with open(filename, 'w', encoding='utf-8') as f:
@@ -68,12 +65,10 @@ jobs:
                   for c in final_configs:
                       flag = COUNTRIES[c['code']]
                       num = counts.get(c['code'], 1)
-                      # Убираем лишние слова из названия для чистоты
                       clean_n = re.sub(r'(?i)VLESS|Vmess|Shadow|Reality|mobile|checked', '', c['orig']).strip()
                       f.write(f"{c['link']}#{flag} {c['code']} | {clean_n} №{num}\n")
                       counts[c['code']] = num + 1
 
-          # ССЫЛКИ
           LTE_URLS = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS+All_RUS.txt"
@@ -84,12 +79,11 @@ jobs:
               "https://shz.al/~WangCai"
           ]
 
-          # Запуск (7-56 для LTE, 7-86 для WIFI)
-          lte_data = get_data(LTE_URLS, 7, 56)
-          format_and_save(lte_data, "blacklte.txt", "🏴 WL Lte")
+          lte_data = get_data(LTE_URLS, 7, 86)
+          format_and_save(lte_data, "blacklte.txt", "🏴ЧЕРНЫЕ СПИСКИ #1🏴")
 
-          wifi_data = get_data(WIFI_URLS, 7, 86)
-          format_and_save(wifi_data, "blackwifi.txt", "🏴 WL Wi-Fi")
+          wifi_data = get_data(WIFI_URLS, 7, 106)
+          format_and_save(wifi_data, "blackwifi.txt", "🏴ЧЕРНЫЕ СПИСКИ #2🏴")
 
       - name: Commit and Push
         run: |
