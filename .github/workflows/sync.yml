@@ -2,7 +2,7 @@ name: VPN Sync Elite
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */1.5 * * *'
+    - cron: '0 */3 * * *'
 
 permissions:
   contents: write
@@ -95,5 +95,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: production update" || exit 0
+          git commit -m "sync: 3h schedule update" || exit 0
           git push
