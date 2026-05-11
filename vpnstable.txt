@@ -1,6 +1,6 @@
-# profile-title: 🏴 WL Stable
+# profile-title: 🏴ЧС - СТАБИЛЬНАЯ🏴
 # profile-update-interval: 1
-# Last update: 11.05.2026 15:58 MSK
+# Last update: 11.05.2026 16:01 MSK
 
 vless://2bbd7cc5-aa4b-4ec7-b12c-223fcb49e253@fingopota.unlimited-access.ru:443?type=xhttp&security=reality&fp=chrome&pbk=HyWLL5SIz0ik1ziUvs049CbRwz8pADomc6x-2OeM1i4&sid=7f11ee6d084c91d9&sni=fingopota.unlimited-access.ru&mode=auto#🇦🇪 WLUnlocker UAE | #1
 vless://d4e7bb0a-ad2c-4030-b2e0-7bb6840b04f5@f5.steptofreedom.one:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=randomized&pbk=ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk&sid=6d6f13013d3e1d0c&sni=f5.steptofreedom.one#🇦🇪 WLUnlocker UAE | #2

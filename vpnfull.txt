@@ -1,6 +1,6 @@
-# profile-title: 🏴 WL Full
+# profile-title: 🏴ЧС - ПОЛНАЯ🏴
 # profile-update-interval: 1
-# Last update: 11.05.2026 15:58 MSK
+# Last update: 11.05.2026 16:01 MSK
 
 vless://e31a303c-a8f0-4189-9bdf-2312d15253d2@rusx2.braidx.tech:443?sni=www.google.com&pbk=9mJq2cP3srX_6K1YfMDp1yndvo5CtgL6TEVQ8tm4fVc&security=reality&type=tcp&fp=chrome&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #1
 vless://b1b24586-cccf-458d-b125-d621c3710676@ru.astrocore.cloud:443?flow=xtls-rprx-vision&fp=chrome&spx=/&sni=ru.astrocore.cloud&pbk=X2Sb6CKcI_yEV4gu9KUAmL9mcL-xpC1Ngks06NYIaxw&type=tcp&sid=f129f93e&security=reality&__rand=9e165800#🇷🇺 WLUnlocker Russia | #2
