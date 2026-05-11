@@ -1,0 +1,100 @@
+name: VPN Sync Elite
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run Sync Script
+        shell: python
+        run: |
+          import urllib.request
+          import re
+          from datetime import datetime
+
+          # Список стран, которые мы ОСТАВЛЯЕМ (если хочешь больше - просто добавь код)
+          COUNTRIES = {
+              "RU": "🇷🇺", "US": "🇺🇸", "DE": "🇩🇪", "NL": "🇳🇱", 
+              "GB": "🇬🇧", "FI": "🇫🇮", "TR": "🇹🇷", "KZ": "🇰🇿",
+              "BY": "🇧🇾", "AE": "🇦🇪", "PL": "🇵🇱", "FR": "🇫🇷"
+          }
+
+          def get_data(urls, start_line, end_line):
+              collected = []
+              for url in urls:
+                  try:
+                      headers = {'User-Agent': 'Mozilla/5.0'}
+                      req = urllib.request.Request(url, headers=headers)
+                      with urllib.request.urlopen(req) as response:
+                          lines = response.read().decode('utf-8').splitlines()
+                          # Берем с 7-й строки до лимита
+                          chunk = lines[start_line-1:end_line]
+                          for l in chunk:
+                              if '#' in l and not l.startswith('//'):
+                                  collected.append(l)
+                  except:
+                      continue
+              return collected
+
+          def format_and_save(raw_list, filename, title):
+              final_configs = []
+              # Очистка и сортировка
+              for item in raw_list:
+                  link, name = item.split('#', 1)
+                  # Ищем код страны в названии
+                  found_code = None
+                  for code in COUNTRIES:
+                      if code.lower() in name.lower():
+                          found_code = code
+                          break
+                  
+                  if found_code:
+                      final_configs.append({'link': link, 'code': found_code, 'orig': name})
+
+              # Сортировка: RU в начало
+              final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
+
+              with open(filename, 'w', encoding='utf-8') as f:
+                  f.write(f"# profile-title: {title}\n\n")
+                  counts = {}
+                  for c in final_configs:
+                      flag = COUNTRIES[c['code']]
+                      num = counts.get(c['code'], 1)
+                      # Убираем лишние слова из названия для чистоты
+                      clean_n = re.sub(r'(?i)VLESS|Vmess|Shadow|Reality|mobile|checked', '', c['orig']).strip()
+                      f.write(f"{c['link']}#{flag} {c['code']} | {clean_n} №{num}\n")
+                      counts[c['code']] = num + 1
+
+          # ССЫЛКИ
+          LTE_URLS = [
+              "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
+              "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS+All_RUS.txt"
+          ]
+          WIFI_URLS = [
+              "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt",
+              "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS+All_RUS.txt",
+              "https://shz.al/~WangCai"
+          ]
+
+          # Запуск (7-56 для LTE, 7-86 для WIFI)
+          lte_data = get_data(LTE_URLS, 7, 56)
+          format_and_save(lte_data, "blacklte.txt", "🏴 WL Lte")
+
+          wifi_data = get_data(WIFI_URLS, 7, 86)
+          format_and_save(wifi_data, "blackwifi.txt", "🏴 WL Wi-Fi")
+
+      - name: Commit and Push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "update configs" || exit 0
+          git push
