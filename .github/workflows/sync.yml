@@ -29,7 +29,8 @@ jobs:
               "US": ("🇺🇸", "USA"), 
               "DE": ("🇩🇪", "Germany"), 
               "NL": ("🇳🇱", "Netherlands"), 
-              "GB": ("🇬🇧", "United Kingdom"), 
+              "GB": ("🇬🇧", "United Kingdom"),
+              "UK": ("🇬🇧", "United Kingdom"),
               "FI": ("🇫🇮", "Finland"), 
               "TR": ("🇹🇷", "Turkey"), 
               "KZ": ("🇰🇿", "Kazakhstan"),
@@ -52,8 +53,7 @@ jobs:
               "JP": ("🇯🇵", "Japan"),
               "SG": ("🇸🇬", "Singapore"),
               "KR": ("🇰🇷", "South Korea"),
-              "TJ": ("🇹🇯", "Tajikistan"),
-              "UK": ("🇬🇧", "United Kingdom")
+              "TJ": ("🇹🇯", "Tajikistan")
           }
 
           def get_data(urls, start_line, end_line):
@@ -81,10 +81,17 @@ jobs:
                   link, name = item.split('#', 1)
                   if link in seen_links: continue
                   found_code = None
+                  # Сначала ищем точное совпадение кода страны (RU, FI и т.д.)
                   for code in COUNTRIES:
-                      if code.lower() in name.lower():
+                      if re.search(rf'\b{code}\b', name, re.IGNORECASE):
                           found_code = code
                           break
+                  # Если не нашли, ищем просто вхождение подстроки
+                  if not found_code:
+                      for code in COUNTRIES:
+                          if code.lower() in name.lower():
+                              found_code = code
+                              break
                   if found_code:
                       seen_links.add(link)
                       final_configs.append({'link': link, 'code': found_code})
@@ -123,5 +130,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: added Tajikistan and UK" || exit 0
+          git commit -m "sync: fix country detection and FI priority" || exit 0
           git push
