@@ -25,9 +25,18 @@ jobs:
           import pytz
 
           COUNTRIES = {
-              "RU": "🇷🇺", "US": "🇺🇸", "DE": "🇩🇪", "NL": "🇳🇱", 
-              "GB": "🇬🇧", "FI": "🇫🇮", "TR": "🇹🇷", "KZ": "🇰🇿",
-              "BY": "🇧🇾", "AE": "🇦🇪", "PL": "🇵🇱", "FR": "🇫🇷"
+              "RU": ("🇷🇺", "Russia"), 
+              "US": ("🇺🇸", "USA"), 
+              "DE": ("🇩🇪", "Germany"), 
+              "NL": ("🇳🇱", "Netherlands"), 
+              "GB": ("🇬🇧", "United Kingdom"), 
+              "FI": ("🇫🇮", "Finland"), 
+              "TR": ("🇹🇷", "Turkey"), 
+              "KZ": ("🇰🇿", "Kazakhstan"),
+              "BY": ("🇧🇾", "Belarus"), 
+              "AE": ("🇦🇪", "UAE"), 
+              "PL": ("🇵🇱", "Poland"), 
+              "FR": ("🇫🇷", "France")
           }
 
           def get_data(urls, start_line, end_line):
@@ -62,16 +71,18 @@ jobs:
                   if found_code:
                       seen_links.add(link)
                       final_configs.append({'link': link, 'code': found_code})
+              
               final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
+              
               with open(filename, 'w', encoding='utf-8') as f:
                   f.write(f"# profile-title: {profile_title}\n")
                   f.write(f"# profile-update-interval: 1\n")
                   f.write(f"# Last update: {now}\n\n")
                   counts = {}
                   for c in final_configs:
-                      flag = COUNTRIES[c['code']]
+                      flag, full_name = COUNTRIES[c['code']]
                       num = counts.get(c['code'], 1)
-                      f.write(f"{c['link']}#{flag} WLUnlocker {c['code']} | {num}\n")
+                      f.write(f"{c['link']}#{flag} WLUnlocker {full_name} | #{num}\n")
                       counts[c['code']] = num + 1
 
           LTE_URLS = [
@@ -95,5 +106,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: 3h schedule update" || exit 0
+          git commit -m "sync: updated format with full country names and #" || exit 0
           git push
