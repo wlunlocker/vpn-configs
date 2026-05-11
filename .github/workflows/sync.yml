@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '30 * * * *'
-    
+
 permissions:
   contents: write
 
@@ -18,8 +18,8 @@ jobs:
         run: |
           import urllib.request
           import re
-          from datetime import datetime
 
+          # Список стран и их флаги
           COUNTRIES = {
               "RU": "🇷🇺", "US": "🇺🇸", "DE": "🇩🇪", "NL": "🇳🇱", 
               "GB": "🇬🇧", "FI": "🇫🇮", "TR": "🇹🇷", "KZ": "🇰🇿",
@@ -34,7 +34,7 @@ jobs:
                       req = urllib.request.Request(url, headers=headers)
                       with urllib.request.urlopen(req) as response:
                           lines = response.read().decode('utf-8').splitlines()
-                          # Берем с 7-й строки до лимита
+                          # Берем диапазон: от start_line до end_line
                           chunk = lines[start_line-1:end_line]
                           for l in chunk:
                               if '#' in l and not l.startswith('//'):
@@ -43,11 +43,14 @@ jobs:
                       continue
               return collected
 
-          def format_and_save(raw_list, filename, title):
+          def format_and_save(raw_list, filename, profile_title):
               final_configs = []
-              # Очистка и сортировка
+              seen_links = set()
+
               for item in raw_list:
                   link, name = item.split('#', 1)
+                  if link in seen_links: continue
+                  
                   found_code = None
                   for code in COUNTRIES:
                       if code.lower() in name.lower():
@@ -55,20 +58,23 @@ jobs:
                           break
                   
                   if found_code:
-                      final_configs.append({'link': link, 'code': found_code, 'orig': name})
+                      seen_links.add(link)
+                      final_configs.append({'link': link, 'code': found_code})
 
+              # RU в начало, остальные по алфавиту
               final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
 
               with open(filename, 'w', encoding='utf-8') as f:
-                  f.write(f"# profile-title: {title}\n\n")
+                  f.write(f"# profile-title: {profile_title}\n\n")
                   counts = {}
                   for c in final_configs:
                       flag = COUNTRIES[c['code']]
                       num = counts.get(c['code'], 1)
-                      clean_n = re.sub(r'(?i)VLESS|Vmess|Shadow|Reality|mobile|checked', '', c['orig']).strip()
-                      f.write(f"{c['link']}#{flag} {c['code']} | {clean_n} №{num}\n")
+                      # Формат: WLUnlocker RU | 1
+                      f.write(f"{c['link']}#{flag} WLUnlocker {c['code']} | {num}\n")
                       counts[c['code']] = num + 1
 
+          # ССЫЛКИ
           LTE_URLS = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS+All_RUS.txt"
@@ -79,16 +85,17 @@ jobs:
               "https://shz.al/~WangCai"
           ]
 
-          lte_data = get_data(LTE_URLS, 7, 86)
-          format_and_save(lte_data, "blacklte.txt", "🏴ЧЕРНЫЕ СПИСКИ #1🏴")
+          # Выполнение (vpnstable: 7-81, vpnfull: 7-106)
+          stable_data = get_data(LTE_URLS, 7, 81)
+          format_and_save(stable_data, "vpnstable.txt", "🏴 WL Stable")
 
-          wifi_data = get_data(WIFI_URLS, 7, 106)
-          format_and_save(wifi_data, "blackwifi.txt", "🏴ЧЕРНЫЕ СПИСКИ #2🏴")
+          full_data = get_data(WIFI_URLS, 7, 106)
+          format_and_save(full_data, "vpnfull.txt", "🏴 WL Full")
 
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "update configs" || exit 0
+          git commit -m "sync: vpnstable and vpnfull update" || exit 0
           git push
