@@ -120,10 +120,10 @@ jobs:
           ]
 
           stable_data = get_data(LTE_URLS, 7, 81)
-          format_and_save(stable_data, "vpnstable.txt", "🏴 WL Stable")
+          format_and_save(stable_data, "vpnstable.txt", "🏴ЧС - СТАБИЛЬНАЯ🏴")
 
           full_data = get_data(WIFI_URLS, 7, 106)
-          format_and_save(full_data, "vpnfull.txt", "🏴 WL Full")
+          format_and_save(full_data, "vpnfull.txt", "🏴ЧС - ПОЛНАЯ🏴")
 
       - name: Commit and Push
         run: |
