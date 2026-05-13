@@ -1,11 +1,12 @@
 # profile-title: 🏳️БС - AWL ONE🏳️
 # profile-update-interval: 1
-# Last update: 13.05.2026 14:37 MSK
+# Last update: 13.05.2026 21:30 MSK
 
-vless://c8b6167c-615a-53ec-ae23-87054336339e@81.17.159.63:443?fp=chrome&host=www.kinopoisk.ru&mode=auto&path=%2FVu-Nf1cGVrkTt3qJrz&pbk=XDBvi6U6TnvlyuCdsIUtQ_yjrjyTEvr0KLHvuo-pF0Q&security=reality&sid=cf53a10184e17998&sni=www.kinopoisk.ru&type=xhttp#🇷🇺 WLUnlocker Russia | #1
-vless://db53d16d-825a-4989-a2ba-498b09d87d83@194.164.234.134:2040?flow=xtls-rprx-vision&fp=chrome&headertype=&host=&path=&pbk=Aevt4F-kvxeAC27LfB8r3KhkKAcrl6U2ew23p13kizU&security=reality&sid=&sni=stats.vk-portal.net&type=tcp#🇷🇺 WLUnlocker Russia | #2
-vless://6784aee2-0dfe-474f-8446-480259ff9918@yt5.safepass.click:443?type=xhttp&security=reality&fp=chrome&pbk=ELp9PUvVnkoFJYiscWrbnPXRnsYdELSCbIz9wNmMRRw&sid=965af8960474c29c&sni=stats.vk-portal.net&mode=auto&extra=%7B#🇷🇺 WLUnlocker Russia | #3
-vless://db53d16d-825a-4989-a2ba-498b09d87d83@46.17.98.60:2040?flow=xtls-rprx-vision&fp=chrome&headertype=&host=&path=&pbk=Aevt4F-kvxeAC27LfB8r3KhkKAcrl6U2ew23p13kizU&security=reality&sid=&sni=stats.vk-portal.net&type=tcp#🇷🇺 WLUnlocker Russia | #4
-vless://88eaeb77-0710-414e-b521-1a865f5a79a0@ss.1kub1.click:2083?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sni=id.vk.com#🇷🇺 WLUnlocker Russia | #5
-vless://db53d16d-825a-4989-a2ba-498b09d87d83@205.172.58.133:2040?flow=xtls-rprx-vision&fp=chrome&headertype=&host=&path=&pbk=Aevt4F-kvxeAC27LfB8r3KhkKAcrl6U2ew23p13kizU&security=reality&sid=&sni=stats.vk-portal.net&type=tcp#🇷🇺 WLUnlocker Russia | #6
-vless://2d01ee96-14b7-46eb-b612-e7f1ee91a823@serv18.strettenvpn.com:7771?encryption=none&type=grpc&serviceName=splitter.wb.ru&mode=gun&security=reality&sni=splitter.wb.ru&fp=chrome&pbk=yhUfTGgu5PYRlFqMnRZkxffH_aU05AFUToGI8_EKF28&sid=8248954896&spx=%2Fo7Aaf6fjwgbitolAe#🇷🇺 WLUnlocker Russia | #7
+vless://8cae8ccf-e644-4122-a3e7-7732cca7a1af@tal.odavpn.online:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=vk.com&fp=chrome&pbk=fV1a9bRBEUvWODYvk0ow7SgGKt1moska3H61LRCLEHw&sid=5adbad5bb8d9&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #1
+vless://b4186875-7023-4f20-88b2-125a04943b2b@dosia.lightforum.su:39673?type=xhttp&headerType=none&security=reality&encryption=none&sni=storage.yandexcloud.net&fp=chrome&pbk=n5P9loBH9eKY7Lj6uVi2CMh7vZcAclKWYjbSOWG0mkU&sid=54c7c13b52eea5f3&path=%2Ftopschool.backet%2Fpublic%2Fcourse_cover%2Fe20b56b6-8679-4123-89c4-963142e1bb7c.png&host=storage.yandexcloud.net#🇷🇺 WLUnlocker Russia | #2
+vless://b4186875-7023-4f20-88b2-125a04943b2b@dosia.lightforum.su:39671?type=tcp&security=reality&fp=random&pbk=n5P9loBH9eKY7Lj6uVi2CMh7vZcAclKWYjbSOWG0mkU&sid=54c7c13b52eea5f3&sni=max.ru#🇷🇺 WLUnlocker Russia | #3
+vless://8cae8ccf-e644-4122-a3e7-7732cca7a1af@gg1.serviceoda.ru:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=ya.ru&fp=qq&pbk=Tl0GCbgfsNHxGGN0TzZt3_OFsPc4xe1kMkn_L3qwiS8&sid=3d8b549801de&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #4
+vless://6784aee2-0dfe-474f-8446-480259ff9918@yt5.safepass.click:443?type=xhttp&security=reality&fp=chrome&pbk=ELp9PUvVnkoFJYiscWrbnPXRnsYdELSCbIz9wNmMRRw&sid=965af8960474c29c&sni=stats.vk-portal.net&mode=auto&extra=%7B#🇷🇺 WLUnlocker Russia | #5
+vless://8cae8ccf-e644-4122-a3e7-7732cca7a1af@212.119.42.251:443?type=tcp&headerType=none&security=reality&encryption=none&sni=ya.ru&fp=chrome&pbk=an7awMYCVlxIepZBuHby2zpLvZDSABhD7whyB3BGZH4&sid=947e85d03dad9bfe&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #6
+vless://db53d16d-825a-4989-a2ba-498b09d87d83@205.172.58.133:2040?flow=xtls-rprx-vision&fp=chrome&headertype=&host=&path=&pbk=Aevt4F-kvxeAC27LfB8r3KhkKAcrl6U2ew23p13kizU&security=reality&sid=&sni=stats.vk-portal.net&type=tcp#🇷🇺 WLUnlocker Russia | #7
+vless://8cae8ccf-e644-4122-a3e7-7732cca7a1af@usa10.odavpn.online:33823?type=tcp&headerType=none&security=reality&encryption=none&sni=ya.ru&fp=chrome&pbk=3fi_Uoj-UMSth_KAPpxyfRBElgh3m5-wgv1QW8r9Chw&sid=aabbccdd&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #8
