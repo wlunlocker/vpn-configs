@@ -1,6 +1,6 @@
 # profile-title: 🏴ЧС - СТАБИЛЬНАЯ🏴
 # profile-update-interval: 1
-# Last update: 13.05.2026 14:21 MSK
+# Last update: 13.05.2026 14:37 MSK
 
 vless://833967e0-665d-4747-aeb6-0a5f06c25a9c@151.101.195.6:443?security=tls&type=xhttp&headerType=&path=%2F&host=russia.alexanderoff.store&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+1000000%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=apps.apple.com&fp=chrome&alpn=h3&allowInsecure=1#🇦🇪 WLUnlocker UAE | #1
 vless://c65f439d-4b36-4037-a1b4-bb8d9a23fcea@151.101.195.6:443?security=tls&type=xhttp&headerType=&path=%2Fnocky&host=sweedenn.alexander.store&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+%221000000%22%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=apps.apple.com&fp=chrome&alpn=h3&allowInsecure=1#🇦🇪 WLUnlocker UAE | #2
