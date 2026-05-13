@@ -1,4 +1,4 @@
-name: VWLUnlocker Sync
+name: WLUnlocker Sync
 on:
   workflow_dispatch:
   schedule:
