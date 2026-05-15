@@ -1,6 +1,6 @@
-# profile-title: 🏳️БС - AWL ONE🏳️
+# profile-title: 🏳️БС - ПОЛНАЯ🏳️
 # profile-update-interval: 1
-# Last update: 15.05.2026 20:16 MSK
+# Last update: 15.05.2026 23:21 MSK
 
 vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:8080?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=0vMqJmM3oYptpB7-Cf1gREddng4BcFKW1nsnX-fiAF0&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #1
 vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@45.10.40.173:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #2
