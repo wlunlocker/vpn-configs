@@ -101,10 +101,10 @@ jobs:
           url_cidr_chk = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt"
           url_cidr_all = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           
-          format_and_save(get_data_ranged(url_vless_mob, 7, 81) + get_data_ranged(url_wangcai, 1, 50), "vpnstable.txt", "🏴ЧС - СТАБИЛЬНАЯ🏴")
-          format_and_save(get_data_ranged(url_vless, 7, 106) + get_data_ranged(url_wangcai, 51, 999), "vpnfull.txt", "🏴ЧС - ПОЛНАЯ🏴")
-          format_and_save(get_data_ranged(url_sni, 7, 106) + get_data_ranged(url_sni, 7, 126), "awlone.txt", "🏳️БС - AWL ONE🏳️")
-          format_and_save(get_data_ranged(url_cidr_chk, 7, 999) + get_data_ranged(url_cidr_all, 107, 256), "awltwo.txt", "🏳️БС - AWL TWO🏳️")
+          format_and_save(get_data_ranged(url_vless_mob, 7, 156) + get_data_ranged(url_wangcai, 1, 50), "vpnstable.txt", "🏴ЧС - СТАБИЛЬНАЯ🏴")
+          format_and_save(get_data_ranged(url_vless, 7, 157) + get_data_ranged(url_wangcai, 107, 999), "vpnfull.txt", "🏴ЧС - ПОЛНАЯ🏴")
+          format_and_save(get_data_ranged(url_sni, 7, 106) + get_data_ranged(url_cidr_all, 157, 258), "awlone.txt", "🏳️БС - ПОЛНАЯ🏳️")
+          format_and_save(get_data_ranged(url_cidr_chk, 7, 999) + get_data_ranged(url_cidr_all, 7, 156), "awltwo.txt", "🏳️БС - СТАБИЛЬНАЯ🏳️")
 
       - name: Commit and Push
         run: |
