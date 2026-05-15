@@ -9,7 +9,7 @@
 https://shz.al/~WangCai --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt
 
 ***
-Будущий сайт - wlunlocker.github.io
+Сайт - wlunlocker.github.io
 
 Телеграм канал с VPN - @wlunlocker
 
