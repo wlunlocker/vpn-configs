@@ -1,14 +1,12 @@
-# profile-title: 🏳️БС - ПОЛНАЯ🏳️
+# profile-title: 🏳️БЕЛЫЕ СПИСКИ №1🏳️
 # profile-update-interval: 1
-# Last update: 16.05.2026 15:07 MSK
+# Last update: 16.05.2026 16:36 MSK
 
-vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:8080?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=0vMqJmM3oYptpB7-Cf1gREddng4BcFKW1nsnX-fiAF0&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #1
-vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@45.10.40.173:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #2
-vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=edge&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #3
-vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:8443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=T6xIzGPsy--IRyF0ts9LgfDka7bDMjOaOKT6zJ1hL1U&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #4
-vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@72.56.96.93:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #5
-vless://6784aee2-0dfe-474f-8446-480259ff9918@yt5.safepass.click:443?type=xhttp&security=reality&fp=chrome&pbk=ELp9PUvVnkoFJYiscWrbnPXRnsYdELSCbIz9wNmMRRw&sid=965af8960474c29c&sni=stats.vk-portal.net&mode=auto&extra=%7B#🇷🇺 WLUnlocker Russia | #6
-vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@72.56.247.198:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=qq&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #7
-vless://770a8756-ede2-4b1f-89eb-e7806e9b2776@ru.vz-or.com:443?type=tcp&security=reality&pbk=RJETAkoZ6lowmwc5f0HtPy00c3dfojqQuypriLExXRE&sni=sun9-38.userapi.com&sid=abbcd128&flow=xtls-rprx-vision&fp=chrome#🇷🇺 WLUnlocker Russia | #8
-vless://6784aee2-0dfe-474f-8446-480259ff9918@wl4.safepass.click:443?type=xhttp&security=reality&fp=chrome&pbk=ELp9PUvVnkoFJYiscWrbnPXRnsYdELSCbIz9wNmMRRw&sid=965af8960474c29c&sni=stats.vk-portal.net&mode=auto&extra=%7B#🇷🇺 WLUnlocker Russia | #9
-vless://6784aee2-0dfe-474f-8446-480259ff9918@wl4.safepass.click:9443?type=xhttp&security=reality&fp=chrome&pbk=ELp9PUvVnkoFJYiscWrbnPXRnsYdELSCbIz9wNmMRRw&sid=965af8960474c29c&sni=stats.vk-portal.net&mode=auto&extra=%7B#🇷🇺 WLUnlocker Russia | #10
+vless://d52936ab-2091-4f3a-87c2-6b02a9eb20d5@152.89.244.172:443?type=tcp&headerType=none&security=reality&encryption=none&sni=kinopoisk.ru&fp=chrome&pbk=mhvT7-nUtXaWrw1Xf7JmBsB0Twj4-alH73mgsN4PZz0&sid=29f847c151f96091&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #1
+vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:8080?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=0vMqJmM3oYptpB7-Cf1gREddng4BcFKW1nsnX-fiAF0&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #2
+vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@45.10.40.173:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #3
+vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=edge&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #4
+vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@212.113.117.239:8443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=T6xIzGPsy--IRyF0ts9LgfDka7bDMjOaOKT6zJ1hL1U&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #5
+vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@72.56.96.93:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #6
+vless://3c81c716-4fd5-11f1-8a2c-525400a7149e@us2.unlockregion.top:443?security=reality&encryption=none&pbk=_rpOMKjM0nkFCJay0V5SuvhWVHQkr51YJbSyY2Q0gA4&headerType=none&fp=randomized&spx=%2Fstats%2Fapi%2F8261813&type=tcp&flow=xtls-rprx-vision&sni=cloudcdn-m9-15.cdn.yandex.net#🇷🇺 WLUnlocker Russia | #7
+vless://5b2fc182-a497-4fbe-aeb8-1841dae99022@72.56.247.198:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=qq&pbk=FSq5DVYJ8UaKArP3FtCmlZKqOQ08dKkqB2fefjRkA0M&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #8

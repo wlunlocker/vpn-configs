@@ -1,6 +1,6 @@
-# profile-title: 🏴ЧС - СТАБИЛЬНАЯ🏴
+# profile-title: 🏴ЧЕРНЫЕ СПИСКИ №1🏴
 # profile-update-interval: 1
-# Last update: 16.05.2026 15:07 MSK
+# Last update: 16.05.2026 16:36 MSK
 
 vless://30dab345-4de9-4b70-ad9f-8ebd5c66686f@node1.boomvpn.ru:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=www.microsoft.com&fp=chrome&pbk=GRxGFwibgoUjG9OL5Dl1OLyK56yw8WaG5BdFP8ifVgQ&sid=26f7082dd0e36ca1&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #1
 vless://d61b605c-e186-483e-ae53-7deaf7c56098@vpn-1.usp-vpn.store:443?security=reality&encryption=none&echfq=none&pbk=8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=vpn-1.usp-vpn.store&sid=90cfb50d12729375#🇦🇪 WLUnlocker UAE | #2

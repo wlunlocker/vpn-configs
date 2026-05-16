@@ -1,6 +1,6 @@
-# profile-title: 🏴ЧС - ПОЛНАЯ🏴
+# profile-title: 🏴ЧЕРНЫЕ СПИСКИ №2🏴
 # profile-update-interval: 1
-# Last update: 16.05.2026 15:07 MSK
+# Last update: 16.05.2026 16:36 MSK
 
 vless://0e3a9376-1bf0-4b9e-a328-f28083bf6c34@ru3.skysafe.online:443?fp=chrome&pbk=4iuR2mv0RnnPZbwvQuZ4L07Bois8hMUczEbMeDF0iRc&security=reality&sid=fb38c1c83009e1&sni=ru3.skysafe.online&spx=%2F&type=grpc#🇷🇺 WLUnlocker Russia | #1
 vless://0e3a9376-1bf0-4b9e-a328-f28083bf6c34@ru3.skysafe.online:8443?flow=xtls-rprx-vision&fp=ios&headertype=none&pbk=4iuR2mv0RnnPZbwvQuZ4L07Bois8hMUczEbMeDF0iRc&security=reality&sid=fb38c1c83009e1&sni=ru3.skysafe.online&spx=%2F&type=tcp#🇷🇺 WLUnlocker Russia | #2
