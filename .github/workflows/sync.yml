@@ -39,7 +39,7 @@ jobs:
               "IN": ("🇮🇳", "India"), "HK": ("🇭🇰", "Hong Kong"), "TW": ("🇹🇼", "Taiwan"), "VN": ("🇻🇳", "Vietnam"),
               "TH": ("🇹🇭", "Thailand"), "MY": ("🇲🇾", "Malaysia"), "ID": ("🇮🇩", "Indonesia"), "PH": ("🇵🇭", "Philippines"),
               "PT": ("🇵🇹", "Portugal"), "GR": ("🇬🇷", "Greece"), "DK": ("🇩🇰", "Denmark"), "SK": ("🇸🇰", "Slovakia"),
-              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭🇷", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
+              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭РУ", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
               "LU": ("🇱🇺", "Luxembourg"), "IS": ("🇮🇸", "Iceland"), "ZA": ("🇿🇦", "South Africa"), "CL": ("🇨🇱", "Chile"),
               "CO": ("🇨🇴", "Colombia"), "PE": ("🇵🇪", "Peru"), "NZ": ("🇳🇿", "New Zealand"), "EG": ("🇪🇬", "Egypt"),
               "SA": ("🇸🇦", "Saudi Arabia")
@@ -69,19 +69,27 @@ jobs:
                   try:
                       link, name = item.split('#', 1)
                       if link in seen_links: continue
+                      
                       found_code = None
+                      # 1. Ищем точное совпадение кода страны как отдельного слова (например, "RU")
                       for code in COUNTRIES:
                           if re.search(rf'\b{code}\b', name, re.IGNORECASE):
                               found_code = code
                               break
+                              
+                      # 2. Если точное слово не найдено, ищем вхождение кода в любом регистре
                       if not found_code:
                           for code in COUNTRIES:
                               if code.lower() in name.lower():
                                   found_code = code
                                   break
-                      if found_code:
-                          seen_links.add(link)
-                          final_configs.append({'link': link, 'code': found_code})
+                                  
+                      # ЖЕСТКИЙ ФИЛЬТР: Если страна вообще не определилась — выкидываем сервер из подписки
+                      if not found_code:
+                          continue
+                          
+                      seen_links.add(link)
+                      final_configs.append({'link': link, 'code': found_code})
                   except: continue
               
               final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
@@ -111,5 +119,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: added WangCai ranges" || exit 0
+          git commit -m "sync: added WangCai ranges and strict country filter" || exit 0
           git push
