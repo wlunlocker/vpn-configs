@@ -1,6 +1,6 @@
-# profile-title: 🏴ЧЕРНЫЕ СПИСКИ №2🏴
+# profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 17.05.2026 19:19 MSK
+# Last update: 17.05.2026 19:53 MSK
 
 vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@ru43.mechvpn.online:443?allowInsecure=1&insecure=1&type=tcp&security=tls&sni=ru43.mechvpn.online&fp=chrome&alpn=h3,h2,http/1.1&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #1
 vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@ru43.mechvpn.online:443?alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&type=tcp#🇷🇺 WLUnlocker Russia | #2

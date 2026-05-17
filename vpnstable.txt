@@ -1,6 +1,6 @@
-# profile-title: 🏴ЧЕРНЫЕ СПИСКИ №1🏴
+# profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 17.05.2026 19:19 MSK
+# Last update: 17.05.2026 19:53 MSK
 
 vless://5444090d-df19-4b22-942c-904666758940@5.181.20.165:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=1Bdy60YD69ATBKLLsZ6Z6a39_VX-OlxyByeg7GbfThc&sid=41d9cd02&sni=crates.io#🇦🇪 WLUnlocker UAE | #1
 vless://5fb4beab-89b7-48b4-9517-172a4221cbad@fl3-cloud.onnstreaming.ru:443?type=tcp&security=reality&encryption=none&pbk=yHl_D4hqW8wkMkSE7zDwm9QBYxPhBjRO99Wd73kbtQE&fp=chrome&sni=fl3-cloud.onnstreaming.ru&sid=9b763beeb4b0f51c&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #2
