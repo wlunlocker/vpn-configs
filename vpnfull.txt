@@ -1,10 +1,26 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 19.05.2026 20:43 MSK
+# Last update: 20.05.2026 01:43 MSK
 
-vless://a42c8b66-d0a7-4b49-9143-b98f1c84edba@144.31.82.47:18038?type=tcp&headerType=none&security=reality&encryption=none&sni=www.microsoft.com&fp=chrome&pbk=UDLhjunZjP-5A6KBMeuWe3qp_FusLAshcQIcCF7EZh8&sid=ce9f790791426d83&spx=%2F&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #1
-vless://31216f81-3139-0021-bac4-646680314264@sw.musicperec.ru:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4&sid=6a2b5c9d&sni=www.amd.com#🇩🇪 WLUnlocker Germany | #1
+vless://b0d7663d-4590-41e8-906e-460f04499a4a@free05.tunnely.ru:8080?encryption=none&type=ws&path=%2Fws%2F&security=none#🇦🇪 WLUnlocker UAE | #1
+vless://a42c8b66-d0a7-4b49-9143-b98f1c84edba@144.31.82.47:18038?type=tcp&headerType=none&security=reality&encryption=none&sni=www.microsoft.com&fp=chrome&pbk=UDLhjunZjP-5A6KBMeuWe3qp_FusLAshcQIcCF7EZh8&sid=ce9f790791426d83&spx=%2F&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #2
+vless://b43a13be-150c-4a6a-8501-b71c1b6476fb@srv186.towersflowerss.com:64534?type=ws&headerType=none&security=none&encryption=none&fp=randomized&path=%2F#🇦🇲 WLUnlocker Armenia | #1
+vless://fcb2c219-71f9-4dc2-b21d-2a6adf76d012@nl.freekeysh110.online:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=nl.freekeysh110.online&fp=chrome&pbk=xoJg4Yjw9uC7_fU2-KTZEI80T2BMyohQtP8ZvtRIpxM&sid=39212a0fd9ef8f3e#🇦🇲 WLUnlocker Armenia | #2
+vless://6bcc0a8a-a7cc-46b7-8448-14ec5e516912@latv1.ggisopi.su:443?flow=xtls-rprx-vision&fp=chrome&pbk=HYKy4FK5lRc1Lv1lbJSew6xmpbg-Hp9IREnObxTf6kU&security=reality&sni=latv1.ggisopi.su&type=tcp#🇦🇹 WLUnlocker Austria | #1
+vless://92f3b80e-90a2-457f-b766-2e5cdeffbfa0@ussun.api.dznn.net:443?type=tcp&headerType=none&security=reality&encryption=none&sni=ussun.api.dznn.net&fp=chrome&pbk=9F7JxyyP-TNLt0dY2xOB0_34I8W0xXIpFY7rZ7-L0Gg&sid=0a6ba2716a409da6&flow=xtls-rprx-vision#🇦🇹 WLUnlocker Austria | #2
+vless://07e326bb-801c-49fc-9005-d2a3e9673e89@sbl.mangshe.xyz:2055?headertype=none&host=sbl.mangshe.xyz&security=none&type=tcp#🇦🇿 WLUnlocker Azerbaijan | #1
+vless://ecfbc74b-aed1-4193-bcfb-1e6d7a6b90e1@sbl.mangshe.xyz:2055?encryption=none&security=none&type=tcp&headerType=none&host=sbl.mangshe.xyz#🇦🇿 WLUnlocker Azerbaijan | #2
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@154.17.22.207:443?encryption=none&security=tls&sni=sn1.skylee5.cloudns.ch&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=sn1.skylee5.cloudns.ch&path=%2F#🇨🇦 WLUnlocker Canada | #1
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@219.76.13.183:443?host=sn1.skylee5.cloudns.ch&path=%2Ffp%3Dchromefp%3Dchrome&security=tls&sni=sn1.skylee5.cloudns.ch&type=ws#🇨🇦 WLUnlocker Canada | #2
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@219.76.13.183:443?sni=sn1.skylee5.cloudns.ch&type=ws&host=sn1.skylee5.cloudns.ch&path=/fp=chrome&security=tls#🇨🇦 WLUnlocker Canada | #3
+vless://06b65903-406d-4a41-8463-6fd5c0ee7798@219.76.13.183:443?type=ws&security=tls&encryption=none&sni=sn1.skylee5.cloudns.ch&host=sn1.skylee5.cloudns.ch#🇨🇦 WLUnlocker Canada | #4
+vless://b43a13be-150c-4a6a-8501-b71c1b6476fb@srv174.towersflowerss.com:65000?type=ws&headerType=none&security=none&encryption=none&fp=randomized&path=%2F#🇨🇿 WLUnlocker Czechia | #1
+vless://b931b922-6129-42bb-9c1c-d51371d18980@lav1.pineappled.org.alexanderoff.ru:443?security=reality&encryption=none&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=www.apple.com&sid=23#🇩🇪 WLUnlocker Germany | #1
 vless://8546145579@swe-8t.freeonline.pro:443?type=tcp&headerType=none&security=reality&encryption=none&sni=www.microsoft.com&fp=chrome&pbk=978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8&sid=bdac121c7debdaba&flow=xtls-rprx-vision#🇩🇪 WLUnlocker Germany | #2
-vless://6bcc0a8a-a7cc-46b7-8448-14ec5e516912@kask2.ggisopi.su:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=kask2.ggisopi.su&fp=chrome&pbk=HYKy4FK5lRc1Lv1lbJSew6xmpbg-Hp9IREnObxTf6kU#🇫🇷 WLUnlocker France | #1
+vless://92f3b80e-90a2-457f-b766-2e5cdeffbfa0@eeshka.api.dznn.net:443?type=tcp&headerType=none&security=reality&encryption=none&sni=eeshka.api.dznn.net&fp=chrome&pbk=9F7JxyyP-TNLt0dY2xOB0_34I8W0xXIpFY7rZ7-L0Gg&sid=0a6ba2716a409da6&flow=xtls-rprx-vision#🇪🇸 WLUnlocker Spain | #1
+vless://a77198e2-9cf7-44c7-a97f-319f6f0e5b07@de.love-list-server.com:443?type=tcp&headerType=none&security=tls&encryption=none&sni=de.great-server-list.co.uk&fp=chrome&flow=xtls-rprx-vision&insecure=0#🇫🇷 WLUnlocker France | #1
+vless://a6dd0cc9-eeb0-4226-9623-b3fc6e1b0b98@172.237.90.117:14573?type=ws&security=none&host=m.zoom.us&path=%2FFREE%2520By%2520Tharuwa%2520%25280767597317%2529#🇮🇳 WLUnlocker India | #1
 vless://bc9639fa-6600-43ff-9a43-eb34ad192810@cloud.globaledgenet.com:443?type=tcp&headerType=none&security=reality&encryption=none&sni=cloud.globaledgenet.com&fp=chrome&pbk=rRGPedMea32_bsWFx_fxQPy-50TOF6KbBAmYL2rkmQ4&flow=xtls-rprx-vision#🇮🇹 WLUnlocker Italy | #1
-vless://6bcc0a8a-a7cc-46b7-8448-14ec5e516912@kask1.ggisopi.su:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=kask1.ggisopi.su&fp=chrome&pbk=HYKy4FK5lRc1Lv1lbJSew6xmpbg-Hp9IREnObxTf6kU#🇮🇹 WLUnlocker Italy | #2
+vless://02ca6335-4c91-412c-956f-f7f9e5630b6c@151.247.219.166:8443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=g3m27BDO4X4sUsRkm5PcrqNxEH1stxgrrCAuUdFKHHo&sid=e0251211bd&sni=www.microsoft.com&spx=/#🇮🇹 WLUnlocker Italy | #2
+vless://6bcc0a8a-a7cc-46b7-8448-14ec5e516912@kask1.ggisopi.su:443?flow=xtls-rprx-vision&fp=chrome&pbk=HYKy4FK5lRc1Lv1lbJSew6xmpbg-Hp9IREnObxTf6kU&security=reality&sni=kask1.ggisopi.su&type=tcp#🇮🇹 WLUnlocker Italy | #3
+vless://54407de7-ef98-4849-b1fb-837a5092d368@58.191.44.237:443?security=reality&type=tcp&sni=www.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=5ff93c29&pbk=RVBbSIFdxU2pfqug2b3XAWXXG6zLQB9e8wDsqFNcPFY#🇸🇦 WLUnlocker Saudi Arabia | #1
