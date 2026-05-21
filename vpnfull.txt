@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 21.05.2026 20:35 MSK
+# Last update: 21.05.2026 23:04 MSK
 
 vless://5381a1bb-479a-412a-9d99-08ccbc008828@ru10.myxasecure.space:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=ru10.myxasecure.space&fp=chrome&pbk=OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw&sid=d67ec5a8fc40ebea#🇷🇺 WLUnlocker Russia | #1
 vless://b43a13be-150c-4a6a-8501-b71c1b6476fb@srv185.towersflowerss.com:443?security=reality&flow=xtls-rprx-vision&encryption=none&fp=chrome&pbk=Ufkz__Q3m_d8NFR08OVtXx3hLaV4-x7UesrVKduEIn0&type=tcp&sni=srv185.towersflowerss.com#🇷🇺 WLUnlocker Russia | #2
