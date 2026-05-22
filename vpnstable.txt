@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 22.05.2026 20:12 MSK
+# Last update: 22.05.2026 22:57 MSK
 
 ss://bm9uZTpodHRwczovL3QubWUvV2FuZ0NhaTLwn4eo8J+Hsw==@90.156.211.232:8443?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dss.lrdxw.club%3Bpath%3D%2F94ce96d3-840d-4320-9b9b-07bdba018212%2F%3Fed%3D2560%3Btls%3Bsni%3Dhttps%3A%2F%2Ft.me%2Foneclickvpnkeys%3Bmux%3D0%3Bskip-cert-verify%3Dtrue#🇦🇪 WLUnlocker UAE | #1
 ss://bm9uZTpodHRwczovL3QubWUvV2FuZ0NhaTLwn4eo8J+Hsw==@176.57.211.166:8443?plugin=v2ray-plugin%3Bmode%3Dwebsocket%3Bhost%3Dss.lrdxw.club%3Bpath%3D%2F94ce96d3-840d-4320-9b9b-07bdba018212%2F%3Fed%3D2560%3Btls%3Bsni%3D%40oneclickvpnkeys%3Bmux%3D0%3Bskip-cert-verify%3Dtrue#🇦🇪 WLUnlocker UAE | #2

@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 22.05.2026 20:12 MSK
+# Last update: 22.05.2026 22:57 MSK
 
 vless://10e82fcc-94ec-4d09-8855-579bb55b77e4@31.59.106.151:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=www.google.com&fp=chrome&pbk=N0QyBaacGqSpRv_Ib4jsSx5A1kfE8IE1w0HcDB5w1BE&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #1
 vless://10e82fcc-94ec-4d09-8855-579bb55b77e4@31.59.106.45:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=www.google.com&fp=chrome&pbk=N0QyBaacGqSpRv_Ib4jsSx5A1kfE8IE1w0HcDB5w1BE&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #2
