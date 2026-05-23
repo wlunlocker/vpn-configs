@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 23.05.2026 16:50 MSK
+# Last update: 23.05.2026 19:06 MSK
 
 vless://ee6ca40f-57e4-5943-8e4c-7a9b911aff44@russiayt.cloudpath.live:443?type=tcp&security=reality&sni=microsoft.com&pbk=6M7gWx17aFEwFa65jjCLldc2UqOUQuBbQO_Rkx5Z9h4&sid=d1172867&fp=chrome&mux=true&muxConcurrency=8&fragment=100-200,10-20,tlshello#🇷🇺 WLUnlocker Russia | #1
 vless://0c9c3d36-c93c-4d1b-bdff-8038c3ed78a2@fl-7-direct.djarbnet.ru:443?path=%2Fgetupdates&security=tls&encryption=none&host=fl-7-direct.djarbnet.ru&type=ws&sni=fl-7-direct.djarbnet.ru#🇦🇪 WLUnlocker UAE | #1
