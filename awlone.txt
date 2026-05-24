@@ -1,6 +1,6 @@
 # profile-title: БЕЛЫЕ СПИСКИ №1 (LTE)
 # profile-update-interval: 1
-# Last update: 24.05.2026 11:38 MSK
+# Last update: 24.05.2026 13:45 MSK
 
 vless://f3d08978-e457-43a3-b062-d74e4328833d@sex.vles.space:2077?encryption=none&security=reality&sni=api.ok.ru&fp=firefox&pbk=GPVE1gXtIAAF0-haYukGL_-fGSKeBhB1dQh-Nejuvyc&sid=aabbccdd&type=xhttp&path=%2Fapi%2Fvideo#🇷🇺 WLUnlocker Russia | #1
 vless://0537e5d5-8d2f-4f82-b660-ebf94062f67e@2.26.87.101:4443?fp=chrome&pbk=cPnEvtfmLBeYzbYYklKblkllFRzRzCd0KgFM-19fSDM&security=reality&sid=c9&sni=eh.vk.com&type=tcp#🇷🇺 WLUnlocker Russia | #2
