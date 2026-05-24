@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 24.05.2026 22:24 MSK
+# Last update: 25.05.2026 01:00 MSK
 
 hysteria2://18cf8030-1ceb-4b7d-8c0c-c036413c144e@185.228.139.247:4433?insecure=1#🇷🇺 WLUnlocker Russia | #1
 hysteria2://18cf8030-1ceb-4b7d-8c0c-c036413c144e@185.228.139.247:4433?insecure=1&sni=de2.xiaoliyu.cyou#🇷🇺 WLUnlocker Russia | #2
