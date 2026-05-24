@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 24.05.2026 13:45 MSK
+# Last update: 24.05.2026 16:48 MSK
 
 vless://35325a3c-411e-42a8-962b-db12e55b071d@72.56.233.158:2027?flow=xtls-rprx-vision&fp=chrome&pbk=EApxy12MeXpqt-78odxizwcXT6hX9f8XeAcbMDVRAV0&security=reality&sid=6ba7b8109dad11d1&sni=ru3.skysafe.online&type=tcp#🇷🇺 WLUnlocker Russia | #1
 vless://404b057c-3b66-407e-b465-240893bc9337@217.171.146.200:443?flow=xtls-rprx-vision&fp=qq&pbk=-tePObR3oZwGAUOb5kqTYkNWl6rtUKl0RFuzuu06wgw&security=reality&sid=50&sni=tradingview.com&spx=%2F&type=tcp#🇷🇺 WLUnlocker Russia | #2
