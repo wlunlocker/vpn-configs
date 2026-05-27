@@ -1,7 +1,10 @@
 # profile-title: БЕЛЫЕ СПИСКИ №1 (LTE)
 # profile-update-interval: 1
-# Last update: 27.05.2026 23:25 MSK
+# Last update: 28.05.2026 01:45 MSK
 
-vless://91a3f712-c4e0-42a0-9475-bdd551a06e73@159.194.239.37:443?type=xhttp&headerType=none&security=reality&encryption=none&sni=ads.x5.ru&fp=chrome&pbk=AhQkw1Ydp_ZkXnE7UbIZvwHk9KE_Bf5_TkojYZZUuGs&sid=2da46294d6a521b2&path=/api/v3/f29479507adb&host=ads.x5.ru#🇷🇺 WLUnlocker Russia | #1
-vless://91a3f712-c4e0-42a0-9475-bdd551a06e73@155.212.146.195:443?type=xhttp&security=reality&path=/api/v3/f29479507adb&sni=ads.x5.ru&fp=chrome&pbk=AhQkw1Ydp_ZkXnE7UbIZvwHk9KE_Bf5_TkojYZZUuGs&sid=2da46294d6a521B2#🇷🇺 WLUnlocker Russia | #2
-vless://83f7aa17-37b7-42b8-a265-d5528dd2705f@85.192.42.234:1021?fp=chrome&pbk=adI4uGaYC3zGQJmMqQND7yiUpARLpKn0gzLlHDSH9UU&security=reality&sid=a9d1a34fceee7440&sni=yandex.ru&type=tcp#🇷🇺 WLUnlocker Russia | #3
+vless://91a3f712-c4e0-42a0-9475-bdd551a06e73@62.217.179.4:443?mode=auto&path=/api/v3/f29479507adb&security=reality&encryption=none&pbk=AhQkw1Ydp_ZkXnE7UbIZvwHk9KE_Bf5_TkojYZZUuGs&host=ads.x5.ru&fp=chrome&allowinsecure=0&type=xhttp&sni=ads.x5.ru&sid=2da46294d6a521b2#🇷🇺 WLUnlocker Russia | #1
+vless://91a3f712-c4e0-42a0-9475-bdd551a06e73@159.194.239.37:443?encryption=none&type=xhttp&security=reality&host=ads.x5.ru&path=%2Fapi%2Fv3%2Ff29479507adb&extra=null&fp=randomized&sni=ads.x5.ru&pbk=AhQkw1Ydp_ZkXnE7UbIZvwHk9KE_Bf5_TkojYZZUuGs&sid=2da46294d6a521b2#🇷🇺 WLUnlocker Russia | #2
+vless://91a3f712-c4e0-42a0-9475-bdd551a06e73@159.194.239.37:443?type=xhttp&headerType=none&security=reality&encryption=none&sni=ads.x5.ru&fp=chrome&pbk=AhQkw1Ydp_ZkXnE7UbIZvwHk9KE_Bf5_TkojYZZUuGs&sid=2da46294d6a521b2&path=/api/v3/f29479507adb&host=ads.x5.ru#🇷🇺 WLUnlocker Russia | #3
+vless://87be8be2-9296-4912-944e-d49cc81485d8@85.158.109.113:443?encryption=none&type=xhttp&mode=auto&host=www.kinopoisk.ru&path=%2FtDjkeuxyQPUDqF8wT2&security=reality&fp=chrome&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&sni=www.kinopoisk.ru&sid=aabbccdd#🇷🇺 WLUnlocker Russia | #4
+vless://69a2af58-d74a-44ca-864a-e09b493f4274@195.96.132.125:443?type=tcp&security=reality&pbk=WM-LMz6slGkGPD3zEM8Ntat27n6p6EfbxRsjYmTykV4&fp=chrome&sni=www.vk.ru&sid=8237eb&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #5
+vless://91a3f712-c4e0-42a0-9475-bdd551a06e73@155.212.146.195:443?encryption=none&security=reality&sni=ads.x5.ru&fp=chrome&pbk=AhQkw1Ydp_ZkXnE7UbIZvwHk9KE_Bf5_TkojYZZUuGs&sid=2da46294d6a521B2&type=xhttp&host=ads.x5.ru&path=/api/v3/f29479507adb#🇷🇺 WLUnlocker Russia | #6
