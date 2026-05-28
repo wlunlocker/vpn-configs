@@ -1,8 +1,10 @@
 # profile-title: БЕЛЫЕ СПИСКИ №1 (LTE)
 # profile-update-interval: 1
-# Last update: 28.05.2026 13:15 MSK
+# Last update: 28.05.2026 19:14 MSK
 
 vless://5610a52c-48e0-4e8c-9230-fb302b04d02e@83.220.174.163:2096?fp=chrome&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#🇷🇺 WLUnlocker Russia | #1
-vless://87be8be2-9296-4912-944e-d49cc81485d8@85.158.109.113:443?encryption=none&type=xhttp&mode=auto&host=www.kinopoisk.ru&path=%2FtDjkeuxyQPUDqF8wT2&security=reality&fp=chrome&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&sni=www.kinopoisk.ru&sid=aabbccdd#🇷🇺 WLUnlocker Russia | #2
-vless://01cf5781-5948-11f1-9a67-dc08fb041e0d@72.56.33.191:443?flow=xtls-rprx-vision&fp=randomized&pbk=2IAFC23dkBm2ZRPTcxSWZ5YkpVxJufIIZn3-aSPRH10&security=reality&sni=ads.x5.ru&spx=%2Fad%2F8611949&type=tcp#🇷🇺 WLUnlocker Russia | #3
-trojan://lEjtI3pFYfU7O1UYozJcfZV5K6Fwfths@64.74.163.118:58536?allowInsecure=1&headerType=none&insecure=1&security=tls&type=tcp&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #4
+vless://c8b6167c-615a-53ec-ae23-87054336339e@81.17.159.63:443?type=xhttp&security=reality&fp=chrome&pbk=XDBvi6U6TnvlyuCdsIUtQ_yjrjyTEvr0KLHvuo-pF0Q&sid=cf53a10184e17998&sni=www.kinopoisk.ru&path=/Vu-Nf1cGVrkTt3qJrz#🇷🇺 WLUnlocker Russia | #2
+vless://96fec558-76d9-40f5-8589-fe01afb6eaf6@64.188.124.119:8443?type=tcp&security=reality&encryption=none&pbk=rOUP7Zp95gDUa3jN1_Yx2aYovSLF5GiJiKfzwHK-jyE&fp=chrome&sni=yandex.ru&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #3
+vless://87be8be2-9296-4912-944e-d49cc81485d8@85.158.109.113:443?encryption=none&type=xhttp&mode=auto&host=www.kinopoisk.ru&path=%2FtDjkeuxyQPUDqF8wT2&security=reality&fp=chrome&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&sni=www.kinopoisk.ru&sid=aabbccdd#🇷🇺 WLUnlocker Russia | #4
+trojan://lEjtI3pFYfU7O1UYozJcfZV5K6Fwfths@64.74.163.118:58536?allowInsecure=1&headerType=none&insecure=1&security=tls&type=tcp&sni=eh.vk.com#🇷🇺 WLUnlocker Russia | #5
+trojan://A2-VxVpRYMRc_XLyYAEbLdyGBBggMJQv@ru3.connectservice.top:41458?type=tcp&security=reality&encryption=none&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&fp=qq&sni=max.ru&sid=02827ef87f4a23c0#🇷🇺 WLUnlocker Russia | #6
