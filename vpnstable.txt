@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 28.05.2026 23:31 MSK
+# Last update: 29.05.2026 01:43 MSK
 
 vless://f00984ef-f57e-41db-9182-b25f7bc3a1e2@2.27.13.15:443?flow=xtls-rprx-vision&fp=chrome&pbk=dZr14WsJ6yNqfoalMrTWBsOU74mckVoQO84Ty68TtW4&security=reality&sid=b03a4d1767157467&sni=newfn.stardevs.top&spx=%2F&type=tcp#🇦🇪 WLUnlocker UAE | #1
 vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=/tofan&mode=auto&extra={"xPaddingBytes":"100-1000"}#🇦🇪 WLUnlocker UAE | #2

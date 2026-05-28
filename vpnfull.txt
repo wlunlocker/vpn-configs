@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №2 (VPN)
 # profile-update-interval: 1
-# Last update: 28.05.2026 23:31 MSK
+# Last update: 29.05.2026 01:43 MSK
 
 vless://ec802839-1704-4861-a97f-df8f5eabf50e@89.110.94.179:443?type=xhttp&headerType=none&security=reality&encryption=none&sni=absolute-disaster.org&fp=chrome&pbk=aGWwI3avxg9_hfT4-f57lPHpvyMZt-YayEUK-IZ0FDI&path=%2F&host=absolute-disaster.org#🇷🇺 WLUnlocker Russia | #1
 vless://297580e1-6693-4f0d-a25c-fd36aee284a8@rutelega.yaponchik.online:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=w05NKnvfi1jL8kYUI7MLv02Y9LQL1S-nSGa8PH1kK0o&sid=69a07f89&sni=metrika.yandex.ru&spx=/#🇷🇺 WLUnlocker Russia | #2
