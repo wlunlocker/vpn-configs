@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 30.05.2026 16:53 MSK
+# Last update: 30.05.2026 19:08 MSK
 
 vless://1cbfb9ea-2a50-4c25-adea-3fd8065e21bc@45.144.52.215:443?type=tcp&headerType=none&security=reality&encryption=none&sni=video.intfreed.ru&fp=chrome&pbk=JxwG7rAbNCd_C82p9K69AZDWh51fri2nm3wLHHrfyiw&sid=7755e972daf8eec8&flow=xtls-rprx-vision#🇦🇪 WLUnlocker UAE | #1
 vless://2ee26119-94e5-40b4-ba3a-16354021b600@185.18.250.127:2096?&security=tls&fp=chrome&sni=69565ce3109804e7813f98ee.mmdbay.blog&type=ws&headerType=none&host=69565ce3109804e7813f98ee.mmdbay.blog&path=%2Fgraphql#🇦🇪 WLUnlocker UAE | #2
@@ -140,10 +140,11 @@ hysteria2://hy2_lositfbu%3AsWBLzjRX9zEvCSBHmJvoefyg9LYx05rv@144.31.213.121:443?h
 hysteria2://hy2_lositfbu%3AsWBLzjRX9zEvCSBHmJvoefyg9LYx05rv@144.31.213.121:443?insecure=1&sni=gb.cleanersaz.help#🇮🇹 WLUnlocker Italy | #8
 vless://0294d19d-5b1c-4ac6-8bf9-b14be79f3db3@144.31.217.142:443?type=tcp&headerType=none&security=reality&encryption=none&sni=dl.google.com&fp=chrome&pbk=3wa3ZmMniymkL-58bPtY7baWPxdJ6n2UaJMG7YiLiGo&flow=xtls-rprx-vision#🇳🇴 WLUnlocker Norway | #1
 vless://41d480fd-1dcc-4766-8e01-a67e7faa5934@129.6.29.253:443?encryption=none&type=ws&security=tls&path=/id-amz&host=investors.spotify.com.cyylr.eu.cc&sni=investors.spotify.com.cyylr.eu.cc&alpn=http/1.1&fp=chrome&allowInsecure=0#🇷🇴 WLUnlocker Romania | #1
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%291b289d8%3A50119#🇸🇬 WLUnlocker Singapore | #1
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%29604c28d%3A52992#🇸🇬 WLUnlocker Singapore | #2
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%2980b6690%3A72938#🇸🇬 WLUnlocker Singapore | #3
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%292ddd5ae%3A83350#🇸🇬 WLUnlocker Singapore | #4
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%299097152%3A93638#🇸🇬 WLUnlocker Singapore | #1
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%2903344e6%3A95931#🇸🇬 WLUnlocker Singapore | #2
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%291b159d1%3A102742#🇸🇬 WLUnlocker Singapore | #3
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%29e7b7ab7%3A102816#🇸🇬 WLUnlocker Singapore | #4
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@18.141.230.148:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%2911e1f91%3A107496#🇸🇬 WLUnlocker Singapore | #5
 vless://1cbfb9ea-2a50-4c25-adea-3fd8065e21bc@88.216.193.56:443?type=tcp&headerType=none&security=reality&encryption=none&sni=video.intfreed.ru&fp=chrome&pbk=JxwG7rAbNCd_C82p9K69AZDWh51fri2nm3wLHHrfyiw&sid=7755e972daf8eec8&flow=xtls-rprx-vision#🇺🇸 WLUnlocker USA | #1
 trojan://BSs5IAVMQdYuykvDsOYZoa6gNPSGBjAbLL@185.126.236.44:443?security=tls&sni=www.mesaly.click&fp=chrome&type=tcp#🇺🇸 WLUnlocker USA | #2
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@88.210.36.106:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3D%28Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2%29e7b7ab7%3A102816#🇺🇸 WLUnlocker USA | #3
