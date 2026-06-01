@@ -1,8 +1,10 @@
 # profile-title: БЕЛЫЕ СПИСКИ №1 (LTE)
 # profile-update-interval: 1
-# Last update: 01.06.2026 14:48 MSK
+# Last update: 01.06.2026 20:53 MSK
 
-vless://87be8be2-9296-4912-944e-d49cc81485d8@85.158.109.113:443?encryption=none&security=reality&sni=www.kinopoisk.ru&fp=chrome&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&sid=aabbccdd&type=xhttp&path=/tDjkeuxyQPUDqF8wT2#🇷🇺 WLUnlocker Russia | #1
-vless://87be8be2-9296-4912-944e-d49cc81485d8@85.158.109.113:443?encryption=none&type=xhttp&mode=auto&host=www.kinopoisk.ru&path=%2FtDjkeuxyQPUDqF8wT2&security=reality&fp=chrome&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&sni=www.kinopoisk.ru&sid=aabbccdd#🇷🇺 WLUnlocker Russia | #2
-vless://5a2dd675-410e-4553-a81b-db7cc8b02d59@72.5.42.122:443?type=tcp&headerType=none&security=reality&encryption=none&sni=www.yandex.ru&pbk=CxjnGHCI3HXN2RAXwytela7jXyOGDCBqzMAqTfm60D0&sid=4ed920401771c4ab&spx=%2F&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #3
-vless://0518b9cd-a1f9-4a05-8067-95fcc6caaa3d@spb.maxg.ch:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=ads.x5.ru&fp=chrome&pbk=QlQDX8jxqNJE1qtZmaZCDxE7gZqcLlOKdWd5YKNv0Gg#🇷🇺 WLUnlocker Russia | #4
+vless://14a59796-6db6-4c48-b4d5-2c7b875074c1@46.36.219.69:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.ru&fp=firefox&pbk=rFb2hsGZE0KGim0_MMIfeKMnYTjKH2llqtN4uDUaTj0&sid=4d05e319&spx=%2Fapi%2Fv2&type=tcp&headerType=none#🇷🇺 WLUnlocker Russia | #1
+vless://1b9e301d-cecd-4eb1-8b36-eef811c2696d@62.238.32.25:443?encryption=none&fp=&pbk=3LUIM_6cYceTgNt6LWnR8YSVrenpLsh-FIGDrmfjjwc&security=reality&sid=5e841fab&sni=yastatic.net&type=tcp#🇷🇺 WLUnlocker Russia | #2
+vless://14a59796-6db6-4c48-b4d5-2c7b875074c1@217.60.5.233:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.ru&fp=firefox&pbk=rFb2hsGZE0KGim0_MMIfeKMnYTjKH2llqtN4uDUaTj0&spx=%2Fapi%2Fv2&type=tcp&headerType=none#🇷🇺 WLUnlocker Russia | #3
+vless://0a84e278-a837-446c-8cd2-59c3b787e13e@sg1.avaravpn.online:8443?encryption=none&security=reality&sni=max.ru&fp=random&pbk=G2T9PF3w5e4AP-Shkea5_-leYkGMvojH2YewWGR_5hI&sid=8c0de80ec8e0e438&type=tcp&headerType=none#🇷🇺 WLUnlocker Russia | #4
+vless://0a84e278-a837-446c-8cd2-59c3b787e13e@nl1.avaravpn.online:8443?encryption=none&security=reality&sni=max.ru&fp=random&pbk=G2T9PF3w5e4AP-Shkea5_-leYkGMvojH2YewWGR_5hI&sid=8c0de80ec8e0e438&type=tcp&headerType=none#🇷🇺 WLUnlocker Russia | #5
+vless://14a59796-6db6-4c48-b4d5-2c7b875074c1@94.183.159.166:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=vk.ru&fp=firefox&pbk=rFb2hsGZE0KGim0_MMIfeKMnYTjKH2llqtN4uDUaTj0&sid=4d05e319b074645b&spx=%2Fapi%2Fv2&type=tcp&headerType=none#🇷🇺 WLUnlocker Russia | #6
