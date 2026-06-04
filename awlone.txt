@@ -1,13 +1,11 @@
 # profile-title: БЕЛЫЕ СПИСКИ №1 (LTE)
 # profile-update-interval: 1
-# Last update: 04.06.2026 23:11 MSK
+# Last update: 05.06.2026 01:24 MSK
 
 vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@83.136.233.105:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #1
 vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@83.136.235.101:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #2
 vless://63a16ebb-8687-42ac-972a-5914cafad1d5@149.248.50.193:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=xapi.ozon.ru&fp=qq&pbk=MrvLfVT6dYIzZWS2L0I4AAJZsBbcAWYZBsBwsOhN4HU&sid=91da4ef2fa99&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #3
 vless://63a16ebb-8687-42ac-972a-5914cafad1d5@139.84.247.135:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=xapi.ozon.ru&fp=qq&pbk=MrvLfVT6dYIzZWS2L0I4AAJZsBbcAWYZBsBwsOhN4HU&sid=91da4ef2fa99&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #4
-vless://63a16ebb-8687-42ac-972a-5914cafad1d5@nlwifi.kotvpn.net:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=yandex.ru&fp=chrome&pbk=PYDZtcMe9SsXXNB2ixS0O_n8AMznwMFEvRm2-4EWQxE&sid=f83e19dcd7734c89&flow=xtls-rprx-vision#🇷🇺 WLUnlocker Russia | #5
-vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@45.142.44.12:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #6
-vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@80.64.24.185:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #7
-vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@82.202.169.202:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #8
-vless://0b0f0f45-b79a-4647-b466-d7879cd4aeea@45.86.159.186:7443?security=reality&encryption=none&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=ya.ru&sid=d82fb387#🇷🇺 WLUnlocker Russia | #9
+vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@45.142.44.12:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #5
+vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@80.64.24.185:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #6
+vless://c09f00bc-ef4c-441e-8317-17ac954c54ad@82.202.169.202:2096?encryption=none&type=grpc&security=reality&mode=gun&serviceName=vless-grpc-reality&fp=chrome&sni=id.vk.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#🇷🇺 WLUnlocker Russia | #7

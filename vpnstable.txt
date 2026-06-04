@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 04.06.2026 23:11 MSK
+# Last update: 05.06.2026 01:24 MSK
 
 vless://49ed8a1f-26b3-4671-bc18-81e8ecb77502@fir.iratom.com:80?mode=auto&path=/&security=&encryption=none&extra={"scMaxEachPostBytes": "1000000", "scMaxConcurrentPosts": 100, "scMinPostsIntervalMs": 30, "xPaddingBytes": "100-1000", "noGRPCHeader": false}&host=center.global.ssl.fastly.net&type=xhttp#🇦🇪 WLUnlocker UAE | #1
 vless://5b6046bc-82fc-4b92-99c4-eda0f4df13f3@45.15.152.73:40268?encryption=none&type=tcp&headerType=none#🇦🇪 WLUnlocker UAE | #2
