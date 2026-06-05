@@ -5,6 +5,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Active-blue?style=for-the-badge">
   <img src="https://img.shields.io/github/last-commit/wlunlocker/vpn-configs?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Available_on-GitHub-orange?style=for-the-badge&logo=github">
   <img src="https://img.shields.io/badge/Keys_Count-1500+-purple?style=for-the-badge&logo=nixos">
   <img src="https://img.shields.io/badge/Update-Every_15_min-red?style=for-the-badge&logo=github">
 </p>
