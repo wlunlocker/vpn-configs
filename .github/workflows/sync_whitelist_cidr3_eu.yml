@@ -1,0 +1,30 @@
+name: Sync CIDR EU 3
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Sync
+        shell: python
+        run: |
+          import requests, datetime
+          from collections import defaultdict
+          r = requests.get("https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt")
+          lines = [l for l in r.text.splitlines() if l.startswith(("vless://", "vmess://", "trojan://", "ss://"))]
+          grouped = defaultdict(list)
+          for l in lines[9:]:
+              if "ru" in l.lower() or "росс" in l.lower(): continue
+              if len(grouped["Europe"]) < 30: grouped["Europe"].append(l.split('#')[0].strip())
+          final = [f"{base}#🌍 🏳️ WLUnlocker Europe | #{i+1}" for i, base in enumerate(grouped["Europe"][:150])]
+          header = f"# profile-title: CIDR EU 3\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
+          with open("whitelist_cidr3_eu.txt", "w", encoding="utf-8") as f: f.write(header + "\n" + "\n".join(final))
+      - name: Push
+        run: |
+          git config user.name "GitHub Actions"; git config user.email "actions@github.com"
+          git add whitelist_cidr3_eu.txt; git commit -m "sync: cidr3" || exit 0; git push
