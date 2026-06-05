@@ -14,7 +14,7 @@
 
 An automated generator of clean, verified, and stable subscriptions for bypassing network restrictions. The scripts aggregate over 1,500 keys, categorize them, and ensure moderation.
 
-> 🛡️ **Key Feature:** All configurations undergo a **Proxy GET-Test**. No randomness, and a minimal number of servers with **"N/A" (No Data)**. Only nodes that successfully respond to an HTTP GET-request via a TLS-connection with a response speed of under 1000ms make it into the lists.
+> 🛡️ **Key Feature:** All configurations undergo a **Proxy GET-Test**. No randomness, and a minimal number of servers with **"N/A" (No Data)**. Only nodes that successfully respond to an HTTP GET-request via a TLS-connection with a response speed of under 1000ms make it into the lists. There is an intuitive website: wlunlocker.github.io.
 
 ---
 
