@@ -4,9 +4,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/github/last-commit/ТВОЙ_НИК/НАЗВАНИЕ_РЕПО?style=for-the-badge">
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Language-HTML-orange?style=for-the-badge&logo=html5">
+  <img src="https://img.shields.io/github/last-commit/wlunlocker/vpn-configs?style=for-the-badge">
 </p>
 
 ## 📌 О проекте
