@@ -3,32 +3,42 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 */3 * * *'
-
 permissions:
   contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - name: Run Sync Script
         shell: python
         run: |
-          import urllib.request, re, os
+          import urllib.request
+          import re
           from datetime import datetime
+          import os
           os.system('pip install pytz')
           import pytz
-
           COUNTRIES = {
               "RU": ("🇷🇺", "Russia"), "US": ("🇺🇸", "USA"), "DE": ("🇩🇪", "Germany"), "NL": ("🇳🇱", "Netherlands"),
-              "GB": ("🇬🇧", "United Kingdom"), "FI": ("🇫🇮", "Finland"), "PL": ("🇵🇱", "Poland"), "FR": ("🇫🇷", "France"),
-              "IE": ("🇮🇪", "Ireland"), "AT": ("🇦🇹", "Austria"), "CH": ("🇨🇭", "Switzerland"), "KZ": ("🇰🇿", "Kazakhstan"),
-              "JP": ("🇯🇵", "Japan"), "RO": ("🇷🇴", "Romania"), "EE": ("🇪🇪", "Estonia"), "CA": ("🇨🇦", "Canada")
+              "GB": ("🇬🇧", "United Kingdom"), "FI": ("🇫🇮", "Finland"), "TR": ("🇹🇷", "Turkey"), "KZ": ("🇰🇿", "Kazakhstan"),
+              "BY": ("🇧🇾", "Belarus"), "AE": ("🇦🇪", "UAE"), "PL": ("🇵🇱", "Poland"), "FR": ("🇫🇷", "France"),
+              "IE": ("🇮🇪", "Ireland"), "BE": ("🇧🇪", "Belgium"), "CZ": ("🇨🇿", "Czechia"), "BG": ("🇧🇬", "Bulgaria"),
+              "AT": ("🇦🇹", "Austria"), "CH": ("🇨🇭", "Switzerland"), "SE": ("🇸🇪", "Sweden"), "NO": ("🇳🇴", "Norway"),
+              "ES": ("🇪🇸", "Spain"), "IT": ("🇮🇹", "Italy"), "HU": ("🇭🇺", "Hungary"), "RO": ("🇷🇴", "Romania"),
+              "JP": ("🇯🇵", "Japan"), "SG": ("🇸🇬", "Singapore"), "KR": ("🇰🇷", "South Korea"), "TJ": ("🇹🇯", "Tajikistan"),
+              "EE": ("🇪🇪", "Estonia"), "LV": ("🇱🇻", "Latvia"), "LT": ("🇱🇹", "Lithuania"), "UA": ("🇺🇦", "Ukraine"),
+              "AM": ("🇦🇲", "Armenia"), "GE": ("🇬🇪", "Georgia"), "UZ": ("🇺🇿", "Uzbekistan"), "MD": ("🇲🇩", "Moldova"),
+              "AZ": ("🇦🇿", "Azerbaijan"), "KG": ("🇰🇬", "Kyrgyzstan"), "IL": ("🇮🇱", "Israel"), "CA": ("🇨🇦", "Canada"),
+              "AU": ("🇦🇺", "Australia"), "BR": ("🇧🇷", "Brazil"), "AR": ("🇦🇷", "Argentina"), "MX": ("🇲🇽", "Mexico"),
+              "IN": ("🇮🇳", "India"), "HK": ("🇭🇰", "Hong Kong"), "TW": ("🇹🇼", "Taiwan"), "VN": ("🇻🇳", "Vietnam"),
+              "TH": ("🇹🇭", "Thailand"), "MY": ("🇲🇾", "Malaysia"), "ID": ("🇮🇩", "Indonesia"), "PH": ("🇵🇭", "Philippines"),
+              "PT": ("🇵🇹", "Portugal"), "GR": ("🇬🇷", "Greece"), "DK": ("🇩🇰", "Denmark"), "SK": ("🇸🇰", "Slovakia"),
+              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭РУ", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
+              "LU": ("🇱🇺", "Luxembourg"), "IS": ("🇮🇸", "Iceland"), "ZA": ("🇿🇦", "South Africa"), "CL": ("🇨🇱", "Chile"),
+              "CO": ("🇨🇴", "Colombia"), "PE": ("🇵🇪", "Peru"), "NZ": ("🇳🇿", "New Zealand"), "EG": ("🇪🇬", "Egypt"),
+              "SA": ("🇸🇦", "Saudi Arabia")
           }
-          FILTERED_LIST = ["FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"]
-
           def get_data_ranged(url, start_line, end_line):
               collected = []
               try:
@@ -36,66 +46,60 @@ jobs:
                   req = urllib.request.Request(url, headers=headers)
                   with urllib.request.urlopen(req) as response:
                       lines = response.read().decode('utf-8').splitlines()
-                      for l in lines[start_line-1:end_line]:
-                          if '#' in l and not l.startswith('//'): collected.append(l)
-              except: pass
+                      chunk = lines[start_line-1:end_line]
+                      for l in chunk:
+                          if '#' in l and not l.startswith('//'):
+                              collected.append(l)
+              except:
+                  pass
               return collected
-
-          def get_country_code(name):
-              name_up = name.upper()
-              for code, (flag, full) in COUNTRIES.items():
-                  if code in name_up or full.upper() in name_up: return code
-              return None
-
           def format_and_save(raw_list, filename, profile_title):
               tz = pytz.timezone('Europe/Moscow')
               now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
+              final_configs = []
+              seen_links = set()
+              for item in raw_list:
+                  try:
+                      link, name = item.split('#', 1)
+                      if link in seen_links: continue
+                      found_code = None
+                      for code in COUNTRIES:
+                          if re.search(rf'\b{code}\b', name, re.IGNORECASE):
+                              found_code = code
+                              break
+                      if not found_code:
+                          for code in COUNTRIES:
+                              if code.lower() in name.lower():
+                                  found_code = code
+                                  break
+                      if not found_code:
+                          continue
+                      seen_links.add(link)
+                      final_configs.append({'link': link, 'code': found_code})
+                  except: continue
+              final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
               with open(filename, 'w', encoding='utf-8') as f:
                   f.write(f"# profile-title: {profile_title}\n# profile-update-interval: 1\n# Last update: {now}\n\n")
                   counts = {}
-                  for item in raw_list:
-                      try:
-                          link, name = item.split('#', 1)
-                          code = get_country_code(name)
-                          if not code: continue
-                          flag, full = COUNTRIES[code]
-                          num = counts.get(code, 1)
-                          f.write(f"{link}#{flag} WLUnlocker {full} {num}\n")
-                          counts[code] = num + 1
-                      except: continue
-
-          urls = {
-              "vmob": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
-              "vfull": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt",
-              "wang": "https://shz.al/~WangCai",
-              "sni": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
-              "cchk": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt"
-          }
-
-          format_and_save(get_data_ranged(urls['sni'], 7, 999), "awlone.txt", "🏳️ГЛУШИЛКИ #1 (ВСЕ СЕРВЕРА)🏳️")
-          format_and_save(get_data_ranged(urls['cchk'], 7, 999), "awltwo.txt", "🏳️ГЛУШИЛКИ #2🏳️")
-          format_and_save(get_data_ranged(urls['vfull'], 7, 999), "vpnfull.txt", "🏴VPN #1 (ВСЕ СЕРВЕРА)🏴")
-          format_and_save(get_data_ranged(urls['vmob'], 7, 999) + get_data_ranged(urls['wang'], 1, 999), "vpnsecond.txt", "🏴VPN #2🏴")
-          
-          final_f = []
-          found_countries = set()
-          for item in get_data_ranged(urls['vmob'], 7, 999) + get_data_ranged(urls['sni'], 7, 999):
-              if len(final_f) >= len(FILTERED_LIST): break
-              link, name = item.split('#', 1)
-              code = get_country_code(name)
-              if code in FILTERED_LIST and code not in found_countries:
-                  flag, full = COUNTRIES[code]
-                  type_f = "🏴" if "VLESS" in name.upper() else "🏳️"
-                  final_f.append(f"{link}#{flag} {type_f} WLUnlocker {full}")
-                  found_countries.add(code)
-
-          with open("filtered.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: 🏳️СТАБИЛЬНАЯ🏴\n# profile-update-interval: 1\n\n" + "\n".join(final_f))
-
+                  for c in final_configs:
+                      flag, full_name = COUNTRIES[c['code']]
+                      num = counts.get(c['code'], 1)
+                      f.write(f"{c['link']}#{flag} WLUnlocker {full_name} | #{num}\n")
+                      counts[c['code']] = num + 1
+          url_vless_mob = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt"
+          url_vless = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt"
+          url_wangcai = "https://shz.al/~WangCai"
+          url_sni = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt"
+          url_cidr_chk = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt"
+          url_cidr_all = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
+          format_and_save(get_data_ranged(url_vless_mob, 7, 156) + get_data_ranged(url_wangcai, 1, 50), "vpnstable.txt", "ЧЕРНЫЕ СПИСКИ №1 (VPN)")
+          format_and_save(get_data_ranged(url_vless, 7, 157) + get_data_ranged(url_wangcai, 107, 999), "vpnfull.txt", "ЧЕРНЫЕ СПИСКИ №2 (VPN)")
+          format_and_save(get_data_ranged(url_sni, 7, 106) + get_data_ranged(url_cidr_all, 157, 258), "awlone.txt", "БЕЛЫЕ СПИСКИ №1 (LTE)")
+          format_and_save(get_data_ranged(url_cidr_chk, 7, 999) + get_data_ranged(url_cidr_all, 7, 156), "awltwo.txt", "БЕЛЫЕ СПИСКИ №2 (LTE)")
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: fixed filtered.txt to exactly one server per requested country" || exit 0
+          git commit -m "sync: added WangCai ranges and strict country filter" || exit 0
           git push
