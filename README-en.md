@@ -22,14 +22,14 @@ An automated generator of clean, verified, and stable subscriptions for bypassin
 
 | Subscription Type | Description | RAW Link (Copy) |
 | --- | --- | --- |
-| 🏳️ **WHITELIST ALL** | Full set of whitelists (CIDR + SNI) for selective bypassing in Russia | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt)` |
-| 🏴 **BLACKLIST ALL** | Full set of blacklists to route all traffic through foreign servers | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt)` |
-| 🛰️ **WHITELIST CIDR 1 RU** | First part of configs filtered by IP address ranges for Russia | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt)` |
-| 🛰️ **WHITELIST CIDR 2 RU** | Second part of configs filtered by IP address ranges for Russia | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt)` |
-| 🛰️ **WHITELIST CIDR 3 EU** | European IP ranges for stable access to foreign services | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt)` |
-| 🌐 **WHITE SNI RU** | Configs filtered by SNI domains for bypassing domain-based blocks | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/white_sni_ru.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/white_sni_ru.txt)` |
-| 📱 **BLACKLIST VPN 1** | Blacklists for mobile networks, resistant to TSPU interference | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt)` |
-| 💻 **BLACKLIST VPN 2** | Standard blacklists for PC and home routers | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt)` |
+| 🌐🏳️ **WHITELIST ALL** | Full set of whitelists (CIDR + SNI) for selective bypassing in Russia | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt)` |
+| 🌐🏴 **BLACKLIST ALL** | Full set of blacklists to route all traffic through foreign servers | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt)` |
+| 🏳️ **WHITELIST CIDR 1 RU** | First part of configs filtered by IP address ranges for Russia | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt)` |
+| 🏳️ **WHITELIST CIDR 2 RU** | Second part of configs filtered by IP address ranges for Russia | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt)` |
+| 🏳️ **WHITELIST CIDR 3 EU** | European IP ranges for stable access to foreign services | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt)` |
+| 🏳️ **WHITE SNI RU** | Configs filtered by SNI domains for bypassing domain-based blocks | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/white_sni_ru.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/white_sni_ru.txt)` |
+| 🏴 **BLACKLIST VPN 1** | Blacklists for mobile networks, resistant to TSPU interference | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt)` |
+| 🏴 **BLACKLIST VPN 2** | Standard blacklists for PC and home routers | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt)` |
 
 ---
 
