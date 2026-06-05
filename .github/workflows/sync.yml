@@ -43,7 +43,7 @@ jobs:
               "HK": ("🇭🇰", "Гонконг", "HONG KONG"), "TW": ("🇹🇼", "Тайвань", "TAIWAN"), "VN": ("🇻🇳", "Вьетнам", "VIETNAM"),
               "TH": ("🇹🇭", "Таиланд", "THAILAND"), "MY": ("🇲🇾", "Малайзия", "MALAYSIA"), "ID": ("🇮🇩", "Индонезия", "INDONESIA"),
               "PH": ("🇵🇭", "Филиппины", "PHILIPPINES"), "PT": ("🇵🇹", "Португалия", "PORTUGAL"), "GR": ("🇬🇷", "Греция", "GREECE"),
-              "DK": ("🇩🇰", "Дания", "DENMARK"), "SK": ("🇸🇰", "Словакия", "SLOVAKIA"), "SI": ("🇸🇮", "Словения", "SLOVENIA"),
+              "DK": ("🇩🇰", "Дания", "DENMARK"), "SK": ("🇸🇰", "Словакия", "SLOVAKIA"), "SI": ("🇸👑", "Словения", "SLOVENIA"),
               "HR": ("🇭🇷", "Хорватия", "CROATIA"), "RS": ("🇷🇸", "Сербия", "SERBIA"), "CY": ("🇨🇾", "Кипр", "CYPRUS"),
               "LU": ("🇱🇺", "Люксембург", "LUXEMBOURG"), "IS": ("🇮🇸", "Исландия", "ICELAND"), "ZA": ("🇿🇦", "ЮАР", "SOUTH AFRICA"),
               "CL": ("🇨🇱", "Чили", "CHILE"), "CO": ("🇨🇴", "Колумбия", "COLOMBIA"), "PE": ("🇵🇪", "Перу", "PERU"),
@@ -101,6 +101,51 @@ jobs:
           black_raw = process_source(urls_black)
           white_raw = process_source(urls_white)
 
+          fpl_url = "https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt"
+          fpl_by_country = {}
+          fpl_seen_links = set()
+
+          for item in get_data(fpl_url):
+              try:
+                  link, name = item.split('#', 1)
+                  if link in fpl_seen_links: continue
+                  name_up = name.upper()
+                  for code, info in COUNTRIES.items():
+                      if code in name_up or info[1].upper() in name_up or info[2] in name_up:
+                          if code not in fpl_by_country:
+                              fpl_by_country[code] = []
+                          fpl_by_country[code].append({
+                              'link': link,
+                              'info': info
+                          })
+                          fpl_seen_links.add(link)
+                          break
+              except: pass
+
+          sorted_fpl_countries = sorted(fpl_by_country.keys(), key=lambda c: COUNTRIES[c][1])
+
+          fpl_selected = []
+          limit_per_country = 2
+          
+          while len(fpl_selected) < 50:
+              temp_selection = []
+              for code in sorted_fpl_countries:
+                  temp_selection.extend(fpl_by_country[code][:limit_per_country])
+              if len(temp_selection) == len(fpl_selected):
+                  break
+              fpl_selected = temp_selection
+              if len(fpl_selected) >= 50:
+                  break
+              limit_per_country += 1
+
+          fpl_results = []
+          fpl_counts = {}
+          for c in fpl_selected:
+              flag_emoji, rus_name, _ = c['info']
+              num = fpl_counts.get(rus_name, 1)
+              fpl_results.append(f"{c['link']}#{flag_emoji} 🏴 WLUnlocker {rus_name} | #{num}")
+              fpl_counts[rus_name] = num + 1
+
           def format_output(raw_list, flag_icon):
               formatted = []
               counts = {}
@@ -116,7 +161,7 @@ jobs:
           black_results = format_output(black_raw, "🏴")
           white_results = format_output(white_raw, "🏳️")
 
-          final_list = (black_results + white_results)[:40]
+          final_list = (black_results + fpl_results + white_results)[:150]
 
           tz = pytz.timezone('Europe/Moscow')
           now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
