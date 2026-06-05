@@ -34,13 +34,30 @@
 
 ---
 
-## 📖 Инструкция по установке (HAPP)
+## 📖 Инструкция по установке (Пример: HAPP)
 
 1. Скопируйте необходимую ссылку из таблицы выше.
 2. Откройте приложение HAPP (или др.) на устройстве.
 3. Нажмите справа сверху на **Три точки**.
 4. Выберите пункт **Вставить из буфера обмена**.
 5. Готово. Для стабильной работы регулярно обновляйте подписку используя кнопку **Обновить**
+
+---
+
+#📋 Источники конфигураций
+
+##VPN #1 (VLESS):
+BLACK_VLESS_RUS_mobile.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt
+BLACK_VLESS_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
+WangCai - https://shz.al/~WangCai
+
+##VPN #2 (SS + Hysteria2):
+BLACK_SS+All_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt
+FreeProxyList (mirror) - https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt
+
+##Whitelist (CIDR & SNI):
+WHITE-SNI-RU-all.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt
+ByeWhiteLists2 - https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt
 
 ---
 
