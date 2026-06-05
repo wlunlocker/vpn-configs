@@ -3,15 +3,7 @@
 # profile-update-interval: 1
 #🇫🇮 🏴 WLUnlocker Финляндия
 #🇷🇺 🏳️ WLUnlocker Россия
-# Last update: 05.06.2026 23:05 MSK (PC Proxy GET Checked 1000ms)
+# Last update: 05.06.2026 23:08 MSK (PC Happe-GET Verified)
 
 vless://182aae32-6108-40e8-8fb4-a9068afa0cb6@de1.gamelistak.com:443?alpn=h2%2Chttp/1.1&encryption=none&extra=%7B%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&fp=chrome&host=de1.gamelistak.com&mode=auto&path=/%40MrNexTV2RAY&security=tls&type=xhttp&x_padding_bytes=100-1000#🇩🇪 🏴 WLUnlocker Германия
-vless://fc965ad9-bdd7-4815-ad71-b39ec5972dc1@216.24.57.7:443?encryption=none&fp=chrome&host=octopusss4.com&path=%2Ftsghdws&security=tls&sni=octopusss4.com&type=ws#🇳🇱 🏳️ WLUnlocker Нидерланды
-vless://e6d74f1f-bce5-43e3-b65a-63bb6d825764@tun2.axenet.company:2087?mode=auto&path=/513sas?&security=tls&encryption=none&extra={"scMaxEachPostBytes":+1000000,+"scMaxConcurrentPosts":+100,+"scMinPostsIntervalMs":+30,+"xPaddingBytes":+"100-1000",+"noGRPCHeader":+false}&insecure=0&host=tun2.lorateam.org&type=xhttp&allowInsecure=0&sni=tun2.lorateam.org#🇨🇦 🏴 WLUnlocker Канада
-trojan://humanity@212.183.88.136:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#🇫🇷 🏳️ WLUnlocker Франция
-trojan://humanity@81.255.155.10:443?path=%2Fassignment&security=tls&insecure=0&host=www.creationlong.org&ech=ip.gs%2Budp%3A%2F%2F8.8.8.8&type=ws&allowInsecure=0&sni=www.creationlong.org#🇵🇱 🏴 WLUnlocker Польша
-vless://931729a8-3c20-4841-89a1-f18dc9ce0a6f@82.202.136.163:8443?allowInsecure=0&sni=cdn7-09.vk-cdnvideo.com&fp=chrome&security=tls#🇭🇺 🏳️ WLUnlocker Венгрия
-vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷 🏴 WLUnlocker Франция
-vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 🏴 WLUnlocker Нидерланды
 trojan://Nova-Proxy@45.144.48.182:8443?fp=random&host=broad-lab-d61d.airdrop2014aa5168.workers.dev&path=%2F%3Fed%3D2560&security=tls&sni=broad-lab-d61d.airdrop2014aa5168.workers.dev&type=ws#🇵🇱 🏴 WLUnlocker Польша
-vless://96eec36e-2c44-5b09-898e-6f0f0526e57f@151.101.128.223:80?encryption=none&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&host=shangulin.global.ssl.fastly.net&mode=auto&path=%2Flogin&security=none&type=xhttp#🇫🇷 🏴 WLUnlocker Франция
