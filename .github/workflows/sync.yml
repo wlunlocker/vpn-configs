@@ -27,9 +27,7 @@ jobs:
               "IE": ("🇮🇪", "Ireland"), "AT": ("🇦🇹", "Austria"), "CH": ("🇨🇭", "Switzerland"), "KZ": ("🇰🇿", "Kazakhstan"),
               "JP": ("🇯🇵", "Japan"), "RO": ("🇷🇴", "Romania"), "EE": ("🇪🇪", "Estonia"), "CA": ("🇨🇦", "Canada")
           }
-
-          # Список для FILTERED (строгий список)
-          FILTERED_COUNTRIES = ["FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"]
+          FILTERED_LIST = ["FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"]
 
           def get_data_ranged(url, start_line, end_line):
               collected = []
@@ -80,14 +78,16 @@ jobs:
           format_and_save(get_data_ranged(urls['vmob'], 7, 999) + get_data_ranged(urls['wang'], 1, 999), "vpnsecond.txt", "🏴VPN #2🏴")
           
           final_f = []
+          found_countries = set()
           for item in get_data_ranged(urls['vmob'], 7, 999) + get_data_ranged(urls['sni'], 7, 999):
-              if len(final_f) >= 30: break
+              if len(final_f) >= len(FILTERED_LIST): break
               link, name = item.split('#', 1)
               code = get_country_code(name)
-              if code in FILTERED_COUNTRIES:
+              if code in FILTERED_LIST and code not in found_countries:
                   flag, full = COUNTRIES[code]
                   type_f = "🏴" if "VLESS" in name.upper() else "🏳️"
                   final_f.append(f"{link}#{flag} {type_f} WLUnlocker {full}")
+                  found_countries.add(code)
 
           with open("filtered.txt", "w", encoding="utf-8") as f:
               f.write("# profile-title: 🏳️СТАБИЛЬНАЯ🏴\n# profile-update-interval: 1\n\n" + "\n".join(final_f))
@@ -97,5 +97,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: fixed filename and filtered country list" || exit 0
+          git commit -m "sync: fixed filtered.txt to exactly one server per requested country" || exit 0
           git push
