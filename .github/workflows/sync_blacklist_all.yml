@@ -70,10 +70,15 @@ jobs:
                       "au": ("🇦🇺", "Австралия"), "at": ("🇦🇹", "Австрия"), "cz": ("🇨🇿", "Чехия"), "bg": ("🇧🇬", "Болгария"), 
                       "ro": ("🇷🇴", "Румыния"), "hu": ("🇭🇺", "Венгрия"), "ee": ("🇪🇪", "Эстония"), "lv": ("🇱🇻", "Латвия"), 
                       "lt": ("🇱🇹", "Литва"), "kr": ("🇰🇷", "Южная Корея"), "in": ("🇮🇳", "Индия"), "br": ("🇧🇷", "Бразилия"), 
-                      "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова")
+                      "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова"),
+                      "tw": ("🇹🇼", "Тайвань"), "is": ("🇮🇸", "Исландия"), "ie": ("🇮🇪", "Ирландия"), "no": ("🇳🇴", "Норвегия"),
+                      "dk": ("🇩🇰", "Дания"), "be": ("🇧🇪", "Бельгия"), "lu": ("🇱🇺", "Люксембург"), "pt": ("🇵🇹", "Португалия"),
+                      "gr": ("🇬🇷", "Греция"), "il": ("🇮🇱", "Израиль"), "th": ("🇹🇭", "Таиланд"), "my": ("🇲🇾", "Малайзия"),
+                      "vn": ("🇻🇳", "Вьетнам"), "id": ("🇮🇩", "Индонезия"), "za": ("🇿🇦", "ЮАР"), "cl": ("🇨🇱", "Чили"),
+                      "ar": ("🇦🇷", "Аргентина"), "mx": ("🇲🇽", "Мексика"), "co": ("🇨🇴", "Колумбия"), "nz": ("🇳🇿", "Новая Зеландия")
                   }
                   
-                  c_flag, c_name = "🌍", "Глобальный"
+                  c_flag, c_name = None, None
                   
                   for code, data in countries_db.items():
                       pattern = rf"\b{code}\b|{data[1].lower()[:4]}"
@@ -81,22 +86,29 @@ jobs:
                           c_flag, c_name = data[0], data[1]
                           break
                           
-                  if c_name == "Глобальный" and "#" in link:
-                      old_tag = link.split('#')[-1].strip()
-                      if len(old_tag) > 1:
-                          c_name = old_tag
+                  if not c_name and "#" in link:
+                      old_tag = link.split('#')[-1].strip().lower()
+                      for code, data in countries_db.items():
+                          if code in old_tag or data[1].lower()[:4] in old_tag:
+                              c_flag, c_name = data[0], data[1]
+                              break
+                              
+                  if not c_name:
+                      return None
                           
                   return f"{base_part}#{c_flag} 🏴 WLUnlocker {c_name}"
               except:
-                  return link
+                  return None
 
           seen = set()
           final_nodes = []
           for node in raw_nodes:
               base = node.split('#')[0].strip()
               if base not in seen:
-                  seen.add(base)
-                  final_nodes.append(format_canon(node))
+                  formatted = format_canon(node)
+                  if formatted:
+                      seen.add(base)
+                      final_nodes.append(formatted)
 
           if not final_nodes:
               exit(1)
