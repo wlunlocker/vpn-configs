@@ -1,4 +1,4 @@
-name: WLUnlocker Sync
+name: WLUnlocker Filter Only Sync
 on:
   workflow_dispatch:
   schedule:
@@ -13,36 +13,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Run Sync Script
+      - name: Run Filtered Sync
         shell: python
         run: |
           import urllib.request
           import re
-          from datetime import datetime
           import os
 
-          os.system('pip install pytz')
-          import pytz
-
           COUNTRIES = {
-              "RU": ("🇷🇺", "Russia"), "US": ("🇺🇸", "USA"), "DE": ("🇩🇪", "Germany"), "NL": ("🇳🇱", "Netherlands"),
-              "GB": ("🇬🇧", "United Kingdom"), "FI": ("🇫🇮", "Finland"), "TR": ("🇹🇷", "Turkey"), "KZ": ("🇰🇿", "Kazakhstan"),
-              "BY": ("🇧🇾", "Belarus"), "AE": ("🇦🇪", "UAE"), "PL": ("🇵🇱", "Poland"), "FR": ("🇫🇷", "France"),
-              "IE": ("🇮🇪", "Ireland"), "BE": ("🇧🇪", "Belgium"), "CZ": ("🇨🇿", "Czechia"), "BG": ("🇧🇬", "Bulgaria"),
-              "AT": ("🇦🇹", "Austria"), "CH": ("🇨🇭", "Switzerland"), "SE": ("🇸🇪", "Sweden"), "NO": ("🇳🇴", "Norway"),
-              "ES": ("🇪🇸", "Spain"), "IT": ("🇮🇹", "Italy"), "HU": ("🇭🇺", "Hungary"), "RO": ("🇷🇴", "Romania"),
-              "JP": ("🇯🇵", "Japan"), "SG": ("🇸🇬", "Singapore"), "KR": ("🇰🇷", "South Korea"), "TJ": ("🇹🇯", "Tajikistan"),
-              "EE": ("🇪🇪", "Estonia"), "LV": ("🇱🇻", "Latvia"), "LT": ("🇱🇹", "Lithuania"), "UA": ("🇺🇦", "Ukraine"),
-              "AM": ("🇦🇲", "Armenia"), "GE": ("🇬🇪", "Georgia"), "UZ": ("🇺🇿", "Uzbekistan"), "MD": ("🇲🇩", "Moldova"),
-              "AZ": ("🇦🇿", "Azerbaijan"), "KG": ("🇰🇬", "Kyrgyzstan"), "IL": ("🇮🇱", "Israel"), "CA": ("🇨🇦", "Canada"),
-              "AU": ("🇦🇺", "Australia"), "BR": ("🇧🇷", "Brazil"), "AR": ("🇦🇷", "Argentina"), "MX": ("🇲🇽", "Mexico"),
-              "IN": ("🇮🇳", "India"), "HK": ("🇭🇰", "Hong Kong"), "TW": ("🇹🇼", "Taiwan"), "VN": ("🇻🇳", "Vietnam"),
-              "TH": ("🇹🇭", "Thailand"), "MY": ("🇲🇾", "Malaysia"), "ID": ("🇮🇩", "Indonesia"), "PH": ("🇵🇭", "Philippines"),
-              "PT": ("🇵🇹", "Portugal"), "GR": ("🇬🇷", "Greece"), "DK": ("🇩🇰", "Denmark"), "SK": ("🇸🇰", "Slovakia"),
-              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭РУ", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
-              "LU": ("🇱🇺", "Luxembourg"), "IS": ("🇮🇸", "Iceland"), "ZA": ("🇿🇦", "South Africa"), "CL": ("🇨🇱", "Chile"),
-              "CO": ("🇨🇴", "Colombia"), "PE": ("🇵🇪", "Peru"), "NZ": ("🇳🇿", "New Zealand"), "EG": ("🇪🇬", "Egypt"),
-              "SA": ("🇸🇦", "Saudi Arabia")
+              "FR": ("🇫🇷", "Франция", "FRANCE"),
+              "DE": ("🇩🇪", "Германия", "GERMANY"),
+              "NL": ("🇳🇱", "Нидерланды", "NETHERLANDS"),
+              "PL": ("🇵🇱", "Польша", "POLAND"),
+              "GB": ("🇬🇧", "Англия", "UNITED KINGDOM"),
+              "US": ("🇺🇸", "Америка", "USA"),
+              "EE": ("🇪🇪", "Эстония", "ЭСТОНИЯ"),
+              "FI": ("🇫🇮", "Финляндия", "FINLAND"),
+              "CA": ("🇨🇦", "Канада", "CANADA"),
+              "IE": ("🇮🇪", "Ирландия", "IRELAND"),
+              "RO": ("🇷🇴", "Румыния", "ROMANIA"),
+              "AT": ("🇦🇹", "Австрия", "AUSTRIA"),
+              "CH": ("🇨🇭", "Швейцария", "SWITZERLAND"),
+              "KZ": ("🇰🇿", "Казахстан", "KAZAKHSTAN"),
+              "JP": ("🇯🇵", "Япония", "JAPAN"),
+              "SE": ("🇸🇪", "Швеция", "SWEDEN"),
+              "TR": ("🇹🇷", "Турция", "TURKEY"),
+              "SG": ("🇸🇬", "Сингапур", "SINGAPORE")
           }
 
           def get_data(url):
@@ -58,64 +54,53 @@ jobs:
               except: pass
               return collected
 
-          def process_and_save(urls, filename, profile_title):
-              tz = pytz.timezone('Europe/Moscow')
-              now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
-              final_configs = []
-              seen_links = set()
-              
-              for url in urls:
-                  for item in get_data(url):
-                      try:
-                          link, name = item.split('#', 1)
-                          if link in seen_links: continue
-                          
-                          found_code = None
-                          for code in COUNTRIES:
-                              if re.search(rf'\b{code}\b', name, re.IGNORECASE):
-                                  found_code = code
-                                  break
-                          
-                          if not found_code:
-                              for code in COUNTRIES:
-                                  if code.lower() in name.lower():
-                                      found_code = code
-                                      break
-                          
-                          if not found_code: continue
-                          
-                          seen_links.add(link)
-                          final_configs.append({'link': link, 'code': found_code})
-                      except: continue
-              
-              with open(filename, 'w', encoding='utf-8') as f:
-                  f.write(f"# profile-title: {profile_title}\n# profile-update-interval: 1\n# Last update: {now}\n\n")
-                  counts = {}
-                  for c in final_configs:
-                      flag, full_name = COUNTRIES[c['code']]
-                      num = counts.get(c['code'], 1)
-                      f.write(f"{c['link']}#{flag} WLUnlocker {full_name} | #{num}\n")
-                      counts[c['code']] = num + 1
-
           urls_black = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt",
               "https://shz.al/~WangCai"
           ]
-          
           urls_white = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
-          
-          process_and_save(urls_black, "blacklists.txt", "ЧЕРНЫЕ СПИСКИ (VPN)")
-          process_and_save(urls_white, "whitelists.txt", "БЕЛЫЕ СПИСКИ (LTE)")
+
+          all_configs = []
+
+          for source_list, type_flag in [(urls_black, "🏴"), (urls_white, "🏳️")]:
+              for url in source_list:
+                  for item in get_data(url):
+                      try:
+                          link, name = item.split('#', 1)
+                          name_up = name.upper()
+                          for code, info in COUNTRIES.items():
+                              if code in name_up or info[1].upper() in name_up or info[2] in name_up:
+                                  all_configs.append({
+                                      'link': link, 'code': code, 'type_flag': type_flag
+                                  })
+                                  break
+                      except: pass
+
+          seen = set()
+          final_lines = []
+
+          for c in all_configs:
+              key = (c['code'], c['type_flag'])
+              if key not in seen:
+                  seen.add(key)
+                  flag_emoji, rus_name, _ = COUNTRIES[c['code']]
+                  line = f"{c['link']}#{flag_emoji} {c['type_flag']} WLUnlocker {rus_name}"
+                  final_lines.append(line)
+              if len(final_lines) >= 50: break
+
+          with open("filtered.txt", "w", encoding="utf-8") as f:
+              f.write("# profile-title: 🏳️ WLUnlocker | ВСЕ 🏴\n# profile-update-interval: 1\n\n")
+              f.write("\n".join(final_lines))
 
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add .
-          git commit -m "sync: updated to blacklists.txt and whitelists.txt" || exit 0
+          git add filtered.txt
+          git commit -m "sync: cleaned code and removed lightnings" || exit 0
           git push
