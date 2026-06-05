@@ -3,7 +3,7 @@
 # profile-update-interval: 1
 #🇫🇮 🏴 WLUnlocker Финляндия
 #🇷🇺 🏳️ WLUnlocker Россия
-# Last update: 05.06.2026 22:34 MSK (Verified Live)
+# Last update: 05.06.2026 22:40 MSK (Strict 1000ms Check)
 
 vless://182aae32-6108-40e8-8fb4-a9068afa0cb6@de1.gamelistak.com:443?alpn=h2%2Chttp/1.1&encryption=none&extra=%7B%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&fp=chrome&host=de1.gamelistak.com&mode=auto&path=/%40MrNexTV2RAY&security=tls&type=xhttp&x_padding_bytes=100-1000#🇩🇪 🏴 WLUnlocker Германия
 vless://322d6d6e-2e34-4ef5-b866-35dab761f1ab@gam2r.skystreamgame.com:8443?security=reality&encryption=none&pbk=XBePIY00JetBf0pbmcx-Dvu8XsZ-l079GiHf93HhS0Y&headerType=none&fp=randomized&type=tcp&flow=xtls-rprx-vision&sni=gam2r.skystreamgame.com&sid=6d6f13013d3e1d0c#🇩🇪 🏳️ WLUnlocker Германия
