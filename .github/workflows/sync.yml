@@ -1,183 +1,99 @@
-name: WLUnlocker Filter Only Sync
+name: Sync Whitelist All
 on:
-  workflow_dispatch:
   schedule:
     - cron: '0 */3 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Run Filtered Sync
+
+      - name: Run Sync
         shell: python
         run: |
-          import urllib.request
+          import requests
           import re
-          import os
-          from datetime import datetime
 
-          os.system('pip install pytz')
-          import pytz
-
-          COUNTRIES = {
-              "RU": ("🇷🇺", "Россия", "RUSSIA"), "US": ("🇺🇸", "Америка", "USA"), "DE": ("🇩🇪", "Германия", "GERMANY"),
-              "NL": ("🇳🇱", "Нидерланды", "NETHERLANDS"), "GB": ("🇬🇧", "Англия", "UNITED KINGDOM"), "FI": ("🇫🇮", "Финляндия", "FINLAND"),
-              "TR": ("🇹🇷", "Турция", "TURKEY"), "KZ": ("🇰🇿", "Казахстан", "KAZAKHSTAN"), "BY": ("🇧🇾", "Беларусь", "BELARUS"),
-              "AE": ("🇦🇪", "ОАЭ", "UAE"), "PL": ("🇵🇱", "Польша", "POLAND"), "FR": ("🇫🇷", "Франция", "FRANCE"),
-              "IE": ("🇮🇪", "Ирландия", "IRELAND"), "BE": ("🇧🇪", "Бельгия", "BELGIUM"), "CZ": ("🇨🇿", "Чехия", "CZECHIA"),
-              "BG": ("🇧🇬", "Болгария", "BULGARIA"), "AT": ("🇦🇹", "Австрия", "AUSTRIA"), "CH": ("🇨🇭", "Швейцария", "SWITZERLAND"),
-              "SE": ("🇸🇪", "Швеция", "SWEDEN"), "NO": ("🇳🇴", "Норвегия", "NORWAY"), "ES": ("🇪🇸", "Испания", "SPAIN"),
-              "IT": ("🇮🇹", "Италия", "ITALY"), "HU": ("🇭🇺", "Венгрия", "HUNGARY"), "RO": ("🇷🇴", "Румыния", "ROMANIA"),
-              "JP": ("🇯🇵", "Япония", "JAPAN"), "SG": ("🇸🇬", "Сингапур", "SINGAPORE"), "KR": ("🇰🇷", "Южная Корея", "SOUTH KOREA"),
-              "TJ": ("🇹🇯", "Таджикистан", "TAJIKISTAN"), "EE": ("🇪🇪", "Эстония", "ESTONIA"), "LV": ("🇱🇻", "Латвия", "LATVIA"),
-              "LT": ("🇱🇹", "Литва", "LITHUANIA"), "UA": ("🇺🇦", "Украина", "UKRAINE"), "AM": ("🇦🇲", "Армения", "ARMENIA"),
-              "GE": ("🇬🇪", "Грузия", "GEORGIA"), "UZ": ("🇺🇿", "Узбекистан", "UZBEKISTAN"), "MD": ("🇲🇩", "Молдова", "MOLDOVA"),
-              "AZ": ("🇦🇿", "Азербайджан", "AZERBAIJAN"), "KG": ("🇰🇬", "Киргизия", "KYRGYZSTAN"), "IL": ("🇮🇱", "Израиль", "ISRAEL"),
-              "CA": ("🇨🇦", "Канада", "CANADA"), "AU": ("🇦🇺", "Австралия", "AUSTRALIA"), "BR": ("🇧🇷", "Бразилия", "BRAZIL"),
-              "AR": ("🇦🇷", "Аргентина", "ARGENTINA"), "MX": ("🇲🇽", "Мексика", "MEXICO"), "IN": ("🇮🇳", "Индия", "INDIA"),
-              "HK": ("🇭🇰", "Гонконг", "HONG KONG"), "TW": ("🇹🇼", "Тайвань", "TAIWAN"), "VN": ("🇻🇳", "Вьетнам", "VIETNAM"),
-              "TH": ("🇹🇭", "Таиланд", "THAILAND"), "MY": ("🇲🇾", "Малайзия", "MALAYSIA"), "ID": ("🇮🇩", "Индонезия", "INDONESIA"),
-              "PH": ("🇵🇭", "Филиппины", "PHILIPPINES"), "PT": ("🇵🇹", "Португалия", "PORTUGAL"), "GR": ("🇬🇷", "Греция", "GREECE"),
-              "DK": ("🇩🇰", "Дания", "DENMARK"), "SK": ("🇸🇰", "Словакия", "SLOVAKIA"), "SI": ("🇸🇮", "Словения", "SLOVENIA"),
-              "HR": ("🇭🇷", "Хорватия", "CROATIA"), "RS": ("🇷🇸", "Сербия", "SERBIA"), "CY": ("🇨🇾", "Кипр", "CYPRUS"),
-              "LU": ("🇱🇺", "Люксембург", "LUXEMBOURG"), "IS": ("🇮🇸", "Исландия", "ICELAND"), "ZA": ("🇿🇦", "ЮАР", "SOUTH AFRICA"),
-              "CL": ("🇨🇱", "Чили", "CHILE"), "CO": ("🇨🇴", "Колумбия", "COLOMBIA"), "PE": ("🇵🇪", "Перу", "PERU"),
-              "NZ": ("🇳🇿", "Новая Зеландия", "NEW ZEALAND"), "EG": ("🇪🇬", "Египет", "EGYPT"), "SA": ("🇸🇦", "Саудовская Аравия", "SAUDI ARABIA")
-          }
-
-          PREFERRED = {"FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"}
-          BLACK_STRICT_COUNTRIES = {"DE", "FR", "PL", "NL", "EE", "CA", "FI"}
-          MIN_DUPLICATE_COUNTRIES = {"EE", "CA"}
-
-          def get_data(url):
-              collected = []
-              try:
-                  headers = {'User-Agent': 'Mozilla/5.0'}
-                  req = urllib.request.Request(url, headers=headers)
-                  with urllib.request.urlopen(req) as response:
-                      lines = response.read().decode('utf-8').splitlines()
-                      for l in lines:
-                          if '#' in l and not l.startswith('//'):
-                              collected.append(l)
-              except: pass
-              return collected
-
-          urls_black = [
-              "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
-              "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt",
-              "https://shz.al/~WangCai",
-              "https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt"
-          ]
-          urls_white = [
+          sources = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
+          limited_source = "https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt"
 
-          black_pool = []
-          black_seen_links = set()
-          black_country_source_tracker = {}
+          raw_nodes = []
 
-          for url_idx, url in enumerate(urls_black):
-              for item in get_data(url):
-                  try:
-                      link, name = item.split('#', 1)
-                      if link in black_seen_links: continue
-                      name_up = name.upper()
-                      for code, info in COUNTRIES.items():
-                          if code in BLACK_STRICT_COUNTRIES and (code in name_up or info[1].upper() in name_up or info[2] in name_up):
-                              if code not in black_country_source_tracker:
-                                  black_country_source_tracker[code] = set()
-                              if url_idx not in black_country_source_tracker[code]:
-                                  black_pool.append({'link': link, 'info': info, 'code': code, 'url_idx': url_idx})
-                                  black_seen_links.add(link)
-                                  black_country_source_tracker[code].add(url_idx)
-                              break
-                  except: pass
+          def clean_node(line):
+              l = line.strip()
+              if not l: return None
+              if any(l.startswith(p) for p in ["vless://", "vmess://", "trojan://", "ss://"]):
+                  return l
+              return None
 
-          black_selected = []
-          for code in sorted(BLACK_STRICT_COUNTRIES, key=lambda c: COUNTRIES[c][1]):
-              nodes = [n for n in black_pool if n['code'] == code]
-              if nodes:
-                  black_selected.append(nodes.pop(0))
-                  black_pool = [n for n in black_pool if n['link'] != black_selected[-1]['link']]
+          for src in sources:
+              try:
+                  r = requests.get(src, timeout=15)
+                  if r.status_code == 200:
+                      for line in r.text.splitlines():
+                          node = clean_node(line)
+                          if node: raw_nodes.append(node)
+              except: pass
 
-          for code in sorted(BLACK_STRICT_COUNTRIES - MIN_DUPLICATE_COUNTRIES, key=lambda c: COUNTRIES[c][1]):
-              if len(black_selected) >= 25: break
-              nodes = [n for n in black_pool if n['code'] == code]
-              while nodes and len(black_selected) < 25:
-                  black_selected.append(nodes.pop(0))
-                  black_pool = [n for n in black_pool if n['link'] != black_selected[-1]['link']]
+          try:
+              r = requests.get(limited_source, timeout=20)
+              if r.status_code == 200:
+                  count = 0
+                  for line in r.text.splitlines():
+                      if count >= 1000: break
+                      node = clean_node(line)
+                      if node:
+                          raw_nodes.append(node)
+                          count += 1
+          except: pass
 
-          if len(black_selected) < 25:
-              for code in sorted(MIN_DUPLICATE_COUNTRIES, key=lambda c: COUNTRIES[c][1]):
-                  if len(black_selected) >= 25: break
-                  nodes = [n for n in black_pool if n['code'] == code]
-                  while nodes and len(black_selected) < 25:
-                      black_selected.append(nodes.pop(0))
-                      black_pool = [n for n in black_pool if n['link'] != black_selected[-1]['link']]
+          def format_canon(link):
+              try:
+                  base_part = link.split('#')[0].strip()
+                  lower_link = link.lower()
+                  flag = "🏳️"
+                  country = "Зарубежный"
+                  
+                  if "ru" in lower_link or "russia" in lower_link or "росс" in lower_link:
+                      flag, country = "🇷🇺", "Россия"
+                  elif "de" in lower_link or "germany" in lower_link or "неме" in lower_link:
+                      flag, country = "🇩🇪", "Германия"
+                  elif "nl" in lower_link or "netherlands" in lower_link or "нидер" in lower_link:
+                      flag, country = "🇳🇱", "Нидерланды"
+                  elif "fi" in lower_link or "finland" in lower_link or "финл" in lower_link:
+                      flag, country = "🇫🇮", "Финляндия"
+                      
+                  return f"{base_part}#{flag} WLUnlocker {country}"
+              except:
+                  return link
 
-          white_pool = {}
-          white_seen_links = set()
-          for url in urls_white:
-              for item in get_data(url):
-                  try:
-                      link, name = item.split('#', 1)
-                      if link in white_seen_links: continue
-                      name_up = name.upper()
-                      for code, info in COUNTRIES.items():
-                          if code in name_up or info[1].upper() in name_up or info[2] in name_up:
-                              if code not in white_pool:
-                                  white_pool[code] = {'link': link, 'info': info}
-                                  white_seen_links.add(link)
-                              break
-                  except: pass
+          seen = set()
+          final_nodes = []
+          for node in raw_nodes:
+              base = node.split('#')[0].strip()
+              if base not in seen:
+                  seen.add(base)
+                  final_nodes.append(format_canon(node))
 
-          white_selected = []
-          for code in sorted(white_pool.keys(), key=lambda c: (c not in PREFERRED, COUNTRIES[c][1])):
-              if len(white_selected) >= 25: break
-              white_selected.append(white_pool[code])
+          if not final_nodes:
+              exit(1)
 
-          black_results = []
-          for c in black_selected:
-              flag_emoji, rus_name, _ = c['info']
-              black_results.append(f"{c['link']}#{flag_emoji} 🏴 WLUnlocker {rus_name}")
+          with open("whitelist_all.txt", "w", encoding="utf-8") as f:
+              f.write("\n".join(final_nodes))
 
-          white_results = []
-          for c in white_selected:
-              flag_emoji, rus_name, _ = c['info']
-              white_results.append(f"{c['link']}#{flag_emoji} 🏳️ WLUnlocker {rus_name}")
-
-          final_list = []
-          b_idx, w_idx = 0, 0
-          while b_idx < len(black_results) or w_idx < len(white_results):
-              if b_idx < len(black_results):
-                  final_list.append(black_results[b_idx])
-                  b_idx += 1
-              if w_idx < len(white_results):
-                  final_list.append(white_results[w_idx])
-                  w_idx += 1
-
-          tz = pytz.timezone('Europe/Moscow')
-          now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
-
-          with open("filtered.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: БС/ЧС - ВСЕ\n")
-              f.write("# profile-desc: Сервера от белых списков (антиглушилки) помечены 🏳️, от черных списков (VPN) 🏴 Telegram: @wlunlocker\n")
-              f.write("# profile-update-interval: 1\n")
-              f.write(f"# Last update: {now}\n\n")
-              f.write("\n".join(final_list))
-
-      - name: Commit and Push
+      - name: Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git rm -f filteredbl.txt filteredwl.txt || true
-          git add filtered.txt
-          git commit -m "sync: 25 strict black nodes (pref only) and up to 25 unique white nodes alternated" || exit 0
+          git add whitelist_all.txt
+          git commit -m "sync: whitelist_all.txt updated" || exit 0
           git push
