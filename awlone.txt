@@ -1,4 +1,0 @@
-# profile-title: БЕЛЫЕ СПИСКИ №1 (LTE)
-# profile-update-interval: 1
-# Last update: 05.06.2026 14:52 MSK
-
