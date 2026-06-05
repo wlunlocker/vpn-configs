@@ -1,0 +1,36 @@
+name: Sync VPN 2
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Sync
+        shell: python
+        run: |
+          import requests, datetime
+          nodes = []
+          # Первый источник
+          r1 = requests.get("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt")
+          if r1.status_code == 200:
+              nodes.extend([l for l in r1.text.splitlines()[6:106] if l.startswith(("ss://", "hysteria2://"))])
+          # Второй источник (фильтр стран)
+          r2 = requests.get("https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt")
+          if r2.status_code == 200:
+              good_countries = ["us", "de", "nl", "sg", "jp", "gb", "ca", "ch", "fr"]
+              for l in r2.text.splitlines():
+                  if l.startswith(("ss://", "hysteria2://")) and any(f"/{c}/" in l or f"{c}" in l.lower() for c in good_countries):
+                      nodes.append(l)
+          
+          final = [f"{n.split('#')[0].strip()}#🏴‍☠️ 🏳️ WLUnlocker VPN #2 | #{i+1}" for i, n in enumerate(list(dict.fromkeys(nodes))[:200])]
+          header = f"# profile-title: VPN #2 (SS + OTHER)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
+          with open("blacklist_vpn2.txt", "w", encoding="utf-8") as f: f.write(header + "\n" + "\n".join(final))
+      - name: Push
+        run: |
+          git config user.name "GitHub Actions"; git config user.email "actions@github.com"
+          git add blacklist_vpn2.txt; git commit -m "sync: vpn2" || exit 0; git push
