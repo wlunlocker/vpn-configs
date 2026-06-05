@@ -77,9 +77,12 @@ jobs:
           black_results = []
           white_results = []
           seen_links = set()
-          counts = {}
+          
+          # Раздельные счетчики для черных и белых списков
+          counts_black = {}
+          counts_white = {}
 
-          def process_links(urls, target_list, flag_icon):
+          def process_links(urls, target_list, flag_icon, counts_dict):
               for url in urls:
                   for item in get_data(url):
                       try:
@@ -90,37 +93,24 @@ jobs:
                               if code in name_up or info[1].upper() in name_up or info[2] in name_up:
                                   seen_links.add(link)
                                   flag_emoji, rus_name, _ = info
-                                  num = counts.get(rus_name, 1)
-                                  # Убрали WLUnlocker из названия
+                                  num = counts_dict.get(rus_name, 1)
                                   target_list.append(f"{link}#{flag_emoji} {flag_icon} {rus_name} | #{num}")
-                                  counts[rus_name] = num + 1
+                                  counts_dict[rus_name] = num + 1
                                   break
                       except: pass
 
-          process_links(urls_black, black_results, "🏴")
-          process_links(urls_white, white_results, "🏳️")
+          process_links(urls_black, black_results, "🏴", counts_black)
+          process_links(urls_white, white_results, "🏳️", counts_white)
 
-          # Чередование: черный, белый, черный, белый...
-          final_list = []
-          for b, w in zip(black_results, white_results):
-              final_list.append(b)
-              final_list.append(w)
-
-          # Добиваем остатки, если списки разной длины
-          if len(black_results) > len(white_results):
-              final_list.extend(black_results[len(white_results):])
-          else:
-              final_list.extend(white_results[len(black_results):])
-
-          # Обрезаем до 50
-          final_list = final_list[:50]
+          # Сначала черные, потом белые. И общий лимит 30 серверов
+          final_list = (black_results + white_results)[:30]
 
           # Дата и время
           tz = pytz.timezone('Europe/Moscow')
           now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
 
           with open("filtered.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: 🏳️ WLUnlocker 🏴\n")
+              f.write("# profile-title: WLUnlocker\n")
               f.write("# profile-desc: Сервера от белых списков (антиглушилки) помечены 🏳️, от черных списков (VPN) 🏴 Telegram: @wlunlocker\n")
               f.write("# profile-update-interval: 1\n")
               f.write(f"# Last update: {now}\n\n")
@@ -131,5 +121,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered.txt
-          git commit -m "sync: updated design, interleaved servers and added metadata" || exit 0
+          git commit -m "sync: updated sorting, limit 30, isolated counters and renamed profile" || exit 0
           git push
