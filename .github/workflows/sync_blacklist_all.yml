@@ -110,7 +110,7 @@ jobs:
               for base, flag in nodes_list:
                   counts[country] += 1
                   idx = counts[country]
-                  final_nodes.append(f"{base}#{flag} 🏴 WLUnlocker {country} |#{idx}")
+                  final_nodes.append(f"{base}#{flag} 🏴 WLUnlocker {country} | #{idx}")
 
           if not final_nodes:
               exit(1)
