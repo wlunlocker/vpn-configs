@@ -24,6 +24,7 @@ jobs:
           os.system('pip install pytz')
           import pytz
 
+          # Полный пул стран
           COUNTRIES = {
               "RU": ("🇷🇺", "Россия", "RUSSIA"), "US": ("🇺🇸", "Америка", "USA"), "DE": ("🇩🇪", "Германия", "GERMANY"),
               "NL": ("🇳🇱", "Нидерланды", "NETHERLANDS"), "GB": ("🇬🇧", "Англия", "UNITED KINGDOM"), "FI": ("🇫🇮", "Финляндия", "FINLAND"),
@@ -50,6 +51,9 @@ jobs:
               "NZ": ("🇳🇿", "Новая Зеландия", "NEW ZEALAND"), "EG": ("🇪🇬", "Египет", "EGYPT"), "SA": ("🇸🇦", "Саудовская Аравия", "SAUDI ARABIA")
           }
 
+          # Твои приоритетные страны
+          PREFERRED = {"FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"}
+
           def get_data(url):
               collected = []
               try:
@@ -74,15 +78,9 @@ jobs:
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
 
-          black_results = []
-          white_results = []
-          seen_links = set()
-          
-          # Раздельные счетчики для черных и белых списков
-          counts_black = {}
-          counts_white = {}
-
-          def process_links(urls, target_list, flag_icon, counts_dict):
+          def process_source(urls):
+              seen_links = set()
+              collected = []
               for url in urls:
                   for item in get_data(url):
                       try:
@@ -92,20 +90,42 @@ jobs:
                           for code, info in COUNTRIES.items():
                               if code in name_up or info[1].upper() in name_up or info[2] in name_up:
                                   seen_links.add(link)
-                                  flag_emoji, rus_name, _ = info
-                                  num = counts_dict.get(rus_name, 1)
-                                  target_list.append(f"{link}#{flag_emoji} {flag_icon} {rus_name} | #{num}")
-                                  counts_dict[rus_name] = num + 1
+                                  collected.append({
+                                      'link': link,
+                                      'info': info,
+                                      'preferred': code in PREFERRED
+                                  })
                                   break
                       except: pass
+              # Сортируем: сначала True (приоритетные), потом False (остальные)
+              collected.sort(key=lambda x: not x['preferred'])
+              return collected
 
-          process_links(urls_black, black_results, "🏴", counts_black)
-          process_links(urls_white, white_results, "🏳️", counts_white)
+          black_raw = process_source(urls_black)
+          white_raw = process_source(urls_white)
 
-          # Сначала черные, потом белые. И общий лимит 30 серверов
-          final_list = (black_results + white_results)[:30]
+          # Строгий баланс: берем поровну, максимум по 20 штук на сторону (всего 40)
+          per_side_limit = min(len(black_raw), len(white_raw), 20)
+          black_raw = black_raw[:per_side_limit]
+          white_raw = white_raw[:per_side_limit]
 
-          # Дата и время
+          # Форматирование списков с раздельной нумерацией повторок
+          def format_output(raw_list, flag_icon):
+              formatted = []
+              counts = {}
+              for c in raw_list:
+                  flag_emoji, rus_name, _ = c['info']
+                  num = counts.get(rus_name, 1)
+                  formatted.append(f"{c['link']}#{flag_emoji} {flag_icon} {rus_name} | #{num}")
+                  counts[rus_name] = num + 1
+              return formatted
+
+          black_results = format_output(black_raw, "🏴")
+          white_results = format_output(white_raw, "🏳️")
+
+          # Сначала черные, потом белые
+          final_list = black_results + white_results
+
           tz = pytz.timezone('Europe/Moscow')
           now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
 
@@ -121,5 +141,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered.txt
-          git commit -m "sync: updated sorting, limit 30, isolated counters and renamed profile" || exit 0
+          git commit -m "sync: 40 limit, strictly balanced black/white, country priority" || exit 0
           git push
