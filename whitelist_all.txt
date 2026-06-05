@@ -1,6 +1,6 @@
 # profile-title: Whitelist All
 # profile-update-interval: 1
-# last-update: 05.06.21
+# last-update: 05.06.22
 # кол-во: 576
 vless://46b81618-5d7f-4b65-b95f-7f782b8242be@5.129.200.113:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=br-any.eun1.prd.api.max.com&pbk=nDq00UeDI5TKKFipI6rgdVCqiTO98ncHKn90Qp3EsBE&sid=f2b78452f9233f26#🇧🇷 🏳️ WLUnlocker Бразилия | #1
 vless://46b81618-5d7f-4b65-b95f-7f782b8242be@5.129.200.113:499?encryption=none&flow=xtls-rprx-vision&type=raw&headerType=none&security=reality&fp=chrome&pbk=nDq00UeDI5TKKFipI6rgdVCqiTO98ncHKn90Qp3EsBE&sni=br-any.eun1.prd.api.max.com&sid=f2b78452f9233f26#🇧🇷 🏳️ WLUnlocker Бразилия | #2
