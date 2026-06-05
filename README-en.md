@@ -2,6 +2,14 @@
   <img src="assets/logo.png" width="400">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Language-HTML-orange?style=for-the-badge&logo=html5">
+  <img src="https://img.shields.io/github/last-commit/wlunlocker/vpn-configs?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Keys_Count-1500+-purple?style=for-the-badge&logo=nixos">
+  <img src="https://img.shields.io/badge/Update-Every_15_min-red?style=for-the-badge&logo=github">
+</p>
+
 ## 📌 About the project
 
 An automated generator of clean, verified, and stable subscriptions for bypassing network restrictions. The scripts aggregate over 1,500 keys, categorize them, and ensure moderation.
