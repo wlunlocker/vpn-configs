@@ -1,6 +1,6 @@
 # profile-title: VPN #2 (SS + OTHER)
 # profile-update-interval: 1
-# last-update: 05.06.22
+# last-update: 05.06.23
 # кол-во: 191
 
 hysteria2://dongtaiwang.com@62.210.124.146:22000/?insecure=1&sni=www.microsoft.com#🏴‍☠️ 🏳️ WLUnlocker VPN #2 | #1
