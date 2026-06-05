@@ -2,6 +2,13 @@
   <img src="assets/logo.png" width="400">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/github/last-commit/ТВОЙ_НИК/НАЗВАНИЕ_РЕПО?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
+</p>
+
 ## 📌 О проекте
 
 Автоматизированный генератор чистых, проверенных и стабильных подписок для обхода сетевых ограничений. Скрипты собирают более 1500 ключей, сортируют их по категориям и модерирует.
