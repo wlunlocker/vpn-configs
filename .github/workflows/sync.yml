@@ -39,7 +39,7 @@ jobs:
               "IN": ("🇮🇳", "India"), "HK": ("🇭🇰", "Hong Kong"), "TW": ("🇹🇼", "Taiwan"), "VN": ("🇻🇳", "Vietnam"),
               "TH": ("🇹🇭", "Thailand"), "MY": ("🇲🇾", "Malaysia"), "ID": ("🇮🇩", "Indonesia"), "PH": ("🇵🇭", "Philippines"),
               "PT": ("🇵🇹", "Portugal"), "GR": ("🇬🇷", "Greece"), "DK": ("🇩🇰", "Denmark"), "SK": ("🇸🇰", "Slovakia"),
-              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭РУ", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
+              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭🇷", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
               "LU": ("🇱🇺", "Luxembourg"), "IS": ("🇮🇸", "Iceland"), "ZA": ("🇿🇦", "South Africa"), "CL": ("🇨🇱", "Chile"),
               "CO": ("🇨🇴", "Colombia"), "PE": ("🇵🇪", "Peru"), "NZ": ("🇳🇿", "New Zealand"), "EG": ("🇪🇬", "Egypt"),
               "SA": ("🇸🇦", "Saudi Arabia")
@@ -60,6 +60,15 @@ jobs:
                   pass
               return collected
 
+          def get_country_code(name):
+              for code in COUNTRIES:
+                  if re.search(rf'\b{code}\b', name, re.IGNORECASE):
+                      return code
+              for code in COUNTRIES:
+                  if code.lower() in name.lower():
+                      return code
+              return None
+
           def format_and_save(raw_list, filename, profile_title):
               tz = pytz.timezone('Europe/Moscow')
               now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
@@ -69,25 +78,8 @@ jobs:
                   try:
                       link, name = item.split('#', 1)
                       if link in seen_links: continue
-                      
-                      found_code = None
-                      # 1. Ищем точное совпадение кода страны как отдельного слова (например, "RU")
-                      for code in COUNTRIES:
-                          if re.search(rf'\b{code}\b', name, re.IGNORECASE):
-                              found_code = code
-                              break
-                              
-                      # 2. Если точное слово не найдено, ищем вхождение кода в любом регистре
-                      if not found_code:
-                          for code in COUNTRIES:
-                              if code.lower() in name.lower():
-                                  found_code = code
-                                  break
-                                  
-                      # ЖЕСТКИЙ ФИЛЬТР: Если страна вообще не определилась — выкидываем сервер из подписки
-                      if not found_code:
-                          continue
-                          
+                      found_code = get_country_code(name)
+                      if not found_code: continue
                       seen_links.add(link)
                       final_configs.append({'link': link, 'code': found_code})
                   except: continue
@@ -102,6 +94,39 @@ jobs:
                       f.write(f"{c['link']}#{flag} WLUnlocker {full_name} | #{num}\n")
                       counts[c['code']] = num + 1
 
+          def format_and_save_filtered(list_black, list_white, filename, profile_title):
+              tz = pytz.timezone('Europe/Moscow')
+              now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
+              final_configs = []
+              seen_links = set()
+              added_combos = set()
+              
+              def process_items(items, flag_type):
+                  for item in items:
+                      if len(final_configs) >= 30: return
+                      try:
+                          link, name = item.split('#', 1)
+                          if link in seen_links: continue
+                          found_code = get_country_code(name)
+                          if not found_code: continue
+                          
+                          combo = (found_code, flag_type)
+                          if combo not in added_combos:
+                              seen_links.add(link)
+                              added_combos.add(combo)
+                              flag, full_name = COUNTRIES[found_code]
+                              f_name = f"{flag}-{flag_type}-WLUnlocker-{full_name}"
+                              final_configs.append(f"{link}#{f_name}")
+                      except: continue
+
+              process_items(list_black, "🏴")
+              process_items(list_white, "🏳️")
+
+              with open(filename, 'w', encoding='utf-8') as f:
+                  f.write(f"# profile-title: {profile_title}\n# profile-update-interval: 1\n# Last update: {now}\n\n")
+                  for cfg in final_configs:
+                      f.write(f"{cfg}\n")
+
           url_vless_mob = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt"
           url_vless = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt"
           url_wangcai = "https://shz.al/~WangCai"
@@ -114,10 +139,14 @@ jobs:
           format_and_save(get_data_ranged(url_sni, 7, 106) + get_data_ranged(url_cidr_all, 157, 258), "awlone.txt", "БЕЛЫЕ СПИСКИ №1 (LTE)")
           format_and_save(get_data_ranged(url_cidr_chk, 7, 999) + get_data_ranged(url_cidr_all, 7, 156), "awltwo.txt", "БЕЛЫЕ СПИСКИ №2 (LTE)")
 
+          black_raw = get_data_ranged(url_vless_mob, 7, 9999) + get_data_ranged(url_vless, 7, 9999) + get_data_ranged(url_wangcai, 7, 9999)
+          white_raw = get_data_ranged(url_sni, 7, 9999) + get_data_ranged(url_cidr_chk, 7, 9999) + get_data_ranged(url_cidr_all, 7, 9999)
+          format_and_save_filtered(black_raw, white_raw, "filtered.txt", "WLUnlocker Filtered")
+
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: added WangCai ranges and strict country filter" || exit 0
+          git commit -m "sync: added filtered subscription with strict naming and limits" || exit 0
           git push
