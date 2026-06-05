@@ -22,7 +22,7 @@ jobs:
               if "ru" in l.lower() or "росс" in l.lower(): continue
               if len(grouped["Europe"]) < 30: grouped["Europe"].append(l.split('#')[0].strip())
           final = [f"{base}#🌍 🏳️ WLUnlocker Europe | #{i+1}" for i, base in enumerate(grouped["Europe"][:150])]
-          header = f"# profile-title: АНТИГЛУШИЛКИ #3 (CIDR)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
+          header = f"# profile-title: АНТИГЛУШИЛКИ #3 EU (CIDR)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
           with open("whitelist_cidr3_eu.txt", "w", encoding="utf-8") as f: f.write(header + "\n" + "\n".join(final))
       - name: Push
         run: |
