@@ -1,18 +1,58 @@
-# WLUnlocker
+# ⚡ WLUnlocker Project
 
+## 📌 О проекте
 
-Бесплатный VPN, Telegram - прокси и многое другое связанное с обходами блокировок РКН
+Автоматизированный генератор чистых, проверенных и стабильных подписок для обхода сетевых ограничений. Скрипты собирают более 1200 уникальных ключей, сортируют их по категориям и жестко модерируют.
 
-***
-Источники:
- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt --- 
-https://shz.al/~WangCai --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt --- https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt
+> 🛡️ **Главная фишка:** Все конфигурации проходят через **Хаппе-Style Proxy GET-тест**. Никакого рандома и статусов **«Н.Д.» (Нет Данных)**. В списки попадают только те узлы, которые успешно ответили на HTTP GET-запрос через TLS-соединение со скоростью ответа до 1200 мс.
 
-***
-Сайт - wlunlocker.github.io
+---
 
-Телеграм канал с VPN - @wlunlocker
+## 🗂️ Доступные подписки (Суб-ссылки)
 
-Телеграм канал с Прокси - @wlproxy
+| Тип подписки | Описание | Ссылка на RAW (Копировать) |
+| --- | --- | --- |
+| 🏳️ **WHITELIST ALL** | Полный набор белых списков (CIDR + SNI) для точечного обхода блокировок внутри РФ | `https://raw.githubusercontent.com/username/repo/main/whitelist_all.txt` |
+| 🏴 **BLACKLIST ALL** | Полный набор черных списков для пуска всего трафика через зарубежные серверы | `https://raw.githubusercontent.com/username/repo/main/blacklist_all.txt` |
+| 🛰️ **WHITELIST CIDR 1 RU** | Первая часть конфигураций, отфильтрованных по диапазонам IP адресов для России | `https://raw.githubusercontent.com/username/repo/main/whitelist_cidr1_ru.txt` |
+| 🛰️ **WHITELIST CIDR 2 RU** | Вторая часть конфигураций по диапазонам IP адресов для России | `https://raw.githubusercontent.com/username/repo/main/whitelist_cidr2_ru.txt` |
+| 🛰️ **WHITELIST CIDR 3 EU** | Европейские IP диапазоны для стабильного доступа к зарубежным сервисам | `https://raw.githubusercontent.com/username/repo/main/whitelist_cidr3_eu.txt` |
+| 🌐 **WHITE SNI RU** | Конфигурации, отфильтрованные по SNI доменам для обхода блокировок по именам сайтов | `https://raw.githubusercontent.com/username/repo/main/white_sni_ru.txt` |
+| 📱 **BLACKLIST VPN 1** | Черные списки для мобильных сетей, устойчивые к блокировкам ТСПУ | `https://raw.githubusercontent.com/username/repo/main/blacklist_vpn1.txt` |
+| 💻 **BLACKLIST VPN 2** | Стандартные черные списки для использования на ПК и домашних роутерах | `https://raw.githubusercontent.com/username/repo/main/blacklist_vpn2.txt` |
 
-Имеются вопросы? - @iduchamp
+---
+
+## 🚀 Поддерживаемые протоколы
+
+Скрипты автоматизации обрабатывают, удаляют дубликаты и тестируют следующие типы прокси конфигураций:
+
+* **VLESS** (включая XTLS, Reality, gRPC) для маскировки под стандартный HTTPS трафик
+* **VMess** для классического зашифрованного соединения
+* **Trojan** для маскировки под стандартный веб сервер
+* **Shadowsocks** для быстрой обработки базового трафика
+
+---
+
+## 📖 Инструкция по установке
+
+1. Скопируйте необходимую RAW ссылку из таблицы выше.
+2. Откройте приложение HTTP Custom на устройстве.
+3. Откройте левое боковое меню и перейдите в раздел **V2ray Settings**.
+4. Выберите пункт **Subscription**.
+5. Нажмите кнопку **Add Subscription**, вставьте скопированный URL адрес и укажите имя подписки.
+6. Нажмите кнопку **Update** для загрузки актуального списка серверов.
+
+1. Скопируйте нужную RAW ссылку.
+2. В приложении перейдите в настройки групп или подписок.
+3. Создайте новую группу, выберите тип URL и вставьте скопированную ссылку.
+4. Выполните команду **Обновить подписку** для загрузки узлов.
+
+---
+
+## ⚙️ Схема работы автоматизации
+
+Источники данных обновляются по следующему алгоритму:
+
+1. **GitHub Actions** запускаются по расписанию, опрашивают сырые источники, распределяют ключи по отдельным файлам, фильтруют дубликаты и невалидные строки.
+2. **Локальный чекер** на выделенном хосте каждые 15 минут выполняет команду `git pull`, забирает обновленные файлы и тестирует каждый узел через защищенное TLS соединение. Серверы, не приславшие ответ на GET запрос или превысившие таймаут, удаляются из файлов. Измененные конфигурации автоматически отправляются обратно в репозиторий через `git push`.
