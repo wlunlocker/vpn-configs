@@ -1,4 +1,4 @@
-name: WLUnlocker Sync
+name: WLUnlocker Filter Only Sync
 on:
   workflow_dispatch:
   schedule:
@@ -19,6 +19,10 @@ jobs:
           import urllib.request
           import re
           import os
+          from datetime import datetime
+
+          os.system('pip install pytz')
+          import pytz
 
           COUNTRIES = {
               "RU": ("🇷🇺", "Россия", "RUSSIA"), "US": ("🇺🇸", "Америка", "USA"), "DE": ("🇩🇪", "Германия", "GERMANY"),
@@ -70,56 +74,62 @@ jobs:
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
 
-          black_lines = []
-          white_lines = []
+          black_results = []
+          white_results = []
           seen_links = set()
+          counts = {}
 
-          for url in urls_black:
-              for item in get_data(url):
-                  try:
-                      link, name = item.split('#', 1)
-                      if link in seen_links: continue
-                      name_up = name.upper()
-                      for code, info in COUNTRIES.items():
-                          if code in name_up or info[1].upper() in name_up or info[2] in name_up:
-                              seen_links.add(link)
-                              flag_emoji, rus_name, _ = info
-                              black_lines.append(f"{link}#{flag_emoji} 🏴 WLUnlocker {rus_name}")
-                              break
-                  except: pass
+          def process_links(urls, target_list, flag_icon):
+              for url in urls:
+                  for item in get_data(url):
+                      try:
+                          link, name = item.split('#', 1)
+                          if link in seen_links: continue
+                          name_up = name.upper()
+                          for code, info in COUNTRIES.items():
+                              if code in name_up or info[1].upper() in name_up or info[2] in name_up:
+                                  seen_links.add(link)
+                                  flag_emoji, rus_name, _ = info
+                                  num = counts.get(rus_name, 1)
+                                  # Убрали WLUnlocker из названия
+                                  target_list.append(f"{link}#{flag_emoji} {flag_icon} {rus_name} | #{num}")
+                                  counts[rus_name] = num + 1
+                                  break
+                      except: pass
 
-          for url in urls_white:
-              for item in get_data(url):
-                  try:
-                      link, name = item.split('#', 1)
-                      if link in seen_links: continue
-                      name_up = name.upper()
-                      for code, info in COUNTRIES.items():
-                          if code in name_up or info[1].upper() in name_up or info[2] in name_up:
-                              seen_links.add(link)
-                              flag_emoji, rus_name, _ = info
-                              white_lines.append(f"{link}#{flag_emoji} 🏳️ WLUnlocker {rus_name}")
-                              break
-                  except: pass
+          process_links(urls_black, black_results, "🏴")
+          process_links(urls_white, white_results, "🏳️")
 
-          final_lines = []
-          for b, w in zip(black_lines, white_lines):
-              final_lines.append(b)
-              final_lines.append(w)
+          # Чередование: черный, белый, черный, белый...
+          final_list = []
+          for b, w in zip(black_results, white_results):
+              final_list.append(b)
+              final_list.append(w)
 
-          if len(black_lines) > len(white_lines):
-              final_lines.extend(black_lines[len(white_lines):])
+          # Добиваем остатки, если списки разной длины
+          if len(black_results) > len(white_results):
+              final_list.extend(black_results[len(white_results):])
           else:
-              final_lines.extend(white_lines[len(black_lines):])
+              final_list.extend(white_results[len(black_results):])
+
+          # Обрезаем до 50
+          final_list = final_list[:50]
+
+          # Дата и время
+          tz = pytz.timezone('Europe/Moscow')
+          now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
 
           with open("filtered.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: 🏳️ WLUnlocker | ВСЕ 🏴\n# profile-update-interval: 1\n\n")
-              f.write("\n".join(final_lines[:50]))
+              f.write("# profile-title: 🏳️ WLUnlocker 🏴\n")
+              f.write("# profile-desc: Сервера от белых списков (антиглушилки) помечены 🏳️, от черных списков (VPN) 🏴 Telegram: @wlunlocker\n")
+              f.write("# profile-update-interval: 1\n")
+              f.write(f"# Last update: {now}\n\n")
+              f.write("\n".join(final_list))
 
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered.txt
-          git commit -m "sync: expanded filtered.txt to all countries max 50" || exit 0
+          git commit -m "sync: updated design, interleaved servers and added metadata" || exit 0
           git push
