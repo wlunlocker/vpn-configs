@@ -1,0 +1,90 @@
+name: WLUnlocker Independent Node Checker
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 */3 * * *' # Запускается через 30 минут после основной синхронизации
+
+permissions:
+  contents: write
+
+jobs:
+  check-nodes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Existing Nodes
+        shell: python
+        run: |
+          import os
+          import socket
+          import re
+          from datetime import datetime
+
+          os.system('pip install pytz')
+          import pytz
+
+          FILE_NAME = "filtered.txt"
+
+          if not os.path.exists(FILE_NAME):
+              print(f"Файл {FILE_NAME} не найден. Проверка отменена.")
+              exit(0)
+
+          def check_tcp_alive(link, timeout=2.0):
+              try:
+                  clean_link = link.split('#')[0].strip()
+                  parts = clean_link.split("://")
+                  if len(parts) < 2: return False
+                  main_part = parts[1].split("@")[-1]
+                  main_part = re.split(r'[/?#]', main_part)[0]
+                  if "]" in main_part:
+                      host, port = main_part.split("]:")
+                      host = host.replace("[", "")
+                  else:
+                      host, port = main_part.split(":")
+                  with socket.create_connection((host, int(port)), timeout=timeout):
+                      return True
+              except:
+                  return False
+
+          metadata = []
+          nodes = []
+          
+          with open(FILE_NAME, "r", encoding="utf-8") as f:
+              for line in f:
+                  line_stripped = line.strip()
+                  if not line_stripped:
+                      continue
+                  if line_stripped.startswith("#"):
+                      # Пропускаем старую строку обновления, чтобы записать новую
+                      if not line_stripped.startswith("# Last update:"):
+                          metadata.append(line_stripped)
+                  else:
+                      nodes.append(line_stripped)
+
+          alive_nodes = []
+          for node in nodes:
+              if check_tcp_alive(node):
+                  alive_nodes.append(node)
+
+          # Если все серваки внезапно легли, не очищаем файл полностью, чтобы подписка не ломалась
+          if not alive_nodes:
+              print("Все узлы недоступны. Файл не будет перезаписан.")
+              exit(0)
+
+          tz = pytz.timezone('Europe/Moscow')
+          now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
+
+          with open(FILE_NAME, "w", encoding="utf-8") as f:
+              for meta in metadata:
+                  f.write(f"{meta}\n")
+              f.write(f"# Last update: {now} (Verified Live)\n\n")
+              f.write("\n".join(alive_nodes))
+
+      - name: Commit and Push Verified Changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add filtered.txt
+          git commit -m "checker: removed dead nodes from subscription" || exit 0
+          git push
