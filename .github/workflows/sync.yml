@@ -50,6 +50,10 @@ jobs:
               "NZ": ("🇳🇿", "Новая Зеландия", "NEW ZEALAND"), "EG": ("🇪🇬", "Египет", "EGYPT"), "SA": ("🇸🇦", "Саудовская Аравия", "SAUDI ARABIA")
           }
 
+          PREFERRED = {"FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"}
+          BLACK_STRICT_COUNTRIES = {"DE", "FR", "PL", "NL", "EE", "CA", "FI"}
+          MIN_DUPLICATE_COUNTRIES = {"EE", "CA"}
+
           def get_data(url):
               collected = []
               try:
@@ -75,60 +79,105 @@ jobs:
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
 
-          def process_unique_countries(urls):
-              pool = {}
-              seen_links = set()
-              for url in urls:
-                  for item in get_data(url):
-                      try:
-                          link, name = item.split('#', 1)
-                          if link in seen_links: continue
-                          name_up = name.upper()
-                          for code, info in COUNTRIES.items():
-                              if code in name_up or info[1].upper() in name_up or info[2] in name_up:
-                                  if code not in pool:
-                                      pool[code] = {'link': link, 'info': info}
-                                      seen_links.add(link)
-                                  break
-                      except: pass
-              
-              sorted_codes = sorted(pool.keys(), key=lambda c: COUNTRIES[c][1])
-              return [pool[code] for code in sorted_codes]
+          black_pool = []
+          black_seen_links = set()
+          black_country_source_tracker = {}
 
-          def generate_output(selected_list, flag_icon):
-              formatted = []
-              for c in selected_list:
-                  flag_emoji, rus_name, _ = c['info']
-                  formatted.append(f"{c['link']}#{flag_emoji} {flag_icon} WLUnlocker {rus_name}")
-              return formatted
+          for url_idx, url in enumerate(urls_black):
+              for item in get_data(url):
+                  try:
+                      link, name = item.split('#', 1)
+                      if link in black_seen_links: continue
+                      name_up = name.upper()
+                      for code, info in COUNTRIES.items():
+                          if code in BLACK_STRICT_COUNTRIES and (code in name_up or info[1].upper() in name_up or info[2] in name_up):
+                              if code not in black_country_source_tracker:
+                                  black_country_source_tracker[code] = set()
+                              if url_idx not in black_country_source_tracker[code]:
+                                  black_pool.append({'link': link, 'info': info, 'code': code, 'url_idx': url_idx})
+                                  black_seen_links.add(link)
+                                  black_country_source_tracker[code].add(url_idx)
+                              break
+                  except: pass
 
-          black_selected = process_unique_countries(urls_black)
-          white_selected = process_unique_countries(urls_white)
+          black_selected = []
+          for code in sorted(BLACK_STRICT_COUNTRIES, key=lambda c: COUNTRIES[c][1]):
+              nodes = [n for n in black_pool if n['code'] == code]
+              if nodes:
+                  black_selected.append(nodes.pop(0))
+                  black_pool = [n for n in black_pool if n['link'] != black_selected[-1]['link']]
 
-          black_results = generate_output(black_selected, "🏴")
-          white_results = generate_output(white_selected, "🏳️")
+          for code in sorted(BLACK_STRICT_COUNTRIES - MIN_DUPLICATE_COUNTRIES, key=lambda c: COUNTRIES[c][1]):
+              if len(black_selected) >= 25: break
+              nodes = [n for n in black_pool if n['code'] == code]
+              while nodes and len(black_selected) < 25:
+                  black_selected.append(nodes.pop(0))
+                  black_pool = [n for n in black_pool if n['link'] != black_selected[-1]['link']]
+
+          if len(black_selected) < 25:
+              for code in sorted(MIN_DUPLICATE_COUNTRIES, key=lambda c: COUNTRIES[c][1]):
+                  if len(black_selected) >= 25: break
+                  nodes = [n for n in black_pool if n['code'] == code]
+                  while nodes and len(black_selected) < 25:
+                      black_selected.append(nodes.pop(0))
+                      black_pool = [n for n in black_pool if n['link'] != black_selected[-1]['link']]
+
+          white_pool = {}
+          white_seen_links = set()
+          for url in urls_white:
+              for item in get_data(url):
+                  try:
+                      link, name = item.split('#', 1)
+                      if link in white_seen_links: continue
+                      name_up = name.upper()
+                      for code, info in COUNTRIES.items():
+                          if code in name_up or info[1].upper() in name_up or info[2] in name_up:
+                              if code not in white_pool:
+                                  white_pool[code] = {'link': link, 'info': info}
+                                  white_seen_links.add(link)
+                              break
+                  except: pass
+
+          white_selected = []
+          for code in sorted(white_pool.keys(), key=lambda c: (c not in PREFERRED, COUNTRIES[c][1])):
+              if len(white_selected) >= 25: break
+              white_selected.append(white_pool[code])
+
+          black_results = []
+          for c in black_selected:
+              flag_emoji, rus_name, _ = c['info']
+              black_results.append(f"{c['link']}#{flag_emoji} 🏴 WLUnlocker {rus_name}")
+
+          white_results = []
+          for c in white_selected:
+              flag_emoji, rus_name, _ = c['info']
+              white_results.append(f"{c['link']}#{flag_emoji} 🏳️ WLUnlocker {rus_name}")
+
+          final_list = []
+          b_idx, w_idx = 0, 0
+          while b_idx < len(black_results) or w_idx < len(white_results):
+              if b_idx < len(black_results):
+                  final_list.append(black_results[b_idx])
+                  b_idx += 1
+              if w_idx < len(white_results):
+                  final_list.append(white_results[w_idx])
+                  w_idx += 1
 
           tz = pytz.timezone('Europe/Moscow')
           now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
 
-          with open("filteredbl.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: ЧС - VPN\n")
-              f.write("# profile-desc: Только конфигурации от черных списков (VPN) 🏴 Telegram: @wlunlocker\n")
+          with open("filtered.txt", "w", encoding="utf-8") as f:
+              f.write("# profile-title: БС/ЧС - ВСЕ\n")
+              f.write("# profile-desc: Сервера от белых списков (антиглушилки) помечены 🏳️, от черных списков (VPN) 🏴 Telegram: @wlunlocker\n")
               f.write("# profile-update-interval: 1\n")
               f.write(f"# Last update: {now}\n\n")
-              f.write("\n".join(black_results))
-
-          with open("filteredwl.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: БС - Антиглушилки\n")
-              f.write("# profile-desc: Только конфигурации от белых списков (Антиглушилки) 🏳️ Telegram: @wlunlocker\n")
-              f.write("# profile-update-interval: 1\n")
-              f.write(f"# Last update: {now}\n\n")
-              f.write("\n".join(white_results))
+              f.write("\n".join(final_list))
 
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add filteredbl.txt filteredwl.txt
-          git commit -m "sync: strict unique countries, removed duplicate country limits and counters" || exit 0
+          git rm -f filteredbl.txt filteredwl.txt || true
+          git add filtered.txt
+          git commit -m "sync: 25 strict black nodes (pref only) and up to 25 unique white nodes alternated" || exit 0
           git push
