@@ -22,14 +22,14 @@
 
 | Тип подписки | Описание | Ссылка на RAW (Копировать) |
 | --- | --- | --- |
-| 🏳️ **WHITELIST ALL**/АНТИГЛУШИЛКИ - ВСЕ СЕРВЕРА | Полный набор белых списков (CIDR + SNI) для точечного обхода блокировок внутри РФ | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt` |
-| 🏴 **BLACKLIST ALL**/VPN - ВСЕ СЕРВЕРА | Полный набор черных списков для пуска всего трафика через зарубежные серверы | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt` |
-| 🛰️ **WHITELIST CIDR 1 RU**/АНТИГЛУШИЛКИ #1 (CIDR) | Первая часть конфигураций, отфильтрованных по диапазонам IP адресов для России | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt` |
-| 🛰️ **WHITELIST CIDR 2 RU**/АНТИГЛУШИЛКИ #2 (CIDR) | Вторая часть конфигураций по диапазонам IP адресов для России | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt` |
-| 🛰️ **WHITELIST CIDR 3 EU**/АНТИГЛУШИЛКИ 3 EU (CIDR) | Европейские IP диапазоны для стабильного доступа к зарубежным сервисам | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt` |
-| 🌐 **WHITE SNI RU**/АНТИГЛУШИКИ #1 (SNI) | Конфигурации, отфильтрованные по SNI доменам для обхода блокировок по именам сайтов | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/white_sni_ru.txt` |
-| 📱 **BLACKLIST VPN 1**/VPN #1 | Черные списки для мобильных сетей, устойчивые к блокировкам ТСПУ | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt` |
-| 💻 **BLACKLIST VPN 2**/VPN #2 | Стандартные черные списки для использования на ПК и домашних роутерах | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt` |
+| 🌐🏳️ **WHITELIST ALL**/АНТИГЛУШИЛКИ - ВСЕ СЕРВЕРА | Полный набор белых списков (CIDR + SNI) для точечного обхода блокировок внутри РФ | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt` |
+| 🌐🏴 **BLACKLIST ALL**/VPN - ВСЕ СЕРВЕРА | Полный набор черных списков для пуска всего трафика через зарубежные серверы | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt` |
+| 🏳️ **WHITELIST CIDR 1 RU**/АНТИГЛУШИЛКИ #1 (CIDR) | Первая часть конфигураций, отфильтрованных по диапазонам IP адресов для России | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt` |
+| 🏳️ **WHITELIST CIDR 2 RU**/АНТИГЛУШИЛКИ #2 (CIDR) | Вторая часть конфигураций по диапазонам IP адресов для России | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt` |
+| 🏳️ **WHITELIST CIDR 3 EU**/АНТИГЛУШИЛКИ 3 EU (CIDR) | Европейские IP диапазоны для стабильного доступа к зарубежным сервисам | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt` |
+| 🏳️ **WHITE SNI RU**/АНТИГЛУШИКИ #1 (SNI) | Конфигурации, отфильтрованные по SNI доменам для обхода блокировок по именам сайтов | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/white_sni_ru.txt` |
+| 🏴 **BLACKLIST VPN 1**/VPN #1 | Черные списки для мобильных сетей, устойчивые к блокировкам ТСПУ | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt` |
+| 🏴 **BLACKLIST VPN 2**/VPN #2 | Стандартные черные списки для использования на ПК и домашних роутерах | `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt` |
 
 ---
 
