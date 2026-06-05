@@ -44,26 +44,26 @@
 
 ---
 
-#📋 Источники конфигураций
-
-##VPN #1 (VLESS):
-BLACK_VLESS_RUS_mobile.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt
-BLACK_VLESS_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
-WangCai - https://shz.al/~WangCai
-
-##VPN #2 (SS + Hysteria2):
-BLACK_SS+All_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt
-FreeProxyList (mirror) - https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt
-
-##Whitelist (CIDR & SNI):
-WHITE-SNI-RU-all.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt
-ByeWhiteLists2 - https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt
-
----
-
 ## ⚙️ Схема работы автоматизации
 
 Источники данных обновляются по следующему алгоритму:
 
 1. **GitHub Actions** запускаются по расписанию, опрашивают сырые источники, распределяют ключи по отдельным файлам, фильтруют дубликаты и невалидные строки.
 2. **Локальный чекер** на выделенном хосте каждые 15 минут выполняет команду `git pull`, забирает обновленные файлы и тестирует каждый узел через защищенное TLS соединение. Серверы, не приславшие ответ на GET запрос или превысившие таймаут, удаляются из файлов. Измененные конфигурации автоматически отправляются обратно в репозиторий через `git push`.
+
+#📋 Источники конфигураций
+
+VPN #1 (VLESS):
+BLACK_VLESS_RUS_mobile.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt
+BLACK_VLESS_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
+WangCai - https://shz.al/~WangCai
+
+VPN #2 (SS + Hysteria2):
+BLACK_SS+All_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt
+FreeProxyList (mirror) - https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt
+
+Whitelist (CIDR & SNI):
+WHITE-SNI-RU-all.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt
+ByeWhiteLists2 - https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt
+
+Дисклеймер: Автор данного репозитория является исключительно агрегатором публично доступных конфигураций и не несет ответственности за сохранность, конфиденциальность и безопасность ваших персональных данных. Все представленные сервера принадлежат третьим лицам; использование данных ресурсов осуществляется вами на свой страх и риск. Проявляйте осмотрительность при передаче чувствительной информации через сторонние VPN-узлы.
