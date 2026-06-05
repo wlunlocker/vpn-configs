@@ -1,7 +1,7 @@
-# profile-title: 🏳️ БС/ЧС - ВСЕ 🏴
+# profile-title: БС/ЧС - ВСЕ
 # profile-desc: Сервера от белых списков (антиглушилки) помечены 🏳️, от черных списков (VPN) 🏴 Telegram: @wlunlocker
 # profile-update-interval: 1
-# Last update: 05.06.2026 15:41 MSK
+# Last update: 05.06.2026 15:43 MSK
 
 #🇫🇮 🏴 WLUnlocker Финляндия | #1
 vless://6a8233fe-6fc0-4dd8-aab2-d4063c16089c@5.144.179.56:45466?security=tls&alpn=h2,http/1.1&encryption=none&headerType=none&fp=chrome&type=tcp#🇳🇱 🏴 WLUnlocker Нидерланды | #1
