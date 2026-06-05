@@ -1,6 +1,6 @@
 # profile-title: ЧЕРНЫЕ СПИСКИ №1 (VPN)
 # profile-update-interval: 1
-# Last update: 05.06.2026 14:49 MSK
+# Last update: 05.06.2026 14:52 MSK
 
 vless://6a8233fe-6fc0-4dd8-aab2-d4063c16089c@5.144.179.56:45466?security=tls&alpn=h2,http/1.1&encryption=none&headerType=none&fp=chrome&type=tcp#🇦🇪 WLUnlocker UAE | #1
 vless://6a8233fe-6fc0-4dd8-aab2-d4063c16089c@5.144.179.56:45466?type=tcp&security=tls&fp=chrome#🇦🇪 WLUnlocker UAE | #2

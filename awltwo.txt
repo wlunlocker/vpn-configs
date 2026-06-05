@@ -1,6 +1,6 @@
 # profile-title: БЕЛЫЕ СПИСКИ №2 (LTE)
 # profile-update-interval: 1
-# Last update: 05.06.2026 14:49 MSK
+# Last update: 05.06.2026 14:52 MSK
 
 hysteria2://05d79f12-6a07-47ce-a566-5d5f571b8c59@103.88.241.133:8443?headerType=none&encryption=none&sni=slopllex.app&insecure=0#🇦🇪 WLUnlocker UAE | #1
 hysteria2://05d79f12-6a07-47ce-a566-5d5f571b8c59@103.88.241.133:8443?sni=slopllex.app&insecure=0&allowInsecure=0#🇦🇪 WLUnlocker UAE | #2
