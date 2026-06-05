@@ -60,17 +60,33 @@ jobs:
               try:
                   base_part = link.split('#')[0].strip()
                   lower_link = link.lower()
-                  flag = "🏴"
-                  country = "Зарубежный"
                   
-                  if "de" in lower_link or "germany" in lower_link or "неме" in lower_link:
-                      flag, country = "🇩🇪", "Германия"
-                  elif "nl" in lower_link or "netherlands" in lower_link or "нидер" in lower_link:
-                      flag, country = "🇳🇱", "Нидерланды"
-                  elif "fi" in lower_link or "finland" in lower_link or "финл" in lower_link:
-                      flag, country = "🇫🇮", "Финляндия"
-                      
-                  return f"{base_part}#{flag} WLUnlocker {country}"
+                  countries_db = {
+                      "ru": ("🇷🇺", "Россия"), "de": ("🇩🇪", "Германия"), "nl": ("🇳🇱", "Нидерланды"), "fi": ("🇫🇮", "Финляндия"), 
+                      "us": ("🇺🇸", "США"), "fr": ("🇫🇷", "Франция"), "gb": ("🇬🇧", "Великобритания"), "uk": ("🇬🇧", "Великобритания"),
+                      "sg": ("🇸🇬", "Сингапур"), "jp": ("🇯🇵", "Япония"), "hk": ("🇭🇰", "Гонконг"), "tr": ("🇹🇷", "Турция"), 
+                      "pl": ("🇵🇱", "Польша"), "ua": ("🇺🇦", "Украина"), "kz": ("🇰🇿", "Казахстан"), "se": ("🇸🇪", "Швеция"), 
+                      "ch": ("🇨🇭", "Швейцария"), "it": ("🇮🇹", "Италия"), "es": ("🇪🇸", "Испания"), "ca": ("🇨🇦", "Канада"), 
+                      "au": ("🇦🇺", "Австралия"), "at": ("🇦🇹", "Австрия"), "cz": ("🇨🇿", "Чехия"), "bg": ("🇧🇬", "Болгария"), 
+                      "ro": ("🇷🇴", "Румыния"), "hu": ("🇭🇺", "Венгрия"), "ee": ("🇪🇪", "Эстония"), "lv": ("🇱🇻", "Латвия"), 
+                      "lt": ("🇱🇹", "Литва"), "kr": ("🇰🇷", "Южная Корея"), "in": ("🇮🇳", "Индия"), "br": ("🇧🇷", "Бразилия"), 
+                      "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова")
+                  }
+                  
+                  c_flag, c_name = "🌍", "Глобальный"
+                  
+                  for code, data in countries_db.items():
+                      pattern = rf"\b{code}\b|{data[1].lower()[:4]}"
+                      if re.search(pattern, lower_link):
+                          c_flag, c_name = data[0], data[1]
+                          break
+                          
+                  if c_name == "Глобальный" and "#" in link:
+                      old_tag = link.split('#')[-1].strip()
+                      if len(old_tag) > 1:
+                          c_name = old_tag
+                          
+                  return f"{base_part}#{c_flag} 🏴 WLUnlocker {c_name}"
               except:
                   return link
 
