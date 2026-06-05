@@ -18,6 +18,7 @@ jobs:
         run: |
           import requests
           import re
+          from collections import defaultdict
 
           sources = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
@@ -56,59 +57,60 @@ jobs:
                           count += 1
           except: pass
 
-          def format_canon(link):
-              try:
-                  base_part = link.split('#')[0].strip()
-                  lower_link = link.lower()
-                  
-                  countries_db = {
-                      "ru": ("🇷🇺", "Россия"), "de": ("🇩🇪", "Германия"), "nl": ("🇳🇱", "Нидерланды"), "fi": ("🇫🇮", "Финляндия"), 
-                      "us": ("🇺🇸", "США"), "fr": ("🇫🇷", "Франция"), "gb": ("🇬🇧", "Великобритания"), "uk": ("🇬🇧", "Великобритания"),
-                      "sg": ("🇸🇬", "Сингапур"), "jp": ("🇯🇵", "Япония"), "hk": ("🇭🇰", "Гонконг"), "tr": ("🇹🇷", "Турция"), 
-                      "pl": ("🇵🇱", "Польша"), "ua": ("🇺🇦", "Украина"), "kz": ("🇰🇿", "Казахстан"), "se": ("🇸🇪", "Швеция"), 
-                      "ch": ("🇨🇭", "Швейцария"), "it": ("🇮🇹", "Италия"), "es": ("🇪🇸", "Испания"), "ca": ("🇨🇦", "Канада"), 
-                      "au": ("🇦🇺", "Австралия"), "at": ("🇦🇹", "Австрия"), "cz": ("🇨🇿", "Чехия"), "bg": ("🇧🇬", "Болгария"), 
-                      "ro": ("🇷🇴", "Румыния"), "hu": ("🇭🇺", "Венгрия"), "ee": ("🇪🇪", "Эстония"), "lv": ("🇱🇻", "Латвия"), 
-                      "lt": ("🇱🇹", "Литва"), "kr": ("🇰🇷", "Южная Корея"), "in": ("🇮🇳", "Индия"), "br": ("🇧🇷", "Бразилия"), 
-                      "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова"),
-                      "tw": ("🇹🇼", "Тайвань"), "is": ("🇮🇸", "Исландия"), "ie": ("🇮🇪", "Ирландия"), "no": ("🇳🇴", "Норвегия"),
-                      "dk": ("🇩🇰", "Дания"), "be": ("🇧🇪", "Бельгия"), "lu": ("🇱🇺", "Люксембург"), "pt": ("🇵🇹", "Португалия"),
-                      "gr": ("🇬🇷", "Греция"), "il": ("🇮🇱", "Израиль"), "th": ("🇹🇭", "Таиланд"), "my": ("🇲🇾", "Малайзия"),
-                      "vn": ("🇻🇳", "Вьетнам"), "id": ("🇮🇩", "Индонезия"), "za": ("🇿🇦", "ЮАР"), "cl": ("🇨🇱", "Чили"),
-                      "ar": ("🇦🇷", "Аргентина"), "mx": ("🇲🇽", "Мексика"), "co": ("🇨🇴", "Колумбия"), "nz": ("🇳🇿", "Новая Зеландия")
-                  }
-                  
-                  c_flag, c_name = None, None
-                  
-                  for code, data in countries_db.items():
-                      pattern = rf"\b{code}\b|{data[1].lower()[:4]}"
-                      if re.search(pattern, lower_link):
-                          c_flag, c_name = data[0], data[1]
-                          break
-                          
-                  if not c_name and "#" in link:
-                      old_tag = link.split('#')[-1].strip().lower()
-                      for code, data in countries_db.items():
-                          if code in old_tag or data[1].lower()[:4] in old_tag:
-                              c_flag, c_name = data[0], data[1]
-                              break
-                              
-                  if not c_name:
-                      return None
-                          
-                  return f"{base_part}#{c_flag} 🏳️ WLUnlocker {c_name}"
-              except:
-                  return None
+          countries_db = {
+              "ru": ("🇷🇺", "Россия"), "de": ("🇩🇪", "Германия"), "nl": ("🇳🇱", "Нидерланды"), "fi": ("🇫🇮", "Финляндия"), 
+              "us": ("🇺🇸", "США"), "fr": ("🇫🇷", "Франция"), "gb": ("🇬🇧", "Великобритания"), "uk": ("🇬🇧", "Великобритания"),
+              "sg": ("🇸🇬", "Сингапур"), "jp": ("🇯🇵", "Япония"), "hk": ("🇭🇰", "Гонконг"), "tr": ("🇹🇷", "Турция"), 
+              "pl": ("🇵🇱", "Польша"), "ua": ("🇺🇦", "Украина"), "kz": ("🇰🇿", "Казахстан"), "se": ("🇸🇪", "Швеция"), 
+              "ch": ("🇨🇭", "Швейцария"), "it": ("🇮🇹", "Италия"), "es": ("🇪🇸", "Испания"), "ca": ("🇨🇦", "Канада"), 
+              "au": ("🇦🇺", "Австралия"), "at": ("🇦🇹", "Австрия"), "cz": ("🇨🇿", "Чехия"), "bg": ("🇧🇬", "Болгария"), 
+              "ro": ("🇷🇴", "Румыния"), "hu": ("🇭🇺", "Венгрия"), "ee": ("🇪🇪", "Эстония"), "lv": ("🇱🇻", "Латвия"), 
+              "lt": ("🇱🇹", "Литва"), "kr": ("🇰🇷", "Южная Корея"), "in": ("🇮🇳", "Индия"), "br": ("🇧🇷", "Бразилия"), 
+              "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова"),
+              "tw": ("🇹🇼", "Тайвань"), "is": ("🇮🇸", "Исландия"), "ie": ("🇮🇪", "Ирландия"), "no": ("🇳🇴", "Норвегия"),
+              "dk": ("🇩🇰", "Дания"), "be": ("🇧🇪", "Бельгия"), "lu": ("🇱🇺", "Люксембург"), "pt": ("🇵🇹", "Португалия"),
+              "gr": ("🇬🇷", "Греция"), "il": ("🇮🇱", "Израиль"), "th": ("🇹🇭", "Таиланд"), "my": ("🇲🇾", "Малайзия"),
+              "vn": ("🇻🇳", "Вьетнам"), "id": ("🇮🇩", "Индонезия"), "za": ("🇿🇦", "ЮАР"), "cl": ("🇨🇱", "Чили"),
+              "ar": ("🇦🇷", "Аргентина"), "mx": ("🇲🇽", "Мексика"), "co": ("🇨🇴", "Колумбия"), "nz": ("🇳🇿", "Новая Зеландия")
+          }
 
-          seen = set()
-          final_nodes = []
+          def get_country_data(link):
+              lower_link = link.lower()
+              for code, data in countries_db.items():
+                  pattern = rf"\b{code}\b|{data[1].lower()[:4]}"
+                  if re.search(pattern, lower_link):
+                      return data[0], data[1]
+              if "#" in link:
+                  old_tag = link.split('#')[-1].strip().lower()
+                  for code, data in countries_db.items():
+                      if code in old_tag or data[1].lower()[:4] in old_tag:
+                          return data[0], data[1]
+              return None, None
+
+          seen_urls = set()
+          grouped_nodes = defaultdict(list)
+
           for node in raw_nodes:
-              base = node.split('#')[0].strip()
-              if base not in seen:
-                  formatted = format_canon(node)
-                  if formatted:
-                      seen.add(base)
-                      final_nodes.append(formatted)
+              base_part = node.split('#')[0].strip()
+              if base_part in seen_urls:
+                  continue
+              
+              c_flag, c_name = get_country_data(node)
+              if not c_name:
+                  continue
+                  
+              seen_urls.add(base_part)
+              grouped_nodes[c_name].append((base_part, c_flag))
+
+          final_nodes = []
+          for country in sorted(grouped_nodes.keys()):
+              nodes_list = grouped_nodes[country]
+              counts = defaultdict(int)
+              
+              for base, flag in nodes_list:
+                  counts[country] += 1
+                  idx = counts[country]
+                  final_nodes.append(f"{base}#{flag} 🏳️ WLUnlocker {country} |#{idx}")
 
           if not final_nodes:
               exit(1)
