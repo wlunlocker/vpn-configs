@@ -50,8 +50,6 @@ jobs:
               "NZ": ("🇳🇿", "Новая Зеландия", "NEW ZEALAND"), "EG": ("🇪🇬", "Египет", "EGYPT"), "SA": ("🇸🇦", "Саудовская Аравия", "SAUDI ARABIA")
           }
 
-          PREFERRED = {"FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"}
-
           def get_data(url):
               collected = []
               try:
@@ -77,7 +75,7 @@ jobs:
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
 
-          def process_to_pool(urls):
+          def process_unique_countries(urls):
               pool = {}
               seen_links = set()
               for url in urls:
@@ -89,56 +87,23 @@ jobs:
                           for code, info in COUNTRIES.items():
                               if code in name_up or info[1].upper() in name_up or info[2] in name_up:
                                   if code not in pool:
-                                      pool[code] = []
-                                  pool[code].append({'link': link, 'info': info})
-                                  seen_links.add(link)
+                                      pool[code] = {'link': link, 'info': info}
+                                      seen_links.add(link)
                                   break
                       except: pass
-              return pool
-
-          def balance_selection(pool):
-              selected = []
-              all_countries = sorted(pool.keys(), key=lambda c: COUNTRIES[c][1])
               
-              for code in all_countries:
-                  if pool[code]:
-                      selected.append(pool[code].pop(0))
-                      
-              limit = 2
-              while len(selected) < 50:
-                  added_in_loop = False
-                  for code in all_countries:
-                      if len(selected) >= 50:
-                          break
-                      if code in PREFERRED and pool[code]:
-                          selected.append(pool[code].pop(0))
-                          added_in_loop = True
-                  if not added_in_loop:
-                      for code in all_countries:
-                          if len(selected) >= 50:
-                              break
-                          if pool[code]:
-                              selected.append(pool[code].pop(0))
-                              added_in_loop = True
-                  if not added_in_loop:
-                      break
-              return selected[:50]
+              sorted_codes = sorted(pool.keys(), key=lambda c: COUNTRIES[c][1])
+              return [pool[code] for code in sorted_codes]
 
           def generate_output(selected_list, flag_icon):
               formatted = []
-              counts = {}
               for c in selected_list:
                   flag_emoji, rus_name, _ = c['info']
-                  num = counts.get(rus_name, 1)
-                  formatted.append(f"{c['link']}#{flag_emoji} {flag_icon} WLUnlocker {rus_name} | #{num}")
-                  counts[rus_name] = num + 1
+                  formatted.append(f"{c['link']}#{flag_emoji} {flag_icon} WLUnlocker {rus_name}")
               return formatted
 
-          black_pool = process_to_pool(urls_black)
-          white_pool = process_to_pool(urls_white)
-
-          black_selected = balance_selection(black_pool)
-          white_selected = balance_selection(white_pool)
+          black_selected = process_unique_countries(urls_black)
+          white_selected = process_unique_countries(urls_white)
 
           black_results = generate_output(black_selected, "🏴")
           white_results = generate_output(white_selected, "🏳️")
@@ -165,5 +130,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filteredbl.txt filteredwl.txt
-          git commit -m "sync: split into filteredbl and filteredwl with 50 limit and smart country balancing" || exit 0
+          git commit -m "sync: strict unique countries, removed duplicate country limits and counters" || exit 0
           git push
