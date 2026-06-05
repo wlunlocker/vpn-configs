@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Active-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Language-HTML-orange?style=for-the-badge&logo=html5">
   <img src="https://img.shields.io/github/last-commit/wlunlocker/vpn-configs?style=for-the-badge">
   <img src="https://img.shields.io/badge/Keys_Count-1500+-purple?style=for-the-badge&logo=nixos">
