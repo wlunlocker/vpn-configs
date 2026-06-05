@@ -1,7 +1,7 @@
 name: Sync Blacklist All
 on:
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
           from collections import defaultdict
           from datetime import datetime
 
-          timestamp = datetime.now().strftime("%d.%m %H:%M")
+          timestamp = datetime.now().strftime("%d.%m.%H")
           
           sources = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
@@ -31,21 +31,14 @@ jobs:
           limited_source = "https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt"
 
           raw_nodes = []
-
-          def clean_node(line):
-              l = line.strip()
-              if not l: return None
-              if any(l.startswith(p) for p in ["vless://", "vmess://", "trojan://", "ss://"]):
-                  return l
-              return None
-
           for src in sources:
               try:
                   r = requests.get(src, timeout=15)
                   if r.status_code == 200:
                       for line in r.text.splitlines():
-                          node = clean_node(line)
-                          if node: raw_nodes.append(node)
+                          l = line.strip()
+                          if any(l.startswith(p) for p in ["vless://", "vmess://", "trojan://", "ss://"]):
+                              raw_nodes.append(l)
               except: pass
 
           try:
@@ -54,9 +47,9 @@ jobs:
                   count = 0
                   for line in r.text.splitlines():
                       if count >= 500: break
-                      node = clean_node(line)
-                      if node:
-                          raw_nodes.append(node)
+                      l = line.strip()
+                      if any(l.startswith(p) for p in ["vless://", "vmess://", "trojan://", "ss://"]):
+                          raw_nodes.append(l)
                           count += 1
           except: pass
 
@@ -69,55 +62,39 @@ jobs:
               "au": ("🇦🇺", "Австралия"), "at": ("🇦🇹", "Австрия"), "cz": ("🇨🇿", "Чехия"), "bg": ("🇧🇬", "Болгария"), 
               "ro": ("🇷🇴", "Румыния"), "hu": ("🇭🇺", "Венгрия"), "ee": ("🇪🇪", "Эстония"), "lv": ("🇱🇻", "Латвия"), 
               "lt": ("🇱🇹", "Литва"), "kr": ("🇰🇷", "Южная Корея"), "in": ("🇮🇳", "Индия"), "br": ("🇧🇷", "Бразилия"), 
-              "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова"),
-              "tw": ("🇹🇼", "Тайвань"), "is": ("🇮🇸", "Исландия"), "ie": ("🇮🇪", "Ирландия"), "no": ("🇳🇴", "Норвегия"),
-              "dk": ("🇩🇰", "Дания"), "be": ("🇧🇪", "Бельгия"), "lu": ("🇱🇺", "Люксембург"), "pt": ("🇵🇹", "Португалия"),
-              "gr": ("🇬🇷", "Греция"), "il": ("🇮🇱", "Израиль"), "th": ("🇹🇭", "Таиланд"), "my": ("🇲🇾", "Малайзия"),
-              "vn": ("🇻🇳", "Вьетнам"), "id": ("🇮🇩", "Индонезия"), "za": ("🇿🇦", "ЮАР"), "cl": ("🇨🇱", "Чили"),
-              "ar": ("🇦🇷", "Аргентина"), "mx": ("🇲🇽", "Мексика"), "co": ("🇨🇴", "Колумбия"), "nz": ("🇳🇿", "Новая Зеландия")
+              "ae": ("🇦🇪", "ОАЭ"), "cy": ("🇨🇾", "Кипр"), "ge": ("🇬🇪", "Грузия"), "md": ("🇲🇩", "Молдова")
           }
 
-          def get_country_data(link):
-              lower_link = link.lower()
-              for code, data in countries_db.items():
-                  pattern = rf"\b{code}\b|{data[1].lower()[:4]}"
-                  if re.search(pattern, lower_link):
-                      return data[0], data[1]
-              if "#" in link:
-                  old_tag = link.split('#')[-1].strip().lower()
-                  for code, data in countries_db.items():
-                      if code in old_tag or data[1].lower()[:4] in old_tag:
-                          return data[0], data[1]
-              return None, None
-
           seen_urls = set()
-          grouped_nodes = defaultdict(list)
-
+          grouped = defaultdict(list)
           for node in raw_nodes:
-              base_part = node.split('#')[0].strip()
-              if base_part in seen_urls:
-                  continue
-              c_flag, c_name = get_country_data(node)
-              if not c_name: continue
-              seen_urls.add(base_part)
-              grouped_nodes[c_name].append((base_part, c_flag))
+              base = node.split('#')[0].strip()
+              if base in seen_urls: continue
+              
+              lower_link = node.lower()
+              c_flag, c_name = None, None
+              for code, data in countries_db.items():
+                  if re.search(rf"\b{code}\b|{data[1].lower()[:4]}", lower_link):
+                      c_flag, c_name = data[0], data[1]; break
+              
+              if c_name:
+                  seen_urls.add(base)
+                  grouped[c_name].append((base, c_flag))
 
-          final_nodes = []
-          for country in sorted(grouped_nodes.keys()):
-              nodes_list = grouped_nodes[country]
-              counts = defaultdict(int)
-              for base, flag in nodes_list:
-                  counts[country] += 1
-                  idx = counts[country]
-                  final_nodes.append(f"{base}#{flag} 🏴 WLUnlocker {country} | #{idx} | {timestamp}")
+          total_count = sum(len(nodes) for nodes in grouped.values())
+          header = f"# profile-title: Blacklist All\n# profile-update-interval: 1\n# last-update: {timestamp}\n# кол-во: {total_count}\n\n"
+          final = [header]
+          for country in sorted(grouped.keys()):
+              for i, (base, flag) in enumerate(grouped[country], 1):
+                  final.append(f"{base}#{flag} 🏴 WLUnlocker {country} | #{i}")
 
           with open("blacklist_all.txt", "w", encoding="utf-8") as f:
-              f.write("\n".join(final_nodes))
+              f.write("\n".join(final))
 
       - name: Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_all.txt
-          git commit -m "sync: blacklist_all.txt updated" || exit 0
+          git commit -m "sync" || exit 0
           git push
