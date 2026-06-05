@@ -1,7 +1,7 @@
 name: Sync Blacklist All
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,10 @@ jobs:
           import requests
           import re
           from collections import defaultdict
+          from datetime import datetime
 
+          timestamp = datetime.now().strftime("%d.%m %H:%M")
+          
           sources = [
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt",
@@ -94,11 +97,8 @@ jobs:
               base_part = node.split('#')[0].strip()
               if base_part in seen_urls:
                   continue
-              
               c_flag, c_name = get_country_data(node)
-              if not c_name:
-                  continue
-                  
+              if not c_name: continue
               seen_urls.add(base_part)
               grouped_nodes[c_name].append((base_part, c_flag))
 
@@ -106,14 +106,10 @@ jobs:
           for country in sorted(grouped_nodes.keys()):
               nodes_list = grouped_nodes[country]
               counts = defaultdict(int)
-              
               for base, flag in nodes_list:
                   counts[country] += 1
                   idx = counts[country]
-                  final_nodes.append(f"{base}#{flag} 🏴 WLUnlocker {country} | #{idx}")
-
-          if not final_nodes:
-              exit(1)
+                  final_nodes.append(f"{base}#{flag} 🏴 WLUnlocker {country} | #{idx} | {timestamp}")
 
           with open("blacklist_all.txt", "w", encoding="utf-8") as f:
               f.write("\n".join(final_nodes))
