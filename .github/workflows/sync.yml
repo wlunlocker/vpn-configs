@@ -1,4 +1,4 @@
-name: WLUnlocker Filter Only Sync
+name: WLUnlocker Sync
 on:
   workflow_dispatch:
   schedule:
@@ -21,24 +21,29 @@ jobs:
           import os
 
           COUNTRIES = {
-              "FR": ("🇫🇷", "Франция", "FRANCE"),
-              "DE": ("🇩🇪", "Германия", "GERMANY"),
-              "NL": ("🇳🇱", "Нидерланды", "NETHERLANDS"),
-              "PL": ("🇵🇱", "Польша", "POLAND"),
-              "GB": ("🇬🇧", "Англия", "UNITED KINGDOM"),
-              "US": ("🇺🇸", "Америка", "USA"),
-              "EE": ("🇪🇪", "Эстония", "ЭСТОНИЯ"),
-              "FI": ("🇫🇮", "Финляндия", "FINLAND"),
-              "CA": ("🇨🇦", "Канада", "CANADA"),
-              "IE": ("🇮🇪", "Ирландия", "IRELAND"),
-              "RO": ("🇷🇴", "Румыния", "ROMANIA"),
-              "AT": ("🇦🇹", "Австрия", "AUSTRIA"),
-              "CH": ("🇨🇭", "Швейцария", "SWITZERLAND"),
-              "KZ": ("🇰🇿", "Казахстан", "KAZAKHSTAN"),
-              "JP": ("🇯🇵", "Япония", "JAPAN"),
-              "SE": ("🇸🇪", "Швеция", "SWEDEN"),
-              "TR": ("🇹🇷", "Турция", "TURKEY"),
-              "SG": ("🇸🇬", "Сингапур", "SINGAPORE")
+              "RU": ("🇷🇺", "Россия", "RUSSIA"), "US": ("🇺🇸", "Америка", "USA"), "DE": ("🇩🇪", "Германия", "GERMANY"),
+              "NL": ("🇳🇱", "Нидерланды", "NETHERLANDS"), "GB": ("🇬🇧", "Англия", "UNITED KINGDOM"), "FI": ("🇫🇮", "Финляндия", "FINLAND"),
+              "TR": ("🇹🇷", "Турция", "TURKEY"), "KZ": ("🇰🇿", "Казахстан", "KAZAKHSTAN"), "BY": ("🇧🇾", "Беларусь", "BELARUS"),
+              "AE": ("🇦🇪", "ОАЭ", "UAE"), "PL": ("🇵🇱", "Польша", "POLAND"), "FR": ("🇫🇷", "Франция", "FRANCE"),
+              "IE": ("🇮🇪", "Ирландия", "IRELAND"), "BE": ("🇧🇪", "Бельгия", "BELGIUM"), "CZ": ("🇨🇿", "Чехия", "CZECHIA"),
+              "BG": ("🇧🇬", "Болгария", "BULGARIA"), "AT": ("🇦🇹", "Австрия", "AUSTRIA"), "CH": ("🇨🇭", "Швейцария", "SWITZERLAND"),
+              "SE": ("🇸🇪", "Швеция", "SWEDEN"), "NO": ("🇳🇴", "Норвегия", "NORWAY"), "ES": ("🇪🇸", "Испания", "SPAIN"),
+              "IT": ("🇮🇹", "Италия", "ITALY"), "HU": ("🇭🇺", "Венгрия", "HUNGARY"), "RO": ("🇷🇴", "Румыния", "ROMANIA"),
+              "JP": ("🇯🇵", "Япония", "JAPAN"), "SG": ("🇸🇬", "Сингапур", "SINGAPORE"), "KR": ("🇰🇷", "Южная Корея", "SOUTH KOREA"),
+              "TJ": ("🇹🇯", "Таджикистан", "TAJIKISTAN"), "EE": ("🇪🇪", "Эстония", "ESTONIA"), "LV": ("🇱🇻", "Латвия", "LATVIA"),
+              "LT": ("🇱🇹", "Литва", "LITHUANIA"), "UA": ("🇺🇦", "Украина", "UKRAINE"), "AM": ("🇦🇲", "Армения", "ARMENIA"),
+              "GE": ("🇬🇪", "Грузия", "GEORGIA"), "UZ": ("🇺🇿", "Узбекистан", "UZBEKISTAN"), "MD": ("🇲🇩", "Молдова", "MOLDOVA"),
+              "AZ": ("🇦🇿", "Азербайджан", "AZERBAIJAN"), "KG": ("🇰🇬", "Киргизия", "KYRGYZSTAN"), "IL": ("🇮🇱", "Израиль", "ISRAEL"),
+              "CA": ("🇨🇦", "Канада", "CANADA"), "AU": ("🇦🇺", "Австралия", "AUSTRALIA"), "BR": ("🇧🇷", "Бразилия", "BRAZIL"),
+              "AR": ("🇦🇷", "Аргентина", "ARGENTINA"), "MX": ("🇲🇽", "Мексика", "MEXICO"), "IN": ("🇮🇳", "Индия", "INDIA"),
+              "HK": ("🇭🇰", "Гонконг", "HONG KONG"), "TW": ("🇹🇼", "Тайвань", "TAIWAN"), "VN": ("🇻🇳", "Вьетнам", "VIETNAM"),
+              "TH": ("🇹🇭", "Таиланд", "THAILAND"), "MY": ("🇲🇾", "Малайзия", "MALAYSIA"), "ID": ("🇮🇩", "Индонезия", "INDONESIA"),
+              "PH": ("🇵🇭", "Филиппины", "PHILIPPINES"), "PT": ("🇵🇹", "Португалия", "PORTUGAL"), "GR": ("🇬🇷", "Греция", "GREECE"),
+              "DK": ("🇩🇰", "Дания", "DENMARK"), "SK": ("🇸🇰", "Словакия", "SLOVAKIA"), "SI": ("🇸🇮", "Словения", "SLOVENIA"),
+              "HR": ("🇭🇷", "Хорватия", "CROATIA"), "RS": ("🇷🇸", "Сербия", "SERBIA"), "CY": ("🇨🇾", "Кипр", "CYPRUS"),
+              "LU": ("🇱🇺", "Люксембург", "LUXEMBOURG"), "IS": ("🇮🇸", "Исландия", "ICELAND"), "ZA": ("🇿🇦", "ЮАР", "SOUTH AFRICA"),
+              "CL": ("🇨🇱", "Чили", "CHILE"), "CO": ("🇨🇴", "Колумбия", "COLOMBIA"), "PE": ("🇵🇪", "Перу", "PERU"),
+              "NZ": ("🇳🇿", "Новая Зеландия", "NEW ZEALAND"), "EG": ("🇪🇬", "Египет", "EGYPT"), "SA": ("🇸🇦", "Саудовская Аравия", "SAUDI ARABIA")
           }
 
           def get_data(url):
@@ -65,42 +70,56 @@ jobs:
               "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
           ]
 
-          all_configs = []
+          black_lines = []
+          white_lines = []
+          seen_links = set()
 
-          for source_list, type_flag in [(urls_black, "🏴"), (urls_white, "🏳️")]:
-              for url in source_list:
-                  for item in get_data(url):
-                      try:
-                          link, name = item.split('#', 1)
-                          name_up = name.upper()
-                          for code, info in COUNTRIES.items():
-                              if code in name_up or info[1].upper() in name_up or info[2] in name_up:
-                                  all_configs.append({
-                                      'link': link, 'code': code, 'type_flag': type_flag
-                                  })
-                                  break
-                      except: pass
+          for url in urls_black:
+              for item in get_data(url):
+                  try:
+                      link, name = item.split('#', 1)
+                      if link in seen_links: continue
+                      name_up = name.upper()
+                      for code, info in COUNTRIES.items():
+                          if code in name_up or info[1].upper() in name_up or info[2] in name_up:
+                              seen_links.add(link)
+                              flag_emoji, rus_name, _ = info
+                              black_lines.append(f"{link}#{flag_emoji} 🏴 WLUnlocker {rus_name}")
+                              break
+                  except: pass
 
-          seen = set()
+          for url in urls_white:
+              for item in get_data(url):
+                  try:
+                      link, name = item.split('#', 1)
+                      if link in seen_links: continue
+                      name_up = name.upper()
+                      for code, info in COUNTRIES.items():
+                          if code in name_up or info[1].upper() in name_up or info[2] in name_up:
+                              seen_links.add(link)
+                              flag_emoji, rus_name, _ = info
+                              white_lines.append(f"{link}#{flag_emoji} 🏳️ WLUnlocker {rus_name}")
+                              break
+                  except: pass
+
           final_lines = []
+          for b, w in zip(black_lines, white_lines):
+              final_lines.append(b)
+              final_lines.append(w)
 
-          for c in all_configs:
-              key = (c['code'], c['type_flag'])
-              if key not in seen:
-                  seen.add(key)
-                  flag_emoji, rus_name, _ = COUNTRIES[c['code']]
-                  line = f"{c['link']}#{flag_emoji} {c['type_flag']} WLUnlocker {rus_name}"
-                  final_lines.append(line)
-              if len(final_lines) >= 50: break
+          if len(black_lines) > len(white_lines):
+              final_lines.extend(black_lines[len(white_lines):])
+          else:
+              final_lines.extend(white_lines[len(black_lines):])
 
           with open("filtered.txt", "w", encoding="utf-8") as f:
               f.write("# profile-title: 🏳️ WLUnlocker | ВСЕ 🏴\n# profile-update-interval: 1\n\n")
-              f.write("\n".join(final_lines))
+              f.write("\n".join(final_lines[:50]))
 
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered.txt
-          git commit -m "sync: cleaned code and removed lightnings" || exit 0
+          git commit -m "sync: expanded filtered.txt to all countries max 50" || exit 0
           git push
