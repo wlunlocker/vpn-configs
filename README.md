@@ -1,4 +1,4 @@
-# ⚡ WLUnlocker Project
+# ⚡ WLUnlocker (VPN)
 
 ## 📌 О проекте
 
