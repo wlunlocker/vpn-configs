@@ -26,23 +26,9 @@ jobs:
 
           COUNTRIES = {
               "RU": ("🇷🇺", "Russia"), "US": ("🇺🇸", "USA"), "DE": ("🇩🇪", "Germany"), "NL": ("🇳🇱", "Netherlands"),
-              "GB": ("🇬🇧", "United Kingdom"), "FI": ("🇫🇮", "Finland"), "TR": ("🇹🇷", "Turkey"), "KZ": ("🇰🇿", "Kazakhstan"),
-              "BY": ("🇧🇾", "Belarus"), "AE": ("🇦🇪", "UAE"), "PL": ("🇵🇱", "Poland"), "FR": ("🇫🇷", "France"),
-              "IE": ("🇮🇪", "Ireland"), "BE": ("🇧🇪", "Belgium"), "CZ": ("🇨🇿", "Czechia"), "BG": ("🇧🇬", "Bulgaria"),
-              "AT": ("🇦🇹", "Austria"), "CH": ("🇨🇭", "Switzerland"), "SE": ("🇸🇪", "Sweden"), "NO": ("🇳🇴", "Norway"),
-              "ES": ("🇪🇸", "Spain"), "IT": ("🇮🇹", "Italy"), "HU": ("🇭🇺", "Hungary"), "RO": ("🇷🇴", "Romania"),
-              "JP": ("🇯🇵", "Japan"), "SG": ("🇸🇬", "Singapore"), "KR": ("🇰🇷", "South Korea"), "TJ": ("🇹🇯", "Tajikistan"),
-              "EE": ("🇪🇪", "Estonia"), "LV": ("🇱🇻", "Latvia"), "LT": ("🇱🇹", "Lithuania"), "UA": ("🇺🇦", "Ukraine"),
-              "AM": ("🇦🇲", "Armenia"), "GE": ("🇬🇪", "Georgia"), "UZ": ("🇺🇿", "Uzbekistan"), "MD": ("🇲🇩", "Moldova"),
-              "AZ": ("🇦🇿", "Azerbaijan"), "KG": ("🇰🇬", "Kyrgyzstan"), "IL": ("🇮🇱", "Israel"), "CA": ("🇨🇦", "Canada"),
-              "AU": ("🇦🇺", "Australia"), "BR": ("🇧🇷", "Brazil"), "AR": ("🇦🇷", "Argentina"), "MX": ("🇲🇽", "Mexico"),
-              "IN": ("🇮🇳", "India"), "HK": ("🇭🇰", "Hong Kong"), "TW": ("🇹🇼", "Taiwan"), "VN": ("🇻🇳", "Vietnam"),
-              "TH": ("🇹🇭", "Thailand"), "MY": ("🇲🇾", "Malaysia"), "ID": ("🇮🇩", "Indonesia"), "PH": ("🇵🇭", "Philippines"),
-              "PT": ("🇵🇹", "Portugal"), "GR": ("🇬🇷", "Greece"), "DK": ("🇩🇰", "Denmark"), "SK": ("🇸🇰", "Slovakia"),
-              "SI": ("🇸🇮", "Slovenia"), "HR": ("🇭🇷", "Croatia"), "RS": ("🇷🇸", "Serbia"), "CY": ("🇨🇾", "Cyprus"),
-              "LU": ("🇱🇺", "Luxembourg"), "IS": ("🇮🇸", "Iceland"), "ZA": ("🇿🇦", "South Africa"), "CL": ("🇨🇱", "Chile"),
-              "CO": ("🇨🇴", "Colombia"), "PE": ("🇵🇪", "Peru"), "NZ": ("🇳🇿", "New Zealand"), "EG": ("🇪🇬", "Egypt"),
-              "SA": ("🇸🇦", "Saudi Arabia")
+              "GB": ("🇬🇧", "United Kingdom"), "FI": ("🇫🇮", "Finland"), "PL": ("🇵🇱", "Poland"), "FR": ("🇫🇷", "France"),
+              "IE": ("🇮🇪", "Ireland"), "AT": ("🇦🇹", "Austria"), "CH": ("🇨🇭", "Switzerland"), "KZ": ("🇰🇿", "Kazakhstan"),
+              "JP": ("🇯🇵", "Japan"), "RO": ("🇷🇴", "Romania"), "EE": ("🇪🇪", "Estonia"), "CA": ("🇨🇦", "Canada")
           }
 
           def get_data_ranged(url, start_line, end_line):
@@ -56,20 +42,16 @@ jobs:
                       for l in chunk:
                           if '#' in l and not l.startswith('//'):
                               collected.append(l)
-              except:
-                  pass
+              except: pass
               return collected
 
           def get_country_code(name):
+              name_clean = name.upper()
               for code in COUNTRIES:
-                  if re.search(rf'\b{code}\b', name, re.IGNORECASE):
-                      return code
-              for code in COUNTRIES:
-                  if code.lower() in name.lower():
-                      return code
+                  if re.search(rf'\b{code}\b', name_clean): return code
               return None
 
-          def format_and_save(raw_list, filename, profile_title):
+          def format_and_save(raw_list, filename, profile_title, flag_icon):
               tz = pytz.timezone('Europe/Moscow')
               now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
               final_configs = []
@@ -84,14 +66,13 @@ jobs:
                       final_configs.append({'link': link, 'code': found_code})
                   except: continue
               
-              final_configs.sort(key=lambda x: (x['code'] != 'RU', x['code']))
               with open(filename, 'w', encoding='utf-8') as f:
                   f.write(f"# profile-title: {profile_title}\n# profile-update-interval: 1\n# Last update: {now}\n\n")
                   counts = {}
                   for c in final_configs:
                       flag, full_name = COUNTRIES[c['code']]
                       num = counts.get(c['code'], 1)
-                      f.write(f"{c['link']}#{flag} WLUnlocker {full_name} | #{num}\n")
+                      f.write(f"{c['link']}#{flag} WLUnlocker {full_name} {num}\n")
                       counts[c['code']] = num + 1
 
           def format_and_save_filtered(list_black, list_white, filename, profile_title):
@@ -99,54 +80,48 @@ jobs:
               now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
               final_configs = []
               seen_links = set()
-              added_combos = set()
+              added = set()
               
-              def process_items(items, flag_type):
+              for items, type_flag in [(list_black, "🏴"), (list_white, "🏳️")]:
                   for item in items:
-                      if len(final_configs) >= 30: return
+                      if len(final_configs) >= 30: break
                       try:
                           link, name = item.split('#', 1)
                           if link in seen_links: continue
                           found_code = get_country_code(name)
-                          if not found_code: continue
+                          if found_code not in COUNTRIES: continue
                           
-                          combo = (found_code, flag_type)
-                          if combo not in added_combos:
+                          key = (found_code, type_flag)
+                          if key not in added:
                               seen_links.add(link)
-                              added_combos.add(combo)
+                              added.add(key)
                               flag, full_name = COUNTRIES[found_code]
-                              f_name = f"{flag}-{flag_type}-WLUnlocker-{full_name}"
-                              final_configs.append(f"{link}#{f_name}")
+                              final_configs.append(f"{link}#{flag} {type_flag} WLUnlocker {full_name}")
                       except: continue
-
-              process_items(list_black, "🏴")
-              process_items(list_white, "🏳️")
 
               with open(filename, 'w', encoding='utf-8') as f:
                   f.write(f"# profile-title: {profile_title}\n# profile-update-interval: 1\n# Last update: {now}\n\n")
-                  for cfg in final_configs:
-                      f.write(f"{cfg}\n")
+                  for cfg in final_configs: f.write(f"{cfg}\n")
 
-          url_vless_mob = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt"
-          url_vless = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt"
-          url_wangcai = "https://shz.al/~WangCai"
-          url_sni = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt"
-          url_cidr_chk = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt"
-          url_cidr_all = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
+          urls = {
+              "vmob": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt",
+              "vfull": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt",
+              "wang": "https://shz.al/~WangCai",
+              "sni": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt",
+              "cchk": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-checked.txt",
+              "call": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt"
+          }
           
-          format_and_save(get_data_ranged(url_vless_mob, 7, 156) + get_data_ranged(url_wangcai, 1, 50), "vpnstable.txt", "ЧЕРНЫЕ СПИСКИ №1 (VPN)")
-          format_and_save(get_data_ranged(url_vless, 7, 157) + get_data_ranged(url_wangcai, 107, 999), "vpnfull.txt", "ЧЕРНЫЕ СПИСКИ №2 (VPN)")
-          format_and_save(get_data_ranged(url_sni, 7, 106) + get_data_ranged(url_cidr_all, 157, 258), "awlone.txt", "БЕЛЫЕ СПИСКИ №1 (LTE)")
-          format_and_save(get_data_ranged(url_cidr_chk, 7, 999) + get_data_ranged(url_cidr_all, 7, 156), "awltwo.txt", "БЕЛЫЕ СПИСКИ №2 (LTE)")
-
-          black_raw = get_data_ranged(url_vless_mob, 7, 9999) + get_data_ranged(url_vless, 7, 9999) + get_data_ranged(url_wangcai, 7, 9999)
-          white_raw = get_data_ranged(url_sni, 7, 9999) + get_data_ranged(url_cidr_chk, 7, 9999) + get_data_ranged(url_cidr_all, 7, 9999)
-          format_and_save_filtered(black_raw, white_raw, "filtered.txt", "WLUnlocker Filtered")
+          format_and_save(get_data_ranged(urls['sni'], 7, 999), "awlone.txt", "🏳️ГЛУШИЛКИ #1 (ВСЕ СЕРВЕРА)🏳️", "🏳️")
+          format_and_save(get_data_ranged(urls['cchk'], 7, 999), "awltwo.txt", "🏳️ГЛУШИЛКИ #2🏳️", "🏳️")
+          format_and_save(get_data_ranged(urls['vfull'], 7, 999), "vpnfull.txt", "🏴VPN #1 (ВСЕ СЕРВЕРА)🏴", "🏴")
+          format_and_save(get_data_ranged(urls['vmob'], 7, 999) + get_data_ranged(urls['wang'], 1, 999), "vpnsecond.txt", "🏴VPN #2🏴", "🏴")
+          format_and_save_filtered(get_data_ranged(urls['vmob'], 7, 999) + get_data_ranged(urls['vfull'], 7, 999), get_data_ranged(urls['sni'], 7, 999), "filtered.txt", "🏳️СТАБИЛЬНАЯ🏴")
 
       - name: Commit and Push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "sync: added filtered subscription with strict naming and limits" || exit 0
+          git commit -m "sync: updated naming logic and filtered subscription" || exit 0
           git push
