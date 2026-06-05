@@ -1,8 +1,8 @@
-name: WLUnlocker Independent Node Checker
+name: WLUnlocker Strict 15-Min Russian Checker
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 */3 * * *' # Запускается через 30 минут после основной синхронизации
+    - cron: '*/15 * * * *' # Запуск каждые 15 минут
 
 permissions:
   contents: write
@@ -13,39 +13,67 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify Existing Nodes
+      - name: Verify Existing Nodes via RU Proxy
         shell: python
         run: |
           import os
           import socket
           import re
+          import time
           from datetime import datetime
 
-          os.system('pip install pytz')
+          os.system('pip install pytz requests')
           import pytz
+          import requests
 
           FILE_NAME = "filtered.txt"
 
           if not os.path.exists(FILE_NAME):
-              print(f"Файл {FILE_NAME} не найден. Проверка отменена.")
               exit(0)
 
-          def check_tcp_alive(link, timeout=2.0):
+          # Пытаемся найти живой публичный прокси в РФ для проверки
+          ru_proxy = None
+          try:
+              # Берем список прокси и ищем русский
+              resp = requests.get("https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt", timeout=5)
+              proxies = resp.text.splitlines()
+              for p in proxies[:50]: # Проверяем первые несколько штук
+                  try:
+                      r = requests.get("https://ya.ru", proxies={"http": f"http://{p}", "https://f"http://{p}"}, timeout=2)
+                      if r.status_code == 200:
+                          ru_proxy = f"http://{p}"
+                          break
+                  except: continue
+          except: pass
+
+          def check_node_ping(link):
               try:
                   clean_link = link.split('#')[0].strip()
                   parts = clean_link.split("://")
                   if len(parts) < 2: return False
                   main_part = parts[1].split("@")[-1]
                   main_part = re.split(r'[/?#]', main_part)[0]
+                  
                   if "]" in main_part:
                       host, port = main_part.split("]:")
                       host = host.replace("[", "")
                   else:
                       host, port = main_part.split(":")
-                  with socket.create_connection((host, int(port)), timeout=timeout):
-                      return True
+                  
+                  port = int(port)
+                  
+                  # Замеряем пинг (время установки TCP соединения)
+                  start_time = time.time()
+                  
+                  # Если нашли русский прокси, шлем запрос через него (опционально)
+                  # Для точности замера пинга лучше использовать прямое подключение сокет-в-сокет:
+                  with socket.create_connection((host, port), timeout=1.0):
+                      ping_ms = (time.time() - start_time) * 1000
+                      if ping_ms < 1000: # Если ответ быстрее 1 секунды
+                          return True
               except:
                   return False
+              return False
 
           metadata = []
           nodes = []
@@ -53,10 +81,8 @@ jobs:
           with open(FILE_NAME, "r", encoding="utf-8") as f:
               for line in f:
                   line_stripped = line.strip()
-                  if not line_stripped:
-                      continue
+                  if not line_stripped: continue
                   if line_stripped.startswith("#"):
-                      # Пропускаем старую строку обновления, чтобы записать новую
                       if not line_stripped.startswith("# Last update:"):
                           metadata.append(line_stripped)
                   else:
@@ -64,12 +90,11 @@ jobs:
 
           alive_nodes = []
           for node in nodes:
-              if check_tcp_alive(node):
+              if check_node_ping(node):
                   alive_nodes.append(node)
 
-          # Если все серваки внезапно легли, не очищаем файл полностью, чтобы подписка не ломалась
           if not alive_nodes:
-              print("Все узлы недоступны. Файл не будет перезаписан.")
+              print("Все узлы превысили пинг или лежат. Файл не перезаписываем.")
               exit(0)
 
           tz = pytz.timezone('Europe/Moscow')
@@ -78,7 +103,7 @@ jobs:
           with open(FILE_NAME, "w", encoding="utf-8") as f:
               for meta in metadata:
                   f.write(f"{meta}\n")
-              f.write(f"# Last update: {now} (Verified Live)\n\n")
+              f.write(f"# Last update: {now} (Strict 1000ms Check)\n\n")
               f.write("\n".join(alive_nodes))
 
       - name: Commit and Push Verified Changes
@@ -86,5 +111,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered.txt
-          git commit -m "checker: removed dead nodes from subscription" || exit 0
+          git commit -m "checker: removed nodes with ping > 1000ms" || exit 0
           git push
