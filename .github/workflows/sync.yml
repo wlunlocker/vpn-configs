@@ -24,7 +24,6 @@ jobs:
           os.system('pip install pytz')
           import pytz
 
-          # Полный пул стран
           COUNTRIES = {
               "RU": ("🇷🇺", "Россия", "RUSSIA"), "US": ("🇺🇸", "Америка", "USA"), "DE": ("🇩🇪", "Германия", "GERMANY"),
               "NL": ("🇳🇱", "Нидерланды", "NETHERLANDS"), "GB": ("🇬🇧", "Англия", "UNITED KINGDOM"), "FI": ("🇫🇮", "Финляндия", "FINLAND"),
@@ -51,7 +50,6 @@ jobs:
               "NZ": ("🇳🇿", "Новая Зеландия", "NEW ZEALAND"), "EG": ("🇪🇬", "Египет", "EGYPT"), "SA": ("🇸🇦", "Саудовская Аравия", "SAUDI ARABIA")
           }
 
-          # Твои приоритетные страны
           PREFERRED = {"FR", "DE", "NL", "PL", "GB", "US", "EE", "FI", "CA", "IE", "RO", "AT", "CH", "KZ", "JP"}
 
           def get_data(url):
@@ -97,40 +95,34 @@ jobs:
                                   })
                                   break
                       except: pass
-              # Сортируем: сначала True (приоритетные), потом False (остальные)
               collected.sort(key=lambda x: not x['preferred'])
               return collected
 
           black_raw = process_source(urls_black)
           white_raw = process_source(urls_white)
 
-          # Строгий баланс: берем поровну, максимум по 20 штук на сторону (всего 40)
-          per_side_limit = min(len(black_raw), len(white_raw), 20)
-          black_raw = black_raw[:per_side_limit]
-          white_raw = white_raw[:per_side_limit]
-
-          # Форматирование списков с раздельной нумерацией повторок
           def format_output(raw_list, flag_icon):
               formatted = []
               counts = {}
               for c in raw_list:
                   flag_emoji, rus_name, _ = c['info']
                   num = counts.get(rus_name, 1)
-                  formatted.append(f"{c['link']}#{flag_emoji} {flag_icon} {rus_name} | #{num}")
+                  if num > 3:
+                      continue
+                  formatted.append(f"{c['link']}#{flag_emoji} {flag_icon} WLUnlocker {rus_name} | #{num}")
                   counts[rus_name] = num + 1
               return formatted
 
           black_results = format_output(black_raw, "🏴")
           white_results = format_output(white_raw, "🏳️")
 
-          # Сначала черные, потом белые
-          final_list = black_results + white_results
+          final_list = (black_results + white_results)[:40]
 
           tz = pytz.timezone('Europe/Moscow')
           now = datetime.now(tz).strftime('%d.%m.%Y %H:%M MSK')
 
           with open("filtered.txt", "w", encoding="utf-8") as f:
-              f.write("# profile-title: WLUnlocker\n")
+              f.write("# profile-title: 🏳️ БС/ЧС - ВСЕ 🏴\n")
               f.write("# profile-desc: Сервера от белых списков (антиглушилки) помечены 🏳️, от черных списков (VPN) 🏴 Telegram: @wlunlocker\n")
               f.write("# profile-update-interval: 1\n")
               f.write(f"# Last update: {now}\n\n")
@@ -141,5 +133,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered.txt
-          git commit -m "sync: 40 limit, strictly balanced black/white, country priority" || exit 0
+          git commit -m "sync: max 3 per country, removed balance limit, updated titles" || exit 0
           git push
