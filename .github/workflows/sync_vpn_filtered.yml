@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run Filtered Sync
+      - name: Run Filtered Sync with Pinger
         shell: python
         run: |
-          import requests, datetime
+          import requests, datetime, socket, urllib.parse
           
           mapping = {
               "pl": ["🇵🇱", "Польша"],
@@ -28,7 +28,33 @@ jobs:
               "ch": ["🇨🇭", "Швейцария"]
           }
           
-          # Отслеживаем уникальность пары (Страна, Протокол)
+          def check_tcp(link, proto):
+              try:
+                  if proto == "ss":
+                      # Формат: ss://base64@host:port или ss://host:port
+                      url_str = link.split('#')[0]
+                      parsed = urllib.parse.urlparse(url_str)
+                      host_port = parsed.netloc.split('@')[-1]
+                      host, port = host_port.split(':')
+                  elif proto in ["vless", "hysteria2"]:
+                      # Формат: proto://uuid@host:port
+                      url_str = link.split('#')[0]
+                      parsed = urllib.parse.urlparse(url_str)
+                      host, port = parsed.netloc.split('@')[-1].split(':')
+                  else:
+                      return False
+                      
+                  port = int(port.split('?')[0])
+                  
+                  # Пробуем подключиться к порту сервера напрямую
+                  s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                  s.settimeout(2.0)
+                  s.connect((host, port))
+                  s.close()
+                  return True
+              except:
+                  return False
+          
           added_pairs = set()
           final_nodes = []
           
@@ -37,7 +63,7 @@ jobs:
               if res.status_code == 200:
                   lines = [line.strip() for line in res.text.splitlines() if line.strip()]
                   
-                  # Первый проход: Ищем строго VLESS (максимум 10 серверов, без дублей стран внутри VLESS)
+                  # Первый проход: собираем живые VLESS (до 10 штук)
                   for line in lines:
                       if not line.startswith("vless://"):
                           continue
@@ -50,14 +76,16 @@ jobs:
                               break
                               
                       if found_code and (found_code, "vless") not in added_pairs:
-                          added_pairs.add((found_code, "vless"))
-                          flag, country_name = mapping[found_code]
-                          clean_node = line.split('#')[0].strip()
-                          final_nodes.append((clean_node, flag, country_name))
-                          if len(final_nodes) == 10:
-                              break
+                          # Если прокси отвечает на пинг — забираем, если нет — цикл крутит дальше и ищет замену
+                          if check_tcp(line, "vless"):
+                              added_pairs.add((found_code, "vless"))
+                              flag, country_name = mapping[found_code]
+                              clean_node = line.split('#')[0].strip()
+                              final_nodes.append((clean_node, flag, country_name))
+                              if len(final_nodes) == 10:
+                                  break
                               
-                  # Второй проход: Добираем SS и Hysteria2 (до 15 серверов, страна может дублироваться, если протокол другой)
+                  # Второй проход: добираем живые SS и Hysteria2 (до 15 штук суммарно)
                   for line in lines:
                       if len(final_nodes) >= 15:
                           break
@@ -77,10 +105,11 @@ jobs:
                               break
                               
                       if found_code and (found_code, proto) not in added_pairs:
-                          added_pairs.add((found_code, proto))
-                          flag, country_name = mapping[found_code]
-                          clean_node = line.split('#')[0].strip()
-                          final_nodes.append((clean_node, flag, country_name))
+                          if check_tcp(line, proto):
+                              added_pairs.add((found_code, proto))
+                              flag, country_name = mapping[found_code]
+                              clean_node = line.split('#')[0].strip()
+                              final_nodes.append((clean_node, flag, country_name))
           except Exception as e:
               print(f"Error: {e}")
           
@@ -100,6 +129,6 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add filtered_vpn.txt
-          git commit -m "sync: filtered vpn" || echo "No changes"
+          git commit -m "sync: filtered vpn with ping" || echo "No changes"
           git pull --rebase origin main
           git push origin main --force-with-lease
