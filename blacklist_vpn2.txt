@@ -1,4 +1,4 @@
-# profile-title: VPN 2
+# profile-title: VPN 2 (SS+OTHER)
 # last-update: 06.06.00
 # count: 199
 hysteria2://dongtaiwang.com@62.210.124.146:22000/?insecure=1&sni=www.microsoft.com#🇫🇷 🏳️ WLUnlocker Франция | #1
