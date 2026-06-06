@@ -27,20 +27,21 @@ jobs:
                       nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
               except: continue
           
-          # Настройка: код -> [эмодзи_флаг, русское_название]
           mapping = {
-              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], 
-              "sg": ["🇸🇬", "Сингапур"], "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], 
-              "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], "fr": ["🇫🇷", "Франция"], 
-              "ru": ["🇷🇺", "Россия"], "fi": ["🇫🇮", "Финляндия"], "se": ["🇸🇪", "Швеция"]
+              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], "sg": ["🇸🇬", "Сингапур"], 
+              "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], 
+              "fr": ["🇫🇷", "Франция"], "ru": ["🇷🇺", "Россия"], "fi": ["🇫🇮", "Финляндия"], "se": ["🇸🇪", "Швеция"],
+              "no": ["🇳🇴", "Норвегия"], "dk": ["🇩🇰", "Дания"], "it": ["🇮🇹", "Италия"], "es": ["🇪🇸", "Испания"],
+              "pl": ["🇵🇱", "Польша"], "at": ["🇦🇹", "Австрия"], "be": ["🇧🇪", "Бельгия"], "ie": ["🇮🇪", "Ирландия"]
           }
           
           final = []
-          for i, n in enumerate(list(dict.fromkeys(nodes))[:200]):
+          for n in list(dict.fromkeys(nodes))[:200]:
               raw = n.split('#')[-1].lower()
               code = next((c for c in mapping if c in raw), None)
-              flag, name = mapping.get(code, ["🌐", "Мир"])
-              final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{i+1}")
+              if code:
+                  flag, name = mapping[code]
+                  final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
           
           header = f"# profile-title: VPN 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
           with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
