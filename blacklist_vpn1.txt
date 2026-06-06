@@ -1,4 +1,4 @@
-# profile-title: VPN 1
+# profile-title: VPN 1 (VLESS)
 # last-update: 06.06.00
 # count: 71
 vless://a2415a12-3f92-4636-9823-9828d3ceb818@103.119.19.179:8443?type=tcp&security=reality&pbk=vo6Xrwkla8OBS5O6lEinNvHXxW8DxCmb8HGHD86VzkU&fp=firefox&sni=www.google.com&sid=0e#🇨🇭 🏴 WLUnlocker Швейцария | #1
