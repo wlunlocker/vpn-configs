@@ -28,8 +28,8 @@ jobs:
               "ch": ["🇨🇭", "Швейцария"]
           }
           
-          limits = {"ss": 3, "hysteria2": 3, "vless": 4}
-          counts = {"ss": 0, "hysteria2": 0, "vless": 0}
+          limits = {"vless": 5, "ss": 5}
+          counts = {"vless": 0, "ss": 0}
           
           added_countries = set()
           final = []
@@ -41,9 +41,8 @@ jobs:
                       line = line.strip()
                       
                       proto = None
-                      if line.startswith("ss://"): proto = "ss"
-                      elif line.startswith("hysteria2://"): proto = "hysteria2"
-                      elif line.startswith("vless://"): proto = "vless"
+                      if line.startswith("vless://"): proto = "vless"
+                      elif line.startswith("ss://"): proto = "ss"
                       
                       if not proto or counts[proto] >= limits[proto]:
                           continue
