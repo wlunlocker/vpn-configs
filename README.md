@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/github/last-commit/wlunlocker/vpn-configs?style=for-the-badge&logo=git">
   <img src="https://img.shields.io/badge/Available_on-GitHub-orange?style=for-the-badge&logo=github">
   <img src="https://img.shields.io/badge/Keys_Count-1500+-purple?style=for-the-badge&logo=keybase">
-  <img src="https://img.shields.io/badge/Update-Every_15_min-red?style=for-the-badge&logo=clockify">
+  <img src="https://img.shields.io/badge/Update-Every_hour-red?style=for-the-badge&logo=clockify">
 </p>
 
 ## 📌 О проекте
