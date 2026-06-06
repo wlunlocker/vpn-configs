@@ -59,7 +59,7 @@ jobs:
                       break
           
           total = sum(len(nodes) for nodes in grouped.values())
-          final = [f"# profile-title: VPN - ВСЕ СЕРВЕРА\n# profile-update-interval: 1\n# last-update: {timestamp}\n# кол-во: {total}"]
+          final = [f"# profile-title: 🌐🏴VPN - ВСЕ СЕРВЕРА\n# profile-update-interval: 1\n# last-update: {timestamp}\n# кол-во: {total}"]
           for country in sorted(grouped.keys()):
               for i, (base, flag) in enumerate(grouped[country], 1):
                   final.append(f"{base}#{flag} 🏴 WLUnlocker {country} | #{i}")
