@@ -1,4 +1,4 @@
-- name: Sync VPN 1
+name: Sync VPN 1
 on:
   schedule:
     - cron: '0 * * * *'
@@ -21,21 +21,26 @@ jobs:
           ]
           nodes = []
           for url, skip in sources:
-              r = requests.get(url)
-              if r.status_code == 200:
-                  nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
+              try:
+                  r = requests.get(url, timeout=15)
+                  if r.status_code == 200:
+                      nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
+              except: continue
           
-          flag_map = {"us": "🇺🇸", "de": "🇩🇪", "nl": "🇳🇱", "sg": "🇸🇬", "jp": "🇯🇵", "gb": "🇬🇧", "ca": "🇨🇦", "ch": "🇨🇭", "fr": "🇫🇷", "ru": "🇷🇺", "fi": "🇫🇮", "se": "🇸🇪"}
+          flag_map = {"us":"🇺🇸","de":"🇩🇪","nl":"🇳🇱","sg":"🇸🇬","jp":"🇯🇵","gb":"🇬🇧","ca":"🇨🇦","ch":"🇨🇭","fr":"🇫🇷","ru":"🇷🇺","fi":"🇫🇮","se":"🇸🇪"}
           final = []
           for i, n in enumerate(list(dict.fromkeys(nodes))[:200]):
-              raw_name = n.split('#')[-1].lower()
-              flag = next((f for country, f in flag_map.items() if country in raw_name), "🌐")
-              clean_n = n.split('#')[0].strip()
-              final.append(f"{clean_n}#{flag} VPN 1 | #{i+1}")
+              raw = n.split('#')[-1].lower()
+              flag = next((f for c, f in flag_map.items() if c in raw), "🌐")
+              final.append(f"{n.split('#')[0].strip()}#{flag} VPN 1 | #{i+1}")
           
-          header = f"# profile-title: VPN #1 (VLESS)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
-          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n" + "\n".join(final))
-      - name: Push
+          header = f"# profile-title: VPN 1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
+      - name: Push Changes
         run: |
-          git config user.name "GitHub Actions"; git config user.email "actions@github.com"
-          git add blacklist_vpn1.txt; git commit -m "sync: vpn1" || exit 0; git push
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add blacklist_vpn1.txt
+          git commit -m "sync: vpn1 update" || echo "No changes"
+          git pull --rebase origin main
+          git push origin main
