@@ -29,7 +29,6 @@ An automated generator of clean, verified, and stable subscriptions for bypassin
 | 🏳️ **WHITELIST CIDR 3 EU** | European IP ranges for stable access to foreign services | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt)` |
 | 🏴 **BLACKLIST VPN 1** | Blacklists for mobile networks, resistant to TSPU interference | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt)` |
 | 🏴 **BLACKLIST VPN 2** | Standard blacklists for PC and home routers | `[https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt](https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt)` |\
-| 🏴 **FILLTERED VPN** | 3 protocols, best countries, ideal filtered subscription for your TV. |  `https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/filtered_vpn.txt` |
 
 ---
 
