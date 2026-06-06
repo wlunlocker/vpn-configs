@@ -22,14 +22,14 @@
 
 | Тип подписки | Описание | Ссылка на RAW (Копировать) |
 | :--- | :--- | :--- |
-| 🌐 🏳️ WHITELIST ALL | Полный набор белых списков серверов.<br>**Серверов:** {whitelist_all} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/whitelist_all.txt |
-| 🌐 🏴 BLACKLIST ALL/VPN | Полный набор черных списков серверов.<br>**Серверов:** {blacklist_all} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/blacklist_all.txt |
-| 🏳️ WHITELIST CIDR 1 | Первая часть конфигураций IP диапазонов.<br>**Серверов:** {whitelist_cidr1} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/whitelist_cidr1_ru.txt |
-| 🏳️ WHITELIST CIDR 2 | Вторая часть конфигураций IP диапазонов.<br>**Серверов:** {whitelist_cidr2} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/whitelist_cidr2_ru.txt |
-| 🏳️ WHITELIST CIDR 3 | Европейские IP диапазоны и конфигурации.<br>**Серверов:** {whitelist_cidr3} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/whitelist_cidr3_eu.txt |
-| 🏴 BLACKLIST VPN 1 | Черные списки обхода блокировок (VLESS).<br>**Серверов:** {blacklist_vpn1} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/blacklist_vpn1.txt |
-| 🏴 BLACKLIST VPN 2 | Стандартные списки обхода блокировок (SS).<br>**Серверов:** {blacklist_vpn2} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/blacklist_vpn2.txt |
-| 🏴 Фильтрованная | Лучшие страны, приоритет VLESS, для ТВ.<br>**Серверов:** {filtered_vpn} | https://raw.githubusercontent.com/твой_юзернейм/твой_репозиторий/main/filtered_vpn.txt |
+| 🌐 🏳️ WHITELIST ALL | Полный набор белых списков серверов.<br>**Серверов:** {whitelist_all} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt |
+| 🌐 🏴 BLACKLIST ALL/VPN | Полный набор черных списков серверов.<br>**Серверов:** {blacklist_all} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt |
+| 🏳️ WHITELIST CIDR 1 | Первая часть конфигураций IP диапазонов.<br>**Серверов:** {whitelist_cidr1} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt |
+| 🏳️ WHITELIST CIDR 2 | Вторая часть конфигураций IP диапазонов.<br>**Серверов:** {whitelist_cidr2} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt |
+| 🏳️ WHITELIST CIDR 3 | Европейские IP диапазоны и конфигурации.<br>**Серверов:** {whitelist_cidr3} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt |
+| 🏴 BLACKLIST VPN 1 | Черные списки обхода блокировок (VLESS).<br>**Серверов:** {blacklist_vpn1} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt |
+| 🏴 BLACKLIST VPN 2 | Стандартные списки обхода блокировок (SS).<br>**Серверов:** {blacklist_vpn2} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt |
+| 🏴 Фильтрованная | Лучшие страны, приоритет VLESS, для ТВ.<br>**Серверов:** {filtered_vpn} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/filtered_vpn.txt |
 
 ---
 
