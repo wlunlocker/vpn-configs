@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 06.06.14
+# last-update: 06.06.16
 # count: 167
 vless://394f6981-a782-4779-9a85-e6cf22935d93@95.173.193.211:8443?type=tcp&security=tls&encryption=none&sni=syd-au-01.fromblancwithlove.com#🇺🇸 🏴 WLUnlocker США | #1
 vless://394f6981-a782-4779-9a85-e6cf22935d93@207.211.214.42:8443?type=tcp&security=tls&encryption=none&sni=bru-be-01.fromblancwithlove.com#🇺🇸 🏴 WLUnlocker США | #2
