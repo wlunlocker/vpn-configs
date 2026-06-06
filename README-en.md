@@ -64,21 +64,22 @@ Data sources are updated via the following algorithm:
 
 ## 📋 Configuration Sources
 
-**VPN #1 (VLESS):**
+### VPN #1 (VLESS):
+BLACK_VLESS_RUS_mobile.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt
 
-* BLACK_VLESS_RUS_mobile.txt - [https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt](https://www.google.com/search?q=https%3A%2F%2Fraw.githubusercontent.com%2Figareck%2Fvpn-configs-for-russia%2Frefs%2Fheads%2Fmain%2FBLACK_VLESS_RUS_mobile.txt)
-* BLACK_VLESS_RUS.txt - [https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt](https://www.google.com/search?q=https%3A%2F%2Fraw.githubusercontent.com%2Figareck%2Fvpn-configs-for-russia%2Frefs%2Fheads%2Fmain%2FBLACK_VLESS_RUS.txt)
-* WangCai - [https://shz.al/~WangCai](https://www.google.com/search?q=https%3A%2F%2Fshz.al%2F%7EWangCai)
+BLACK_VLESS_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt
 
-**VPN #2 (SS + Hysteria2):**
+WangCai - https://shz.al/~WangCai
 
-* BLACK_SS+All_RUS.txt - [https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt](https://www.google.com/search?q=https%3A%2F%2Fraw.githubusercontent.com%2Figareck%2Fvpn-configs-for-russia%2Frefs%2Fheads%2Fmain%2FBLACK_SS%252BAll_RUS.txt)
-* FreeProxyList (mirror) - [https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt](https://www.google.com/search?q=https%3A%2F%2Fraw.githubusercontent.com%2Fnikita29a%2FFreeProxyList%2Frefs%2Fheads%2Fmain%2Fmirror%2F1.txt)
+### VPN #2 (SS + Hysteria2):
+BLACK_SS+All_RUS.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt
 
-**Whitelist (CIDR & SNI):**
+FreeProxyList (mirror) - https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt
 
-* WHITE-SNI-RU-all.txt - [https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt](https://www.google.com/search?q=https%3A%2F%2Fraw.githubusercontent.com%2Figareck%2Fvpn-configs-for-russia%2Frefs%2Fheads%2Fmain%2FWHITE-SNI-RU-all.txt)
-* ByeWhiteLists2 - [https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt](https://www.google.com/search?q=https%3A%2F%2Fraw.githubusercontent.com%2FByeWhiteLists%2FByeWhiteLists2%2Frefs%2Fheads%2Fmain%2FByeWhiteLists2.txt)
+### Whitelist (CIDR & SNI):
+WHITE-SNI-RU-all.txt - https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt
+
+ByeWhiteLists2 - https://raw.githubusercontent.com/ByeWhiteLists/ByeWhiteLists2/refs/heads/main/ByeWhiteLists2.txt
 
 ---
 
