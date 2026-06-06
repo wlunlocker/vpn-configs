@@ -13,7 +13,7 @@ jobs:
       - name: Parse Subscriptions and Update README
         shell: python
         run: |
-          import re
+          import re, os
           
           def get_count(filename):
               try:
