@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Parse Subscriptions and Update README
+      - name: Parse Subscriptions and Update Both READMEs
         shell: python
         run: |
           import re, os
@@ -19,11 +19,9 @@ jobs:
               try:
                   with open(filename, 'r', encoding='utf-8') as f:
                       content = f.read()
-                      
                       match = re.search(r'#\s*(?:count|кол-во|кол-во серверов):\s*(\d+)', content, re.IGNORECASE)
                       if match:
                           return match.group(1)
-                      
                       lines = content.splitlines()
                       valid_nodes = [l for l in lines if l.strip().startswith(('vless://', 'ss://', 'hysteria2://', 'trojan://', 'shadowsocks://'))]
                       if valid_nodes:
@@ -32,39 +30,71 @@ jobs:
                   pass
               return "0"
 
-          counts = {
-              "whitelist_all": get_count("whitelist_all.txt"),
-              "blacklist_all": get_count("blacklist_all.txt"),
-              "whitelist_cidr1": get_count("whitelist_cidr1_ru.txt"),
-              "whitelist_cidr2": get_count("whitelist_cidr2_ru.txt"),
-              "whitelist_cidr3": get_count("whitelist_cidr3_eu.txt"),
-              "blacklist_vpn1": get_count("blacklist_vpn1.txt"),
-              "blacklist_vpn2": get_count("blacklist_vpn2.txt"),
-              "filtered_vpn": get_count("filtered_vpn.txt")
+          c = {
+              "wl_all": get_count("whitelist_all.txt"),
+              "bl_all": get_count("blacklist_all.txt"),
+              "cidr1": get_count("whitelist_cidr1_ru.txt"),
+              "cidr2": get_count("whitelist_cidr2_ru.txt"),
+              "cidr3": get_count("whitelist_cidr3_eu.txt"),
+              "vpn1": get_count("blacklist_vpn1.txt"),
+              "vpn2": get_count("blacklist_vpn2.txt"),
+              "filtered": get_count("filtered_vpn.txt")
           }
 
-          with open("README.md", "r", encoding="utf-8") as f:
-              readme = f.read()
+          ru_table = f"""
+### 🇷🇺 Список подписок
 
-          pattern = r"()(.*?)()"
-          match = re.search(pattern, readme, re.DOTALL)
+| Тип подписки | Описание | Ссылка на RAW (Копировать) |
+| :--- | :--- | :--- |
+| 🌐 🏳️ WHITELIST ALL | Полный набор белых списков серверов.<br>**Серверов:** {c['wl_all']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt |
+| 🌐 🏴 BLACKLIST ALL/VPN | Полный набор черных списков серверов.<br>**Серверов:** {c['bl_all']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt |
+| 🏳️ WHITELIST CIDR 1 | Первая часть конфигураций IP диапазонов.<br>**Серверов:** {c['cidr1']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt |
+| 🏳️ WHITELIST CIDR 2 | Вторая часть конфигураций IP диапазонов.<br>**Серверов:** {c['cidr2']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt |
+| 🏳️ WHITELIST CIDR 3 | Европейские IP диапазоны и конфигурации.<br>**Серверов:** {c['cidr3']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt |
+| 🏴 BLACKLIST VPN 1 | Черные списки обхода блокировок (VLESS).<br>**Серверов:** {c['vpn1']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt |
+| 🏴 BLACKLIST VPN 2 | Стандартные списки обхода блокировок (SS).<br>**Серверов:** {c['vpn2']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt |
+| 🏴 Фильтрованная | Лучшие страны, приоритет VLESS, для ТВ.<br>**Серверов:** {c['filtered']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/filtered_vpn.txt |
+"""
 
-          if match:
-              table_content = match.group(2)
-              
-              for key, val in counts.items():
-                  table_content = re.sub(r'(\*\*Серверов:\*\*|\*\*Servers:\*\*)\s*(\{\s*' + key + r'\s*\}|\d+)', f'\\1 {val}', table_content)
+          en_table = f"""
+### 🇬🇧 Subscription List
 
-              new_readme = readme[:match.start(2)] + table_content + readme[match.end(2):]
-              
-              with open("README.md", "w", encoding="utf-8") as f:
-                  f.write(new_readme)
+| Subscription Type | Description | RAW Link (Copy) |
+| :--- | :--- | :--- |
+| 🌐 🏳️ WHITELIST ALL | Complete set of whitelisted servers.<br>**Servers:** {c['wl_all']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_all.txt |
+| 🌐 🏴 BLACKLIST ALL/VPN | Complete set of blacklisted servers.<br>**Servers:** {c['bl_all']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_all.txt |
+| 🏳️ WHITELIST CIDR 1 | First part of IP range configurations.<br>**Servers:** {c['cidr1']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr1_ru.txt |
+| 🏳️ WHITELIST CIDR 2 | Second part of IP range configurations.<br>**Servers:** {c['cidr2']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr2_ru.txt |
+| 🏳️ WHITELIST CIDR 3 | European IP ranges and configurations.<br>**Servers:** {c['cidr3']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt |
+| 🏴 BLACKLIST VPN 1 | Anti-censorship blacklists (VLESS).<br>**Servers:** {c['vpn1']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt |
+| 🏴 BLACKLIST VPN 2 | Standard anti-censorship blacklists (SS).<br>**Servers:** {c['vpn2']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt |
+| 🏴 Filtered | Premium countries, VLESS priority, ideal for TV.<br>**Servers:** {c['filtered']} | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/filtered_vpn.txt |
+"""
+
+          def update_file(filepath, content_template):
+              if os.path.exists(filepath):
+                  with open(filepath, "r", encoding="utf-8") as f:
+                      text = f.read()
+                  
+                  pattern = r".*?"
+                  if "" in text and "" in text:
+                      new_block = f"{content_template}"
+                      updated_text = re.sub(pattern, new_block, text, flags=re.DOTALL)
+                      with open(filepath, "w", encoding="utf-8") as f:
+                          f.write(updated_text)
+                  else:
+                      print(f"Markers missing in {filepath}")
+              else:
+                  print(f"File {filepath} not found")
+
+          update_file("README.md", ru_table)
+          update_file("README-en.md", en_table)
 
       - name: Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add README.md
-          git commit -m "docs: auto-update server counters in README" || echo "No changes"
+          git add README.md README-en.md
+          git commit -m "docs: auto-update server counters in both READMEs" || echo "No changes"
           git pull --rebase origin main
           git push origin main --force-with-lease
