@@ -16,9 +16,11 @@ jobs:
           import requests, datetime
           nodes = []
           mapping = {
-              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], 
-              "sg": ["🇸🇬", "Сингапур"], "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], 
-              "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], "fr": ["🇫🇷", "Франция"], "ru": ["🇷🇺", "Россия"]
+              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], "sg": ["🇸🇬", "Сингапур"], 
+              "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], 
+              "fr": ["🇫🇷", "Франция"], "ru": ["🇷🇺", "Россия"], "fi": ["🇫🇮", "Финляндия"], "se": ["🇸🇪", "Швеция"],
+              "no": ["🇳🇴", "Норвегия"], "dk": ["🇩🇰", "Дания"], "it": ["🇮🇹", "Италия"], "es": ["🇪🇸", "Испания"],
+              "pl": ["🇵🇱", "Польша"], "at": ["🇦🇹", "Австрия"], "be": ["🇧🇪", "Бельгия"], "ie": ["🇮🇪", "Ирландия"]
           }
           
           try:
@@ -33,10 +35,11 @@ jobs:
           except: pass
           
           final = []
-          for i, n in enumerate(list(dict.fromkeys(nodes))[:200]):
+          for n in list(dict.fromkeys(nodes))[:200]:
               code = next((c for c in mapping if c in n.lower()), None)
-              flag, name = mapping.get(code, ["🌐", "Мир"])
-              final.append(f"{n.split('#')[0].strip()}#{flag} 🏳️ WLUnlocker {name} | #{i+1}")
+              if code:
+                  flag, name = mapping[code]
+                  final.append(f"{n.split('#')[0].strip()}#{flag} 🏳️ WLUnlocker {name} | #{len(final)+1}")
               
           header = f"# profile-title: VPN 2\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
           with open("blacklist_vpn2.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
