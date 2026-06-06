@@ -1,0 +1,76 @@
+name: Sync Filtered VPN
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Filtered Sync
+        shell: python
+        run: |
+          import requests, datetime
+          
+          mapping = {
+              "pl": ["🇵🇱", "Польша"],
+              "nl": ["🇳🇱", "Нидерланды"],
+              "de": ["🇩🇪", "Германия"],
+              "ee": ["🇪🇪", "Эстония"],
+              "ca": ["🇨🇦", "Канада"],
+              "fi": ["🇫🇮", "Финляндия"],
+              "ie": ["🇮🇪", "Ирландия"],
+              "gb": ["🇬🇧", "Англия"],
+              "fr": ["🇫🇷", "Франция"],
+              "ch": ["🇨🇭", "Швейцария"]
+          }
+          
+          added_countries = set()
+          final = []
+          
+          try:
+              res = requests.get("https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt", timeout=15)
+              if res.status_code == 200:
+                  for line in res.text.splitlines():
+                      line = line.strip()
+                      if not line.startswith(("ss://", "hysteria2://")):
+                          continue
+                          
+                      line_lower = line.lower()
+                      found_code = None
+                      
+                      for code in mapping:
+                          if f"/{code}/" in line_lower or code in line_lower:
+                              found_code = code
+                              break
+                      
+                      if found_code and found_code not in added_countries:
+                          added_countries.add(found_code)
+                          flag, country_name = mapping[found_code]
+                          
+                          clean_node = line.split('#')[0].strip()
+                          node_number = len(final) + 1
+                          formatted_node = f"{clean_node}#{flag}🏴‍☠️WLUnlocker {country_name} | #{node_number}"
+                          final.append(formatted_node)
+                          
+                          if len(final) == len(mapping):
+                              break
+          except Exception as e:
+              print(f"Error: {e}")
+          
+          header = f"# profile-title: 🏴‍☠️Фильтрованная\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          
+          with open("filtered_vpn.txt", "w", encoding="utf-8") as f:
+              f.write(header + "\n".join(final))
+              
+      - name: Push Changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add filtered_vpn.txt
+          git commit -m "sync: filtered vpn" || echo "No changes"
+          git pull --rebase origin main
+          git push origin main --force-with-lease
