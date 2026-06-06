@@ -1,4 +1,4 @@
-- name: Sync VPN 2
+name: Sync VPN 2
 on:
   schedule:
     - cron: '0 * * * *'
@@ -15,28 +15,32 @@ jobs:
         run: |
           import requests, datetime
           nodes = []
-          flag_map = {"us": "🇺🇸", "de": "🇩🇪", "nl": "🇳🇱", "sg": "🇸🇬", "jp": "🇯🇵", "gb": "🇬🇧", "ca": "🇨🇦", "ch": "🇨🇭", "fr": "🇫🇷", "ru": "🇷🇺"}
+          flag_map = {"us":"🇺🇸","de":"🇩🇪","nl":"🇳🇱","sg":"🇸🇬","jp":"🇯🇵","gb":"🇬🇧","ca":"🇨🇦","ch":"🇨🇭","fr":"🇫🇷","ru":"🇷🇺"}
           
-          r1 = requests.get("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt")
-          if r1.status_code == 200:
-              nodes.extend([l for l in r1.text.splitlines()[6:106] if l.startswith(("ss://", "hysteria2://"))])
-          
-          r2 = requests.get("https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt")
-          if r2.status_code == 200:
-              good_countries = ["us", "de", "nl", "sg", "jp", "gb", "ca", "ch", "fr"]
-              for l in r2.text.splitlines():
-                  if l.startswith(("ss://", "hysteria2://")) and any(f"/{c}/" in l or f"{c}" in l.lower() for c in good_countries):
-                      nodes.append(l)
+          try:
+              r1 = requests.get("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt", timeout=15)
+              if r1.status_code == 200:
+                  nodes.extend([l for l in r1.text.splitlines()[6:106] if l.startswith(("ss://", "hysteria2://"))])
+              r2 = requests.get("https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt", timeout=15)
+              if r2.status_code == 200:
+                  good = ["us", "de", "nl", "sg", "jp", "gb", "ca", "ch", "fr"]
+                  for l in r2.text.splitlines():
+                      if l.startswith(("ss://", "hysteria2://")) and any(f"/{c}/" in l or f"{c}" in l.lower() for c in good):
+                          nodes.append(l)
+          except: pass
           
           final = []
           for i, n in enumerate(list(dict.fromkeys(nodes))[:200]):
-              flag = next((f for country, f in flag_map.items() if country in n.lower()), "🌐")
-              clean_n = n.split('#')[0].strip()
-              final.append(f"{clean_n}#{flag} VPN 2 | #{i+1}")
+              flag = next((f for c, f in flag_map.items() if c in n.lower()), "🌐")
+              final.append(f"{n.split('#')[0].strip()}#{flag} VPN 2 | #{i+1}")
               
-          header = f"# profile-title: VPN #2 (SS + OTHER)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
-          with open("blacklist_vpn2.txt", "w", encoding="utf-8") as f: f.write(header + "\n" + "\n".join(final))
-      - name: Push
+          header = f"# profile-title: VPN 2 (SS + OTHER)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          with open("blacklist_vpn2.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
+      - name: Push Changes
         run: |
-          git config user.name "GitHub Actions"; git config user.email "actions@github.com"
-          git add blacklist_vpn2.txt; git commit -m "sync: vpn2" || exit 0; git push
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add blacklist_vpn2.txt
+          git commit -m "sync: vpn2 update" || echo "No changes"
+          git pull --rebase origin main
+          git push origin main
