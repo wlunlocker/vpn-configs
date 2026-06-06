@@ -43,7 +43,7 @@ jobs:
                   flag, name = mapping[code]
                   final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
           
-          header = f"# profile-title: VPN 1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          header = f"# profile-title: 🏴VPN #1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
           with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
       - name: Push Changes
         run: |
