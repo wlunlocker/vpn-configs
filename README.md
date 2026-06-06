@@ -29,7 +29,6 @@
 | 🏳️ WHITELIST CIDR 3 | Европейские IP диапазоны и конфигурации.<br>**Серверов:** | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/whitelist_cidr3_eu.txt |
 | 🏴 BLACKLIST VPN 1 | Черные списки обхода блокировок (VLESS).<br>**Серверов:** | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn1.txt |
 | 🏴 BLACKLIST VPN 2 | Стандартные списки обхода блокировок (SS).<br>**Серверов:** | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/blacklist_vpn2.txt |
-| 🏴 Фильтрованная | Лучшие страны, приоритет VLESS, для ТВ.<br>**Серверов:** | https://raw.githubusercontent.com/wlunlocker/vpn-configs/main/filtered_vpn.txt |
 
 ---
 
