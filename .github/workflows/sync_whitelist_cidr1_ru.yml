@@ -18,7 +18,7 @@ jobs:
           lines = [l for l in r.text.splitlines() if l.startswith(("vless://", "vmess://", "trojan://", "ss://"))]
           nodes = [l for l in lines[49:500] if "ru" in l.lower() or "росс" in l.lower()]
           final = [f"{n.split('#')[0].strip()}#🇷🇺 🏳️ WLUnlocker Россия | #{i+1}" for i, n in enumerate(nodes[:150])]
-          header = f"# profile-title: АНТИГЛУШИЛКИ #1 (CIDR)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
+          header = f"# profile-title: 🏳️АНТИГЛУШИЛКИ #1 (RU)\n# profile-update-interval: 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# кол-во: {len(final)}\n"
           with open("whitelist_cidr1_ru.txt", "w", encoding="utf-8") as f: f.write(header + "\n" + "\n".join(final))
       - name: Push
         run: |
