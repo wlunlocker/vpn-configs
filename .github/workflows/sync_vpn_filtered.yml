@@ -28,6 +28,9 @@ jobs:
               "ch": ["🇨🇭", "Швейцария"]
           }
           
+          limits = {"ss": 3, "hysteria2": 3, "vless": 4}
+          counts = {"ss": 0, "hysteria2": 0, "vless": 0}
+          
           added_countries = set()
           final = []
           
@@ -36,7 +39,13 @@ jobs:
               if res.status_code == 200:
                   for line in res.text.splitlines():
                       line = line.strip()
-                      if not line.startswith(("ss://", "hysteria2://")):
+                      
+                      proto = None
+                      if line.startswith("ss://"): proto = "ss"
+                      elif line.startswith("hysteria2://"): proto = "hysteria2"
+                      elif line.startswith("vless://"): proto = "vless"
+                      
+                      if not proto or counts[proto] >= limits[proto]:
                           continue
                           
                       line_lower = line.lower()
@@ -49,19 +58,20 @@ jobs:
                       
                       if found_code and found_code not in added_countries:
                           added_countries.add(found_code)
+                          counts[proto] += 1
                           flag, country_name = mapping[found_code]
                           
                           clean_node = line.split('#')[0].strip()
                           node_number = len(final) + 1
-                          formatted_node = f"{clean_node}#{flag}🏴‍☠️WLUnlocker {country_name} | #{node_number}"
+                          formatted_node = f"{clean_node}#{flag}🏴WLUnlocker {country_name} | #{node_number}"
                           final.append(formatted_node)
                           
-                          if len(final) == len(mapping):
+                          if len(final) == 10:
                               break
           except Exception as e:
               print(f"Error: {e}")
           
-          header = f"# profile-title: 🏴‍☠️Фильтрованная\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          header = f"# profile-title: 🏴Фильтрованная\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
           
           with open("filtered_vpn.txt", "w", encoding="utf-8") as f:
               f.write(header + "\n".join(final))
