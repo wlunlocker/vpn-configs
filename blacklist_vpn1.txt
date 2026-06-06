@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 06.06.07
+# last-update: 06.06.10
 # count: 103
 vless://ec9e886e-f3ca-4d9d-a747-bf5cb5a882bc@171.22.136.84:8443?type=ws&encryption=none&path=/test&host=play.google.com&security=none#🇺🇸 🏴 WLUnlocker США | #1
 vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷 🏴 WLUnlocker Франция | #2
