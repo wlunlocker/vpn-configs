@@ -15,7 +15,11 @@ jobs:
         run: |
           import requests, datetime
           nodes = []
-          flag_map = {"us":"🇺🇸","de":"🇩🇪","nl":"🇳🇱","sg":"🇸🇬","jp":"🇯🇵","gb":"🇬🇧","ca":"🇨🇦","ch":"🇨🇭","fr":"🇫🇷","ru":"🇷🇺"}
+          mapping = {
+              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], 
+              "sg": ["🇸🇬", "Сингапур"], "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], 
+              "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], "fr": ["🇫🇷", "Франция"], "ru": ["🇷🇺", "Россия"]
+          }
           
           try:
               r1 = requests.get("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_SS%2BAll_RUS.txt", timeout=15)
@@ -23,24 +27,24 @@ jobs:
                   nodes.extend([l for l in r1.text.splitlines()[6:106] if l.startswith(("ss://", "hysteria2://"))])
               r2 = requests.get("https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt", timeout=15)
               if r2.status_code == 200:
-                  good = ["us", "de", "nl", "sg", "jp", "gb", "ca", "ch", "fr"]
                   for l in r2.text.splitlines():
-                      if l.startswith(("ss://", "hysteria2://")) and any(f"/{c}/" in l or f"{c}" in l.lower() for c in good):
+                      if l.startswith(("ss://", "hysteria2://")) and any(f"/{c}/" in l or f"{c}" in l.lower() for c in mapping):
                           nodes.append(l)
           except: pass
           
           final = []
           for i, n in enumerate(list(dict.fromkeys(nodes))[:200]):
-              flag = next((f for c, f in flag_map.items() if c in n.lower()), "🌐")
-              final.append(f"{n.split('#')[0].strip()}#{flag} VPN 2 | #{i+1}")
+              code = next((c for c in mapping if c in n.lower()), None)
+              flag, name = mapping.get(code, ["🌐", "Мир"])
+              final.append(f"{n.split('#')[0].strip()}#{flag} 🏳️ WLUnlocker {name} | #{i+1}")
               
-          header = f"# profile-title: VPN 2 (SS + OTHER)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          header = f"# profile-title: VPN 2\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
           with open("blacklist_vpn2.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
       - name: Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_vpn2.txt
-          git commit -m "sync: vpn2 update" || echo "No changes"
+          git commit -m "sync: vpn2" || echo "No changes"
           git pull --rebase origin main
-          git push origin main
+          git push origin main --force-with-lease
