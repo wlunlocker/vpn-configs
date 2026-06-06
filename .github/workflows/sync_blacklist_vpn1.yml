@@ -27,20 +27,28 @@ jobs:
                       nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
               except: continue
           
-          flag_map = {"us":"🇺🇸","de":"🇩🇪","nl":"🇳🇱","sg":"🇸🇬","jp":"🇯🇵","gb":"🇬🇧","ca":"🇨🇦","ch":"🇨🇭","fr":"🇫🇷","ru":"🇷🇺","fi":"🇫🇮","se":"🇸🇪"}
+          # Настройка: код -> [эмодзи_флаг, русское_название]
+          mapping = {
+              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], 
+              "sg": ["🇸🇬", "Сингапур"], "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], 
+              "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], "fr": ["🇫🇷", "Франция"], 
+              "ru": ["🇷🇺", "Россия"], "fi": ["🇫🇮", "Финляндия"], "se": ["🇸🇪", "Швеция"]
+          }
+          
           final = []
           for i, n in enumerate(list(dict.fromkeys(nodes))[:200]):
               raw = n.split('#')[-1].lower()
-              flag = next((f for c, f in flag_map.items() if c in raw), "🌐")
-              final.append(f"{n.split('#')[0].strip()}#{flag} VPN 1 | #{i+1}")
+              code = next((c for c in mapping if c in raw), None)
+              flag, name = mapping.get(code, ["🌐", "Мир"])
+              final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{i+1}")
           
-          header = f"# profile-title: VPN 1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
+          header = f"# profile-title: VPN 1\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
           with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
       - name: Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_vpn1.txt
-          git commit -m "sync: vpn1 update" || echo "No changes"
+          git commit -m "sync: vpn1" || echo "No changes"
           git pull --rebase origin main
-          git push origin main
+          git push origin main --force-with-lease
