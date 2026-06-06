@@ -28,19 +28,42 @@ jobs:
               "ch": ["🇨🇭", "Швейцария"]
           }
           
-          added_countries = set()
-          vless_nodes = []
-          other_nodes = []
+          # Отслеживаем уникальность пары (Страна, Протокол)
+          added_pairs = set()
+          final_nodes = []
           
           try:
               res = requests.get("https://raw.githubusercontent.com/nikita29a/FreeProxyList/refs/heads/main/mirror/1.txt", timeout=15)
               if res.status_code == 200:
-                  for line in res.text.splitlines():
-                      line = line.strip()
+                  lines = [line.strip() for line in res.text.splitlines() if line.strip()]
+                  
+                  # Первый проход: Ищем строго VLESS (максимум 10 серверов, без дублей стран внутри VLESS)
+                  for line in lines:
+                      if not line.startswith("vless://"):
+                          continue
                       
+                      line_lower = line.lower()
+                      found_code = None
+                      for code in mapping:
+                          if f"/{code}/" in line_lower or code in line_lower:
+                              found_code = code
+                              break
+                              
+                      if found_code and (found_code, "vless") not in added_pairs:
+                          added_pairs.add((found_code, "vless"))
+                          flag, country_name = mapping[found_code]
+                          clean_node = line.split('#')[0].strip()
+                          final_nodes.append((clean_node, flag, country_name))
+                          if len(final_nodes) == 10:
+                              break
+                              
+                  # Второй проход: Добираем SS и Hysteria2 (до 15 серверов, страна может дублироваться, если протокол другой)
+                  for line in lines:
+                      if len(final_nodes) >= 15:
+                          break
+                          
                       proto = None
-                      if line.startswith("vless://"): proto = "vless"
-                      elif line.startswith("ss://"): proto = "ss"
+                      if line.startswith("ss://"): proto = "ss"
                       elif line.startswith("hysteria2://"): proto = "hysteria2"
                       
                       if not proto:
@@ -48,30 +71,21 @@ jobs:
                           
                       line_lower = line.lower()
                       found_code = None
-                      
                       for code in mapping:
                           if f"/{code}/" in line_lower or code in line_lower:
                               found_code = code
                               break
-                      
-                      if found_code and found_code not in added_countries:
-                          added_countries.add(found_code)
+                              
+                      if found_code and (found_code, proto) not in added_pairs:
+                          added_pairs.add((found_code, proto))
                           flag, country_name = mapping[found_code]
                           clean_node = line.split('#')[0].strip()
-                          
-                          node_data = (clean_node, flag, country_name)
-                          
-                          if proto == "vless" and len(vless_nodes) < 10:
-                              vless_nodes.append(node_data)
-                          else:
-                              other_nodes.append(node_data)
+                          final_nodes.append((clean_node, flag, country_name))
           except Exception as e:
               print(f"Error: {e}")
           
-          combined_nodes = vless_nodes + other_nodes
           final = []
-          
-          for clean_node, flag, country_name in combined_nodes[:15]:
+          for clean_node, flag, country_name in final_nodes:
               node_number = len(final) + 1
               formatted_node = f"{clean_node}#{flag}🏴WLUnlocker {country_name} | #{node_number}"
               final.append(formatted_node)
