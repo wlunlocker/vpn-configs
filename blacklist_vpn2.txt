@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 06.06.22
+# last-update: 07.06.00
 # count: 199
 hysteria2://c7166f8f-236b-4fa4-b99c-172813b24f73@fi-hel-hostvds-06.sssrvpn.pro:13337?sni=h2.mtproxy-hub.org&obfs=salamander&obfs-password=killmebaby#🇩🇪 🏳️ WLUnlocker Германия | #1
 hysteria2://dongtaiwang.com@62.210.124.146:22000/?insecure=1&sni=www.microsoft.com#🇫🇷 🏳️ WLUnlocker Франция | #2
