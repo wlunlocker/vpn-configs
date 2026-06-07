@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 07.06.21
+# last-update: 07.06.23
 # count: 154
 vless://394f6981-a782-4779-9a85-e6cf22935d93@207.211.214.42:8443/?type=tcp&encryption=none&flow=&security=tls&sni=bru-be-01.fromblancwithlove.com&alpn=networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-channel@.networld_vpn-#🇺🇸 🏴 WLUnlocker США | #1
 vless://394f6981-a782-4779-9a85-e6cf22935d93@207.211.214.42:8443?encryption=none&security=tls&sni=bru-be-01.fromblancwithlove.com&type=tcp#🇺🇸 🏴 WLUnlocker США | #2
