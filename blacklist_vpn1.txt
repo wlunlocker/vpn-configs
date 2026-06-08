@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 08.06.20
+# last-update: 08.06.22
 # count: 145
 vless://6585a62b-4d8b-48cc-bdad-e2542504d748@45.131.4.173:8443?encryption=none&type=xhttp&mode=auto&host=Itsrezu2.dr-ping.com&path=/&security=tls&fp=chrome&sni=Itsrezu2.dr-ping.com&alpn=h2,http/1.1#🇺🇸 🏴 WLUnlocker США | #1
 vless://08ae0f55-44d0-4b0a-985a-1f8090fb86ab@msk2.ow-pk.ru:55519?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=azltJAmyoOGjY31Za_15MGXzKsiubcGHyybk6cjXpCA&sid=ac79a2af&sni=kredopro.ru&spx=/0+9s0BnrhI2xfF3q&echfq=none#🇳🇱 🏴 WLUnlocker Нидерланды | #2
