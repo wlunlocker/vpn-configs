@@ -1,6 +1,6 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 09.06.18
-# count: 110
+# last-update: 09.06.20
+# count: 109
 vless://6585a62b-4d8b-48cc-bdad-e2542504d748@167.68.5.43:8443?encryption=none&type=xhttp&mode=auto&host=Itsrezu2.dr-ping.com&path=/&security=tls&fp=chrome&sni=Itsrezu2.dr-ping.com&alpn=h2,http/1.1#🇺🇸 🏴 WLUnlocker США | #1
 vless://6585a62b-4d8b-48cc-bdad-e2542504d748@167.68.5.43:8443?type=xhttp&security=tls&path=/&sni=Itsrezu2.dr-ping.com&fp=chrome#🇺🇸 🏴 WLUnlocker США | #2
 vless://6585a62b-4d8b-48cc-bdad-e2542504d748@194.36.55.163:8443?mode=auto&path=/&security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&host=Itsrezu2.dr-ping.com&fp=chrome&type=xhttp&allowInsecure=0&sni=Itsrezu2.dr-ping.com#🇺🇸 🏴 WLUnlocker США | #3
@@ -109,5 +109,4 @@ vless://6ca8ea5b-e47f-4c19-adee-365456e1e87c@31.76.38.86:7443?type=tcp&security=
 vless://6ca8ea5b-e47f-4c19-adee-365456e1e87c@31.76.38.87:7443?flow=xtls-rprx-vision&security=reality&allowInsecure=0&encryption=none&type=tcp&sni=stackoverflow.com&sid=d82fb387&fp=firefox&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&headerType=none#🇮🇹 🏴 WLUnlocker Италия | #106
 vless://14ca5431-b1e3-4e70-909a-c8ed2b770adc@89.169.38.249.blanesik.space:443?encryption=none&security=tls&sni=89.169.38.249.blanesik.space&fp=safari&insecure=0&allowInsecure=0&type=grpc&authority=89.169.38.249.blanesik.space&serviceName=%2Fsequre%2Fgrpc&mode=gun#🇨🇦 🏴 WLUnlocker Канада | #107
 vless://14ca5431-b1e3-4e70-909a-c8ed2b770adc@89.169.38.249.blanesik.space:443?type=grpc&headerType=none&security=tls&encryption=none&sni=89.169.38.249.blanesik.space&fp=safari&serviceName=%2Fsequre%2Fgrpc&insecure=0#🇨🇦 🏴 WLUnlocker Канада | #108
-vless://36af4874-d6a3-4f7c-82a7-1cb724961b52@91.193.58.4:443?path=%2F%3Fed%3D2560%26https%3A%2F%2Ft.me%2FWangCai2%F0%9F%87%A8%F0%9F%87%B3&security=tls&encryption=none&host=linek.perry.us.kg&type=ws&sni=linek.perry.us.kg#🇨🇦 🏴 WLUnlocker Канада | #109
-vless://88e1c62f-82e4-4e54-b536-4b760fa78529@64.110.104.30:443?path=%2Fdjjc%2Fjp1&security=tls&encryption=none&host=d2-jp1.djwstlsweb.top&fp=safari&type=ws&sni=d2-jp1.djwstlsweb.top#🇯🇵 🏴 WLUnlocker Япония | #110
+vless://88e1c62f-82e4-4e54-b536-4b760fa78529@64.110.104.30:443?path=%2Fdjjc%2Fjp1&security=tls&encryption=none&host=d2-jp1.djwstlsweb.top&fp=safari&type=ws&sni=d2-jp1.djwstlsweb.top#🇯🇵 🏴 WLUnlocker Япония | #109
