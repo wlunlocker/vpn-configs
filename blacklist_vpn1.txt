@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 10.06.20
+# last-update: 10.06.22
 # count: 149
 vless://6cb2af25-9d59-43bd-a8fa-682e4898e081@dney.gg-linkvault.online:48932?type=xhttp&security=reality&fp=random&pbk=Dl4-nKAkksLHmX2yR0LWAzyFBjIj1W10R4OxHKMX2AI&sni=www.nvidia.com&mode=auto&extra={"xmux":{"cMaxReuseTimes":"64-128","maxConcurrency":"16-32","maxConnections":0,"hMaxRequestTimes":"600-900","hMaxReusableSecs":"1800-3000"},"noSSEHeader":true,"xPaddingBytes":"100-1000","scMaxBufferedPosts":30,"scMaxEachPostBytes":1000000,"scMinPostsIntervalMs":30,"scStreamUpServerSecs":"20-80"}#🇺🇸 🏴 WLUnlocker США | #1
 vless://6cb2af25-9d59-43bd-a8fa-682e4898e081@vasquez.gg-linkvault.ru:48932?type=xhttp&security=reality&fp=random&pbk=Dl4-nKAkksLHmX2yR0LWAzyFBjIj1W10R4OxHKMX2AI&sid=fedcba9876543210&sni=www.nvidia.com&mode=auto&extra={"xmux":{"cMaxReuseTimes":"64-128","maxConcurrency":"16-32","maxConnections":0,"hMaxRequestTimes":"600-900","hMaxReusableSecs":"1800-3000"},"noSSEHeader":true,"xPaddingBytes":"100-1000","scMaxBufferedPosts":30,"scMaxEachPostBytes":1000000,"scMinPostsIntervalMs":30,"scStreamUpServerSecs":"20-80"}#🇺🇸 🏴 WLUnlocker США | #2
