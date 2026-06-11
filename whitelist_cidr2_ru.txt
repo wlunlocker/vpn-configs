@@ -1,6 +1,6 @@
 # profile-title: 🏳️АНТИГЛУШИЛКИ #2 (RU)
 # profile-update-interval: 1
-# last-update: 11.06.00
+# last-update: 11.06.05
 # кол-во: 150
 
 vless://56022eef-4ade-4240-b0cc-eb006797e7ac@94.126.207.245:443?security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=V32osv0u9T3QItvyk4UgK-mjJuXkXLn4u_3pbk8eNgs&sid=9339&sni=api.vk.com&packetencoding=xudp#🇷🇺 🏳️ WLUnlocker Россия | #1
