@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 11.06.16
+# last-update: 11.06.19
 # count: 200
 hysteria2://93d7b794-cca6-4c6d-bae8-dd2df25961b4@2.26.74.63:443?sni=fl01.shifor.live&pinSHA256=safari#🇳🇱 🏳️ WLUnlocker Нидерланды | #1
 hysteria2://18cf8030-1ceb-4b7d-8c0c-c036413c144e@152.53.12.152:4433/?insecure=1&sni=de3.xiaoliyu.cyou#🇩🇪 🏳️ WLUnlocker Германия | #2
