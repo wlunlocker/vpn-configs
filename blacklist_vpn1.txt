@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 12.06.12
+# last-update: 12.06.16
 # count: 177
 vless://e267d3db-4bf9-4190-bc37-f85c76647e82@94.125.103.28:2761?flow=xtls-rprx-vision&fp=firefox&pbk=d9ncsYIjJIiCaqLszDyLhZoZ9-XMYYhBrlHUyuHFxQo&security=reality&sid=a4e1fd84&sni=nl.xanka.best&type=tcp#🇫🇮 🏴 WLUnlocker Финляндия | #1
 vless://e3977fd7-7bb1-4aa0-b89a-fc8591af9e10@151.101.1.51:443?mode=packet-up&path=%2Fassets%2Fjs&security=tls&encryption=none&insecure=0&host=relay-j826qe0a.edgecompute.app&fp=chrome&type=xhttp&allowInsecure=0&sni=relay-j826qe0a.edgecompute.app#🇳🇱 🏴 WLUnlocker Нидерланды | #2
