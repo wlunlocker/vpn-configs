@@ -1,6 +1,6 @@
 # profile-title: 🏳️АНТИГЛУШИЛКИ #1 (RU)
 # profile-update-interval: 1
-# last-update: 13.06.11
+# last-update: 13.06.14
 # кол-во: 150
 
 vless://4fb684c9-977f-4a7c-82a5-1f70fc141510@194.113.235.13:58888?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=sun6-21.userapi.com&pbk=vTATCiPT7A58mmpm0k2qnIlOKqPL5rxcmgXKxzBDLXU&sid=7a3f9e2b1c8d4f6a&spx=%25252525252525252525252525252F#🇷🇺 🏳️ WLUnlocker Россия | #1
