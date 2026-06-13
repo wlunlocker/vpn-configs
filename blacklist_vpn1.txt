@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 13.06.21
+# last-update: 13.06.23
 # count: 110
 vless://4d37001f-ca6c-4f9d-8355-6f0912258b20@45.198.105.231:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=storage.yandex.net&fp=firefox&pbk=pPi-WO8qQFFZ9UJWNLW9YClbjcoAAZWJQ2_FM3Kjhz8&sid=d3ee47fc2f553c44&flow=xtls-rprx-vision#🇨🇦 🏴 WLUnlocker Канада | #1
 vless://977f2eea-9f37-417b-bdc3-5abfba1e54df@45.198.105.231:8443?security=reality&flow=xtls-rprx-vision&sni=storage.yandex.net&type=tcp&fp=chrome&pbk=pPi-WO8qQFFZ9UJWNLW9YClbjcoAAZWJQ2_FM3Kjhz8&sid=d3ee47fc2f553c44#🇨🇦 🏴 WLUnlocker Канада | #2
