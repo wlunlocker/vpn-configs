@@ -1,6 +1,6 @@
 # profile-title: 🌐🏴VPN - ВСЕ СЕРВЕРА
 # profile-update-interval: 1
-# last-update: 14.06.15
+# last-update: 14.06.17
 # кол-во: 1263
 vless://f64cab0a-75a4-44f1-b2f6-8ecc6c73c249@94.177.9.149:443?flow=xtls-rprx-vision&fp=firefox&pbk=wpZDT_592emHu309qN-7-qceofbMJzoAdIx9m9RFJGg&security=reality&sid=b77ac02151b47155&sni=at-c3.buycloud.app&type=tcp#🇦🇹 🏴 WLUnlocker Австрия | #1
 vless://6cb2af25-9d59-43bd-a8fa-682e4898e081@at.maximum-vpn.com:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=random&pbk=roCvVZ0atQ-_68OSDPuknzHchm6djGzQB4Ydl5n31Fg&sni=www.microsoft.com#🇦🇹 🏴 WLUnlocker Австрия | #2
