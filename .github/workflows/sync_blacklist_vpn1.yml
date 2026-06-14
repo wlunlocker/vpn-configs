@@ -10,117 +10,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install GeoIP Dependencies
-        run: |
-          pip install maxminddb requests
-          wget -q https://github.com/P3TERX/GeoLite2/raw/download/GeoLite2-Country.mmdb
-          
       - name: Run Sync
         shell: python
         run: |
-          import requests, datetime, socket, urllib.parse, maxminddb, os
-          
+          import requests, datetime
           sources = [
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt", 6),
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt", 6),
               ("https://shz.al/~WangCai", 0)
           ]
-          
           nodes = []
           for url, skip in sources:
               try:
                   r = requests.get(url, timeout=15)
                   if r.status_code == 200:
-                      nodes.extend([l.strip() for l in r.text.splitlines()[skip:] if l.strip().startswith("vless://")])
-              except:
-                  continue
+                      nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
+              except: continue
           
-          unique_nodes = list(dict.fromkeys(nodes))
-          
-          flags = {
-              "ad": "🇦🇩", "ae": "🇦🇪", "af": "🇦🇫", "ag": "🇦🇬", "ai": "🇦🇮", "al": "🇦🇱", "am": "🇦🇲", "ao": "🇦🇴", 
-              "aq": "🇦🇶", "ar": "🇦🇷", "as": "🇦🇸", "at": "🇦🇹", "au": "🇦🇺", "aw": "🇦🇼", "ax": "🇦🇽", "az": "🇦🇿", 
-              "ba": "🇧🇦", "bb": "🇧🇧", "bd": "🇧🇩", "be": "🇧🇪", "bf": "🇧🇫", "bg": "🇧🇬", "bh": "🇧🇭", "bi": "🇧🇮", 
-              "bj": "🇧🇯", "bl": "🇧🇱", "bm": "🇧🇲", "bn": "🇧🇳", "bo": "🇧🇴", "bq": "🇧🇶", "br": "🇧🇷", "bs": "🇧🇸", 
-              "bt": "🇧🇹", "bv": "🇧🇻", "bw": "🇧🇼", "by": "🇧🇾", "bz": "🇧🇿", "ca": "🇨🇦", "cc": "🇨🇨", "cd": "🇨🇩", 
-              "cf": "🇨🇫", "cg": "🇨🇬", "ch": "🇨🇭", "ci": "🇨🇮", "ck": "🇨🇰", "cl": "🇨连", "cm": "🇨🇲", "cn": "🇨🇳", 
-              "co": "🇨🇴", "cr": "🇨🇷", "cu": "🇨🇺", "cv": "🇨🇻", "cw": "🇨🇼", "cx": "🇨🇽", "cy": "🇨🇾", "cz": "🇨🇿", 
-              "de": "🇩🇪", "dj": "🇩🇯", "dk": "🇩🇰", "dm": "🇩🇲", "do": "🇩🇴", "dz": "🇩🇿", "ec": "🇪🇨", "ee": "🇪🇪", 
-              "eg": "🇪🇬", "eh": "🇪🇭", "er": "🇪🇷", "es": "🇪🇸", "et": "🇪🇹", "fi": "🇫🇮", "fj": "🇫🇯", "fk": "🇫🇰", 
-              "fm": "🇫🇲", "fo": "🇫🇴", "fr": "🇫🇷", "ga": "🇬🇦", "gb": "🇬🇧", "gd": "🇬🇩", "ge": "🇬🇪", "gf": "🇬🇫", 
-              "gg": "🇬🇬", "gh": "🇬🇭", "gi": "🇬🇮", "gl": "🇬🇱", "gm": "🇬🇲", "gn": "🇬🇳", "gp": "🇬🇵", "gq": "🇬🇶", 
-              "gr": "🇬🇷", "gs": "🇬🇸", "gt": "🇬🇹", "gu": "🇬🇺", "gw": "🇬🇼", "gy": "🇬🇾", "hk": "🇭🇰", "hm": "🇭🇲", 
-              "hn": "🇭🇳", "hr": "🇭🇷", "ht": "🇭🇹", "hu": "🇭🇺", "id": "🇮🇩", "ie": "🇮🇪", "il": "🇮🇱", "im": "🇮🇲", 
-              "in": "🇮🇳", "io": "🇮🇴", "iq": "🇮🇶", "ir": "🇮🇷", "is": "🇮🇸", "it": "🇮🇹", "je": "🇯🇪", "jm": "🇯🇲", 
-              "jo": "🇯🇴", "jp": "🇯🇵", "ke": "🇰🇪", "kg": "🇰🇬", "kh": "🇰🇭", "ki": "🇰🇺", "km": "🇰🇲", "kn": "🇰🇳", 
-              "kp": "🇰🇵", "kr": "🇰🇷", "kw": "🇰🇼", "ky": "🇰🇾", "kz": "🇰🇿", "la": "🇱🇦", "lb": "🇱🇧", "lc": "🇱🇨", 
-              "li": "🇱🇮", "lk": "🇱🇰", "lr": "🇱🇷", "ls": "🇱🇸", "lt": "🇱🇹", "lu": "🇱🇺", "lv": "🇱🇻", "ly": "🇱🇾", 
-              "ma": "🇲🇦", "mc": "🇲🇨", "md": "🇲🇩", "me": "🇲🇪", "mf": "🇲🇫", "mg": "🇲🇬", "mh": "🇲🇭", "mk": "🇲🇰", 
-              "ml": "🇲🇲", "mn": "🇲🇳", "mo": "🇲🇴", "mp": "🇲🇵", "mq": "🇲🇶", "mr": "🇲🇷", "ms": "🇲🇸", "mt": "🇲🇹", 
-              "mu": "🇲🇺", "mv": "🇲🇻", "mw": "🇲🇼", "mx": "🇲🇽", "my": "🇲🇾", "mz": "🇲🇿", "na": "🇳🇦", "nc": "🇳🇨", 
-              "ne": "🇳🇪", "nf": "🇳🇫", "ng": "🇳🇬", "ni": "🇳🇮", "nl": "🇳🇱", "no": "🇳🇴", "np": "🇳🇵", "nr": "🇳🇷", 
-              "nu": "🇳🇺", "nz": "🇳🇿", "om": "🇴🇲", "pa": "🇵🇦", "pe": "🇵🇪", "pf": "🇵🇫", "pg": "🇵🇬", "ph": "🇵🇭", 
-              "pk": "🇵🇰", "pl": "🇵🇱", "pm": "🇵🇲", "pn": "🇵🇳", "pr": "🇵🇷", "ps": "🇵🇸", "pt": "🇵🇹", "pw": "🇵🇼", 
-              "py": "🇵🇾", "qa": "🇶🇦", "re": "🇷🇪", "ro": "🇷🇴", "rs": "🇷🇸", "ru": "🇷🇺", "rw": "🇷🇼", "sa": "🇸🇦", 
-              "sb": "🇸🇧", "sc": "🇸🇨", "sd": "🇸🇩", "se": "🇸🇪", "sg": "🇸🇬", "sh": "🇸🇭", "si": "🇸🇮", "sj": "🇸🇯", 
-              "sk": "🇸🇰", "sl": "🇸🇱", "sm": "🇸🇲", "sn": "🇸🇳", "so": "🇸🇴", "sr": "🇸🇷", "ss": "🇸🇸", "st": "🇸🇹", 
-              "sv": "🇸🇻", "sx": "🇸🇽", "sy": "🇸🇾", "sz": "🇸🇿", "tc": "🇹🇨", "td": "🇹🇩", "tf": "🇹🇫", "tg": "🇹🇬", 
-              "th": "🇹🇭", "tj": "🇹🇯", "tk": "🇹🇰", "tl": "🇹🇱", "tm": "🇹🇲", "tn": "🇹🇳", "to": "🇹🇴", "tr": "🇹🇷", 
-              "tt": "🇹🇹", "tv": "🇹🇻", "tw": "🇹🇼", "tz": "🇹🇿", "ua": "🇺🇦", "ug": "🇺🇬", "um": "🇺🇲", "us": "🇺🇸", 
-              "uy": "🇺🇾", "uz": "🇺🇿", "va": "🇻🇦", "vc": "🇻🇨", "ve": "🇻🇪", "vg": "🇻🇬", "vi": "🇻🇮", "vn": "🇻🇳", 
-              "vu": "🇻🇺", "wf": "🇼🇫", "ws": "🇼🇸", "ye": "🇾🇪", "yt": "🇾🇹", "za": "🇿🇦", "zm": "🇿🇲", "zw": "🇿🇼"
+          mapping = {
+              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], "sg": ["🇸🇬", "Сингапур"], 
+              "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], 
+              "fr": ["🇫🇷", "Франция"], "ru": ["🇷🇺", "Россия"], "fi": ["🇫🇮", "Финляндия"], "se": ["🇸🇪", "Швеция"],
+              "no": ["🇳🇴", "Норвегия"], "dk": ["🇩🇰", "Дания"], "it": ["🇮🇹", "Италия"], "es": ["🇪🇸", "Испания"],
+              "pl": ["🇵🇱", "Польша"], "at": ["🇦🇹", "Австрия"], "be": ["🇧🇪", "Бельгия"], "ie": ["🇮🇪", "Ирландия"]
           }
           
-          if os.path.exists("GeoLite2-Country.mmdb"):
-              reader = maxminddb.open_database("GeoLite2-Country.mmdb")
-          else:
-              reader = None
-
-          def get_country_info(link):
-              try:
-                  url_str = link.split('#')[0]
-                  parsed = urllib.parse.urlparse(url_str)
-                  host_port = parsed.netloc.split('@')[-1].split('?')[0]
-                  host = host_port.split(':')[0] if ':' in host_port else host_port
-                  
-                  ip = socket.gethostbyname(host)
-                  
-                  if reader:
-                      data = reader.get(ip)
-                      if data and 'country' in data:
-                          code = data['country']['iso_code'].lower()
-                          name = data['country']['names'].get('ru', data['country']['names'].get('en', 'Сервер'))
-                          return code, name
-              except:
-                  pass
-              return None, None
-
           final = []
-          for n in unique_nodes[:200]:
-              clean_node = n.split('#')[0].strip()
-              
-              code, country_name = get_country_info(clean_node)
-              
-              if code and code in flags:
-                  flag = flags[code]
-              else:
-                  flag, country_name = "🌐", "Сервер"
-                  
-              final.append(f"{clean_node}#{flag} 🏴 WLUnlocker {country_name} | #{len(final)+1}")
+          for n in list(dict.fromkeys(nodes))[:200]:
+              raw = n.split('#')[-1].lower()
+              code = next((c for c in mapping if c in raw), None)
+              if code:
+                  flag, name = mapping[code]
+                  final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
           
-          if reader:
-              reader.close()
-              
           header = f"# profile-title: 🏴VPN #1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
-          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f:
-              f.write(header + "\n".join(final))
-              
+          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
       - name: Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_vpn1.txt
-          git commit -m "sync: vpn1 complete geo check" || echo "No changes"
+          git commit -m "sync: vpn1" || echo "No changes"
           git pull --rebase origin main
           git push origin main --force-with-lease
