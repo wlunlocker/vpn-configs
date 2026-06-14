@@ -13,19 +13,24 @@ jobs:
       - name: Run Sync
         shell: python
         run: |
-          import requests, datetime
+          import requests, datetime, socket, urllib.parse, time
+          
           sources = [
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt", 6),
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt", 6),
               ("https://shz.al/~WangCai", 0)
           ]
+          
           nodes = []
           for url, skip in sources:
               try:
                   r = requests.get(url, timeout=15)
                   if r.status_code == 200:
-                      nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
-              except: continue
+                      nodes.extend([l.strip() for l in r.text.splitlines()[skip:] if l.strip().startswith("vless://")])
+              except:
+                  continue
+          
+          unique_nodes = list(dict.fromkeys(nodes))
           
           mapping = {
               "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], "sg": ["🇸🇬", "Сингапур"], 
@@ -35,21 +40,44 @@ jobs:
               "pl": ["🇵🇱", "Польша"], "at": ["🇦🇹", "Австрия"], "be": ["🇧🇪", "Бельгия"], "ie": ["🇮🇪", "Ирландия"]
           }
           
+          def get_real_country(link):
+              try:
+                  url_str = link.split('#')[0]
+                  parsed = urllib.parse.urlparse(url_str)
+                  host_port = parsed.netloc.split('@')[-1].split('?')[0]
+                  host = host_port.split(':')[0] if ':' in host_port else host_port
+                  
+                  ip = socket.gethostbyname(host)
+                  
+                  geo_res = requests.get(f"http://ip-api.com/json/{ip}", timeout=3).json()
+                  if geo_res and geo_res.get("status") == "success":
+                      return geo_res.get("countryCode").lower()
+              except:
+                  pass
+              return None
+
           final = []
-          for n in list(dict.fromkeys(nodes))[:200]:
-              raw = n.split('#')[-1].lower()
-              code = next((c for c in mapping if c in raw), None)
-              if code:
+          for n in unique_nodes:
+              if len(final) >= 100:
+                  break
+                  
+              code = get_real_country(n)
+              time.sleep(1.4)
+              
+              if code and code in mapping:
                   flag, name = mapping[code]
-                  final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
+                  clean_node = n.split('#')[0].strip()
+                  final.append(f"{clean_node}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
           
           header = f"# profile-title: 🏴VPN #1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
-          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
+          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f:
+              f.write(header + "\n".join(final))
+              
       - name: Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_vpn1.txt
-          git commit -m "sync: vpn1" || echo "No changes"
+          git commit -m "sync: vpn1 with real ip geo" || echo "No changes"
           git pull --rebase origin main
           git push origin main --force-with-lease
