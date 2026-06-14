@@ -13,7 +13,7 @@ jobs:
       - name: Run Sync
         shell: python
         run: |
-          import requests, datetime
+          import requests, datetime, re
           
           sources = [
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt", 6),
@@ -30,44 +30,68 @@ jobs:
               except:
                   continue
           
-          mapping = {
-              "германия": ["🇩🇪", "Германия"], 
-              "нидерланды": ["🇳🇱", "Нидерланды"], 
-              "сша": ["🇺🇸", "США"], 
-              "united states": ["🇺🇸", "США"],
-              "сингапур": ["🇸🇬", "Сингапур"], 
-              "япония": ["🇯🇵", "Япония"], 
-              "великобритания": ["🇬🇧", "Великобритания"], 
-              "англия": ["🇬🇧", "Великобритания"],
-              "канада": ["🇨🇦", "Канада"], 
-              "швейцария": ["🇨🇭", "Швейцария"], 
-              "франция": ["🇫🇷", "Франция"], 
-              "россия": ["🇷🇺", "Россия"], 
-              "финляндия": ["🇫🇮", "Финляндия"], 
-              "швеция": ["🇸🇪", "Швеция"],
-              "норвегия": ["🇳🇴", "Норвегия"], 
-              "дания": ["🇩🇰", "Дания"], 
-              "италия": ["🇮🇹", "Италия"], 
-              "испания": ["🇪🇸", "Испания"],
-              "польша": ["🇵🇱", "Польша"], 
-              "австрия": ["🇦🇹", "Австрия"], 
-              "бельгия": ["🇧🇪", "Бельгия"], 
-              "ирландия": ["🇮🇪", "Ирландия"]
+          geo_data = {
+              "de": {"flag": "🇩🇪", "name": "Германия", "emoji": "🇩🇪", "keywords": ["германия", "герм", "гер", "germany", "ger", "de"]},
+              "nl": {"flag": "🇳🇱", "name": "Нидерланды", "emoji": "🇳🇱", "keywords": ["нидерланды", "нид", "netherlands", "holland", "ned", "nl"]},
+              "us": {"flag": "🇺🇸", "name": "США", "emoji": "🇺🇸", "keywords": ["сша", "америка", "usa", "united states", "america", "us"]},
+              "sg": {"flag": "🇸🇬", "name": "Сингапур", "emoji": "🇸🇬", "keywords": ["сингапур", "синг", "singapore", "sgp", "sg"]},
+              "jp": {"flag": "🇯🇵", "name": "Япония", "emoji": "🇯🇵", "keywords": ["япония", "яп", "japan", "jpn", "jp"]},
+              "gb": {"flag": "🇬🇧", "name": "Великобритания", "emoji": "🇬🇧", "keywords": ["великобритания", "британия", "англия", "вел", "анг", "uk", "gb", "england", "united kingdom"]},
+              "ca": {"flag": "🇨🇦", "name": "Канада", "emoji": "🇨🇦", "keywords": ["канада", "кан", "canada", "can", "ca"]},
+              "ch": {"flag": "🇨🇭", "name": "Швейцария", "emoji": "🇨🇭", "keywords": ["швейцария", "швейц", "switzerland", "swiss", "ch"]},
+              "fr": {"flag": "🇫🇷", "name": "Франция", "emoji": "🇫🇷", "keywords": ["франция", "фран", "france", "fra", "fr"]},
+              "ru": {"flag": "🇷🇺", "name": "Россия", "emoji": "🇷🇺", "keywords": ["россия", "рос", "рф", "russia", "rus", "rf", "ru"]},
+              "fi": {"flag": "🇫🇮", "name": "Финляндия", "emoji": "🇫🇮", "keywords": ["финляндия", "фин", "finland", "fin", "fi"]},
+              "se": ["🇸🇪", "Швеция"],
+              "se": {"flag": "🇸🇪", "name": "Швеция", "emoji": "🇸🇪", "keywords": ["швеция", "швец", "sweden", "swe", "se"]},
+              "no": {"flag": "🇳🇴", "name": "Норвегия", "emoji": "🇳🇴", "keywords": ["норвегия", "нор", "norway", "nor", "no"]},
+              "dk": {"flag": "🇩🇰", "name": "Дания", "emoji": "🇩🇰", "keywords": ["дания", "дан", "denmark", "dnk", "dk"]},
+              "it": {"flag": "🇮🇹", "name": "Италия", "emoji": "🇮🇹", "keywords": ["италия", "итал", "italy", "ita", "it"]},
+              "es": {"flag": "🇪🇸", "name": "Испания", "emoji": "🇪🇸", "keywords": ["испания", "исп", "spain", "esp", "es"]},
+              "pl": {"flag": "🇵🇱", "name": "Польша", "emoji": "🇵🇱", "keywords": ["польша", "пол", "poland", "pol", "pl"]},
+              "at": {"flag": "🇦🇹", "name": "Австрия", "emoji": "🇦🇹", "keywords": ["австрия", "авс", "austria", "aut", "at"]},
+              "be": {"flag": "🇧🇪", "name": "Бельгия", "emoji": "🇧🇪", "keywords": ["бельгия", "бел", "belgium", "bel", "be"]},
+              "ie": {"flag": "🇮🇪", "name": "Ирландия", "emoji": "🇮🇪", "keywords": ["ирландия", "ирл", "ireland", "irl", "ie"]},
+              "hk": {"flag": "🇭🇰", "name": "Гонконг", "emoji": "🇭🇰", "keywords": ["гонконг", "гонк", "hong kong", "hkg", "hk"]},
+              "tr": {"flag": "🇹🇷", "name": "Турция", "emoji": "🇹🇷", "keywords": ["турция", "тур", "turkey", "tur", "tr"]}
           }
           
           final = []
           for n in list(dict.fromkeys(nodes))[:200]:
               clean_node = n.split('#')[0].strip()
+              raw_tail = n.split('#')[-1].strip() if '#' in n else ""
+              raw_tail_lower = raw_tail.lower()
               
-              if '#' in n:
-                  raw_tail = n.split('#')[-1].lower()
-              else:
-                  raw_tail = ""
+              matched_code = None
               
-              matched_key = next((k for k in mapping if k in raw_tail), None)
+              for code, info in geo_data.items():
+                  if info["emoji"] in raw_tail:
+                      matched_code = code
+                      break
               
-              if matched_key:
-                  flag, name = mapping[matched_key]
+              if not matched_code:
+                  for code, info in geo_data.items():
+                      for k in info["keywords"]:
+                          if len(k) > 2:
+                              if k in raw_tail_lower:
+                                  matched_code = code
+                                  break
+                      if matched_code:
+                          break
+                          
+              if not matched_code:
+                  for code, info in geo_data.items():
+                      for k in info["keywords"]:
+                          if len(k) <= 2:
+                              if re.search(r'\b' + re.escape(k) + r'\b', raw_tail_lower):
+                                  matched_code = code
+                                  break
+                      if matched_code:
+                          break
+              
+              if matched_code:
+                  flag = geo_data[matched_code]["flag"]
+                  name = geo_data[matched_code]["name"]
               else:
                   flag, name = "🌐", "Сервер"
                   
@@ -82,6 +106,6 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_vpn1.txt
-          git commit -m "sync: vpn1 full name search" || echo "No changes"
+          git commit -m "sync: vpn1 ultimate keyword search" || echo "No changes"
           git pull --rebase origin main
           git push origin main --force-with-lease
