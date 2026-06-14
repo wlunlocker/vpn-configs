@@ -14,42 +14,74 @@ jobs:
         shell: python
         run: |
           import requests, datetime
+          
           sources = [
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS_mobile.txt", 6),
               ("https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/BLACK_VLESS_RUS.txt", 6),
               ("https://shz.al/~WangCai", 0)
           ]
+          
           nodes = []
           for url, skip in sources:
               try:
                   r = requests.get(url, timeout=15)
                   if r.status_code == 200:
-                      nodes.extend([l for l in r.text.splitlines()[skip:] if l.startswith("vless://")])
-              except: continue
+                      nodes.extend([l.strip() for l in r.text.splitlines()[skip:] if l.strip().startswith("vless://")])
+              except:
+                  continue
           
           mapping = {
-              "us": ["🇺🇸", "США"], "de": ["🇩🇪", "Германия"], "nl": ["🇳🇱", "Нидерланды"], "sg": ["🇸🇬", "Сингапур"], 
-              "jp": ["🇯🇵", "Япония"], "gb": ["🇬🇧", "Великобритания"], "ca": ["🇨🇦", "Канада"], "ch": ["🇨🇭", "Швейцария"], 
-              "fr": ["🇫🇷", "Франция"], "ru": ["🇷🇺", "Россия"], "fi": ["🇫🇮", "Финляндия"], "se": ["🇸🇪", "Швеция"],
-              "no": ["🇳🇴", "Норвегия"], "dk": ["🇩🇰", "Дания"], "it": ["🇮🇹", "Италия"], "es": ["🇪🇸", "Испания"],
-              "pl": ["🇵🇱", "Польша"], "at": ["🇦🇹", "Австрия"], "be": ["🇧🇪", "Бельгия"], "ie": ["🇮🇪", "Ирландия"]
+              "германия": ["🇩🇪", "Германия"], 
+              "нидерланды": ["🇳🇱", "Нидерланды"], 
+              "сша": ["🇺🇸", "США"], 
+              "united states": ["🇺🇸", "США"],
+              "сингапур": ["🇸🇬", "Сингапур"], 
+              "япония": ["🇯🇵", "Япония"], 
+              "великобритания": ["🇬🇧", "Великобритания"], 
+              "англия": ["🇬🇧", "Великобритания"],
+              "канада": ["🇨🇦", "Канада"], 
+              "швейцария": ["🇨🇭", "Швейцария"], 
+              "франция": ["🇫🇷", "Франция"], 
+              "россия": ["🇷🇺", "Россия"], 
+              "финляндия": ["🇫🇮", "Финляндия"], 
+              "швеция": ["🇸🇪", "Швеция"],
+              "норвегия": ["🇳🇴", "Норвегия"], 
+              "дания": ["🇩🇰", "Дания"], 
+              "италия": ["🇮🇹", "Италия"], 
+              "испания": ["🇪🇸", "Испания"],
+              "польша": ["🇵🇱", "Польша"], 
+              "австрия": ["🇦🇹", "Австрия"], 
+              "бельгия": ["🇧🇪", "Бельгия"], 
+              "ирландия": ["🇮🇪", "Ирландия"]
           }
           
           final = []
           for n in list(dict.fromkeys(nodes))[:200]:
-              raw = n.split('#')[-1].lower()
-              code = next((c for c in mapping if c in raw), None)
-              if code:
-                  flag, name = mapping[code]
-                  final.append(f"{n.split('#')[0].strip()}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
+              clean_node = n.split('#')[0].strip()
+              
+              if '#' in n:
+                  raw_tail = n.split('#')[-1].lower()
+              else:
+                  raw_tail = ""
+              
+              matched_key = next((k for k in mapping if k in raw_tail), None)
+              
+              if matched_key:
+                  flag, name = mapping[matched_key]
+              else:
+                  flag, name = "🌐", "Сервер"
+                  
+              final.append(f"{clean_node}#{flag} 🏴 WLUnlocker {name} | #{len(final)+1}")
           
           header = f"# profile-title: 🏴VPN #1 (VLESS)\n# last-update: {datetime.datetime.now().strftime('%d.%m.%H')}\n# count: {len(final)}\n"
-          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f: f.write(header + "\n".join(final))
+          with open("blacklist_vpn1.txt", "w", encoding="utf-8") as f:
+              f.write(header + "\n".join(final))
+              
       - name: Push Changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add blacklist_vpn1.txt
-          git commit -m "sync: vpn1" || echo "No changes"
+          git commit -m "sync: vpn1 full name search" || echo "No changes"
           git pull --rebase origin main
           git push origin main --force-with-lease
