@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 14.06.14
+# last-update: 14.06.16
 # count: 115
 vless://f64cab0a-75a4-44f1-b2f6-8ecc6c73c249@94.177.9.149:443?flow=xtls-rprx-vision&fp=firefox&pbk=wpZDT_592emHu309qN-7-qceofbMJzoAdIx9m9RFJGg&security=reality&sid=b77ac02151b47155&sni=at-c3.buycloud.app&type=tcp#🇺🇸 🏴 WLUnlocker США | #1
 vless://f68435e2-ac00-4374-8c03-c1d36e171088@185.148.147.27:1443?flow=xtls-rprx-vision&fp=firefox&pbk=yOUdRfWt1VaYEeJvHWtfoHoDesPHZPOCaaYe8XDwCB0&security=reality&sid=0441f3e34348cb40&sni=bulg.kupivodku.top&type=tcp#🇫🇮 🏴 WLUnlocker Финляндия | #2
