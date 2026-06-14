@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 14.06.15
+# last-update: 14.06.17
 # count: 198
 hysteria2://2f4c3fc5-8fa2-4576-a583-8f98a6026887@hkt.ccwink.cc:56309?headerType=none&encryption=none&sni=hkt.ccwink.cc&insecure=0#🇩🇪 🏳️ WLUnlocker Германия | #1
 hysteria2://2f4c3fc5-8fa2-4576-a583-8f98a6026887@hkt.ccwink.cc:56309?insecure=1#🇸🇪 🏳️ WLUnlocker Швеция | #2
