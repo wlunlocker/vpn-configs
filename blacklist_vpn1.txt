@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 18.06.16
+# last-update: 18.06.19
 # count: 58
 vless://76a556ba-cec0-4323-81d4-546ea40a360c@fir.iratom.com:80?security=none&type=xhttp&headerType=&path=%2F&host=center.global.ssl.fastly.net&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+%221000000%22%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D#🇳🇱 🏴 WLUnlocker Нидерланды | #1
 vless://1ba82279-238b-4b9c-8263-1b8fdf60c827@free02.tunnely.ru:8080?encryption=none&type=ws&path=%2Fws%2F&security=none#🇳🇱 🏴 WLUnlocker Нидерланды | #2
