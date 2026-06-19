@@ -1,6 +1,6 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 19.06.17
-# count: 59
+# last-update: 19.06.19
+# count: 57
 vless://6f30dce4-1951-4b3d-abeb-7170f51430e7@67.159.18.226:12445?security=none&encryption=none&headerType=none&type=tcp#🇨🇭 🏴 WLUnlocker Швейцария | #1
 vless://a365a98b-b655-4480-886f-fcaad4956b7d@94.183.240.225:1003?flow=xtls-rprx-vision&fp=firefox&pbk=OyxvimJx2EPWwJv1nBGi0y60V6zM7q4t_zLOR991Xzc&security=reality&sid=8d&sni=soft98.ir&type=tcp#🇸🇪 🏴 WLUnlocker Швеция | #2
 vless://a365a98b-b655-4480-886f-fcaad4956b7d@94.183.240.225:1003?flow=xtls-rprx-vision&fp=firefox&pbk=OyxvimJx2EPWwJv1nBGi0y60V6zM7q4t_zLOR991Xzc&security=reality&sid=8d&sni=www.speedtest.net&type=tcp#🇸🇪 🏴 WLUnlocker Швеция | #3
@@ -57,6 +57,4 @@ vless://394f6981-a782-4779-9a85-e6cf22935d93@143.244.45.54:8443/?type=tcp&encryp
 vless://394f6981-a782-4779-9a85-e6cf22935d93@143.244.45.55:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇨🇦 🏴 WLUnlocker Канада | #54
 vless://394f6981-a782-4779-9a85-e6cf22935d93@185.229.191.157:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇳🇱 🏴 WLUnlocker Нидерланды | #55
 vless://394f6981-a782-4779-9a85-e6cf22935d93@185.229.191.180:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇳🇱 🏴 WLUnlocker Нидерланды | #56
-vless://394f6981-a782-4779-9a85-e6cf22935d93@185.229.191.185:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇳🇱 🏴 WLUnlocker Нидерланды | #57
-vless://394f6981-a782-4779-9a85-e6cf22935d93@185.229.191.184:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇳🇱 🏴 WLUnlocker Нидерланды | #58
-vless://394f6981-a782-4779-9a85-e6cf22935d93@185.229.191.96:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇳🇱 🏴 WLUnlocker Нидерланды | #59
+vless://394f6981-a782-4779-9a85-e6cf22935d93@185.229.191.96:8443/?type=tcp&encryption=none&flow=&security=tls&sni=ams1.fromblancwithlove.com#🇳🇱 🏴 WLUnlocker Нидерланды | #57
