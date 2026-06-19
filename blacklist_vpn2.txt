@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 19.06.19
+# last-update: 19.06.21
 # count: 200
 hysteria2://dc013da7-a117-4a3f-97bd-11b4c765b238@23.146.72.207:443?insecure=1&sni=www.bing.com#🇸🇪 🏳️ WLUnlocker Швеция | #1
 hysteria2://43bcba7d-cd22-379c-a7da-2e8eafecbc78@88.151.195.220:443?headerType=none&encryption=none&sni=u711540us282.wagahaha.xyz&insecure=0#🇺🇸 🏳️ WLUnlocker США | #2
