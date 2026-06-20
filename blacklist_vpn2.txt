@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 19.06.22
+# last-update: 20.06.00
 # count: 200
 hysteria2://e3a5bb40be52de65@89.251.26.111:55555?insecure=1&security=tls&sni=apps.apple.com#🇩🇪 🏳️ WLUnlocker Германия | #1
 hysteria2://e3a5bb40be52de65@89.251.26.111:55555?insecure=1&sni=apps.apple.com#🇩🇪 🏳️ WLUnlocker Германия | #2
