@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 20.06.20
+# last-update: 20.06.22
 # count: 120
 vless://9a2573c5-936f-4f93-8409-e43164793176@138.124.100.10:443?flow=xtls-rprx-vision&fp=firefox&pbk=MpuwI3YH2g3YWHKLuQwwgD_qLo-UmUtZe8L1KXOKxhA&security=reality&sid=b0d8f964b7ac8ac0&sni=cdn2-09.cdn-vkvideo.com&spx=/api/v1/video/init&type=tcp#🇪🇸 🏴 WLUnlocker Испания | #1
 vless://9a2573c5-936f-4f93-8409-e43164793176@cdn2-09.cdn-vkvideo.com:443?security=reality&encryption=none&pbk=MpuwI3YH2g3YWHKLuQwwgD_qLo-UmUtZe8L1KXOKxhA&headerType=none&fp=firefox&spx=%2Fapi%2Fv1%2Fvideo%2Finit&type=tcp&flow=xtls-rprx-vision&sni=cdn2-09.cdn-vkvideo.com&sid=b0d8f964b7ac8ac0#🇪🇸 🏴 WLUnlocker Испания | #2
