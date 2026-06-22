@@ -1,6 +1,6 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 22.06.20
-# count: 117
+# last-update: 22.06.22
+# count: 118
 hysteria2://ebcb836a-ab7a-424f-a07c-aba25c70da69@finnode.dostupnet.ru:10100?headerType=none&encryption=none&sni=finnode.dostupnet.ru&insecure=0#🇩🇪 🏳️ WLUnlocker Германия | #1
 hysteria2://ebcb836a-ab7a-424f-a07c-aba25c70da69@finnode.dostupnet.ru:10100?insecure=0&sni=finnode.dostupnet.ru#🇩🇪 🏳️ WLUnlocker Германия | #2
 hysteria2://2f4c3fc5-8fa2-4576-a583-8f98a6026887@hkt.ccwink.cc:56309/?insecure=1#🇸🇪 🏳️ WLUnlocker Швеция | #3
@@ -116,5 +116,6 @@ ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklOQDE0MS4xNjQuNDUuMTg3OjgxMTk=#🇩🇪 �
 ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklOQDM4LjE4MC4xNjEuMTIzOjgxMTk=#🇨🇭 🏳️ WLUnlocker Швейцария | #113
 ss://YWVzLTI1Ni1nY206Y2ZlNjg1NzI2ZWVhMmM0YkA0Ni4xNy40My4yODo1MDEyOQ==#🇩🇪 🏳️ WLUnlocker Германия | #114
 ss://YWVzLTI1Ni1nY206YzVmY2RmNzgyOTExMmNiNA==@46.29.163.104:24213#🇷🇺 🏳️ WLUnlocker Россия | #115
-ss://YWVzLTI1Ni1nY206ZmJhZjMzYmNmZmU1M2NmOUAxNzYuMzIuMzkuOTY6MjMyNDI=#🇷🇺 🏳️ WLUnlocker Россия | #116
-ss://YWVzLTI1Ni1nY206bEdxczk1UWtGSG8yTlZAMTQxLjE2NC40NS4xODc6NTQ5OA==#🇸🇬 🏳️ WLUnlocker Сингапур | #117
+ss://YWVzLTI1Ni1nY206YzgrcTJXeTJrMGwrUVk2Vm5JTmZtSFdtSjZoZm1oWXJhd09mUThTd1hJTT0=@95.182.85.39:53192#🇷🇺 🏳️ WLUnlocker Россия | #116
+ss://YWVzLTI1Ni1nY206ZmJhZjMzYmNmZmU1M2NmOUAxNzYuMzIuMzkuOTY6MjMyNDI=#🇷🇺 🏳️ WLUnlocker Россия | #117
+ss://YWVzLTI1Ni1nY206bEdxczk1UWtGSG8yTlZAMTQxLjE2NC40NS4xODc6NTQ5OA==#🇸🇬 🏳️ WLUnlocker Сингапур | #118
