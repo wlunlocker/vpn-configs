@@ -1,6 +1,6 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 23.06.17
-# count: 143
+# last-update: 23.06.19
+# count: 144
 hysteria2://00dcd873-9211-4d61-ad35-87999906e5c8@fta.fontanvpn.com:443?encryption=none&headerType=none&__rand=025d5f55&sni=fta.fontanvpn.com&insecure=0&__rand=94cf702c#🇩🇪 🏳️ WLUnlocker Германия | #1
 hysteria2://00dcd873-9211-4d61-ad35-87999906e5c8@fta.fontanvpn.com:443?encryption=none&headerType=none&__rand=025d5f55&sni=fta.fontanvpn.com&insecure=0&__rand=94cf702c&descriptions=%D0%BB%D1%8E%D0%B1%D0%B8_%D1%81%D0%B5%D0%B1%D1%8Fc888e7#🇩🇪 🏳️ WLUnlocker Германия | #2
 hysteria2://00dcd873-9211-4d61-ad35-87999906e5c8@fta.fontanvpn.com:443?encryption=none&sni=fta.fontanvpn.com&insecure=0&headerType=none&__rand=025d5f55#🇩🇪 🏳️ WLUnlocker Германия | #3
@@ -120,27 +120,28 @@ ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpyTWVKaGlhOUhoQ3cxaEdjeGVWRlFm@195.93.253.245
 ss://Y2hhY2hhMjAtcG9seTEzMDU6bW5vUGZxa29VYitHdDhSYmlQWnZqVkp6a3ZSRWRrZHphM3Rla0picGJLVT0@68.210.184.141:777#🇸🇪 🏳️ WLUnlocker Швеция | #117
 ss://YWVzLTEyOC1nY206NTIzejJmZ3JkN2p4MHo1eHY2bzU=@167.160.90.51:11475#🇺🇸 🏳️ WLUnlocker США | #118
 ss://YWVzLTEyOC1nY206SlZTdXVpYjR5ZHZZOG03dTZqRWxUWWJlUk84eWdKNEhpOElxNzMzQnFBa0Y=@168.138.175.92:9888#🇸🇬 🏳️ WLUnlocker Сингапур | #119
-ss://YWVzLTI1Ni1nY206MzJjMGVhNmU4MjMzNDFhMkA0Ni4yOS4xNjMuMzA6MzIzMjQ=#🇷🇺 🏳️ WLUnlocker Россия | #120
-ss://YWVzLTI1Ni1nY206R1RaSTVBYmpOQWVXUUcwb1ZOcHR2V0pvZ0hOS2lpS0E=@47.79.144.115:40003#🇯🇵 🏳️ WLUnlocker Япония | #121
-ss://YWVzLTI1Ni1nY206S2l4THZLendqZWtHMDBybUAzOC4xODAuMTk3LjQxOjgwODA=#🇦🇹 🏳️ WLUnlocker Австрия | #122
-ss://YWVzLTI1Ni1nY206UENubkg2U1FTbmZvUzI3QDE0MS4xNjQuNDUuMTg3OjgwOTE=#🇩🇪 🏳️ WLUnlocker Германия | #123
-ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDE0MS4xNjQuNDUuMTg3OjcwMDE=#🇩🇪 🏳️ WLUnlocker Германия | #124
-ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDE0MS4xNjQuNDUuMTg3OjcwMDI=#🇩🇪 🏳️ WLUnlocker Германия | #125
-ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDE4NS4yMTMuMjAuMTEwOjcwMDE=#🇩🇪 🏳️ WLUnlocker Германия | #126
-ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDIxMy4yMDIuMjA4LjE5OTo3MDAx#🇩🇪 🏳️ WLUnlocker Германия | #127
-ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDk0LjE1Ni4yNTAuMTQ4OjcwMDE=#🇩🇪 🏳️ WLUnlocker Германия | #128
-ss://YWVzLTI1Ni1nY206VEV6amZBWXEySWp0dW9TQDE0MS4xNjQuNDUuMTg3OjY2Nzk=#🇩🇪 🏳️ WLUnlocker Германия | #129
-ss://YWVzLTI1Ni1nY206WEtGS2wyclVMaklwNzRAMTAzLjEwNi4yMjguMTc1OjgwMDk=#🇯🇵 🏳️ WLUnlocker Япония | #130
-ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklOQDE0MS4xNjQuNDUuMTg3OjgxMTk=#🇩🇪 🏳️ WLUnlocker Германия | #131
-ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklOQDM4LjE4MC4xNjEuMTIzOjgxMTk=#🇨🇭 🏳️ WLUnlocker Швейцария | #132
-ss://YWVzLTI1Ni1nY206Y2ZlNjg1NzI2ZWVhMmM0YkA0Ni4xNy40My4yODo1MDEyOQ==#🇩🇪 🏳️ WLUnlocker Германия | #133
-ss://YWVzLTI1Ni1nY206YzVmY2RmNzgyOTExMmNiNA==@46.29.163.104:24213#🇷🇺 🏳️ WLUnlocker Россия | #134
-ss://YWVzLTI1Ni1nY206YzgrcTJXeTJrMGwrUVk2Vm5JTmZtSFdtSjZoZm1oWXJhd09mUThTd1hJTT0=@95.182.85.39:53192#🇷🇺 🏳️ WLUnlocker Россия | #135
-ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNAMTMuMjEyLjk3Ljc5Ojgw#🇸🇬 🏳️ WLUnlocker Сингапур | #136
-ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNAMTMuMjUwLjYzLjIzNDo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #137
-ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNANDcuMTI5LjE0My40Njo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #138
-ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNANTQuMTY5LjI0Ni45Mjo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #139
-ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNANTQuMTY5LjIxOS45ODo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #140
-ss://YWVzLTI1Ni1nY206ZmJhZjMzYmNmZmU1M2NmOUAxNzYuMzIuMzkuOTY6MjMyNDI=#🇷🇺 🏳️ WLUnlocker Россия | #141
-ss://YWVzLTI1Ni1nY206bEdxczk1UWtGSG8yTlZAMTQxLjE2NC40NS4xODc6NTQ5OA==#🇸🇬 🏳️ WLUnlocker Сингапур | #142
-ss://YWVzLTI1Ni1nY206bnNOckVqQXpUUEt3aEhPd2dodWdrUlE1R253aFdQVDRCSG16M1lnZE1mcz0=@95.182.85.39:53192#🇸🇬 🏳️ WLUnlocker Сингапур | #143
+ss://YWVzLTI1Ni1nY206MWE4NzAxN2QwYmY1N2YzNA@195.133.23.66:32432#🇷🇺 🏳️ WLUnlocker Россия | #120
+ss://YWVzLTI1Ni1nY206MzJjMGVhNmU4MjMzNDFhMkA0Ni4yOS4xNjMuMzA6MzIzMjQ=#🇷🇺 🏳️ WLUnlocker Россия | #121
+ss://YWVzLTI1Ni1nY206R1RaSTVBYmpOQWVXUUcwb1ZOcHR2V0pvZ0hOS2lpS0E=@47.79.144.115:40003#🇯🇵 🏳️ WLUnlocker Япония | #122
+ss://YWVzLTI1Ni1nY206S2l4THZLendqZWtHMDBybUAzOC4xODAuMTk3LjQxOjgwODA=#🇦🇹 🏳️ WLUnlocker Австрия | #123
+ss://YWVzLTI1Ni1nY206UENubkg2U1FTbmZvUzI3QDE0MS4xNjQuNDUuMTg3OjgwOTE=#🇩🇪 🏳️ WLUnlocker Германия | #124
+ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDE0MS4xNjQuNDUuMTg3OjcwMDE=#🇩🇪 🏳️ WLUnlocker Германия | #125
+ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDE0MS4xNjQuNDUuMTg3OjcwMDI=#🇩🇪 🏳️ WLUnlocker Германия | #126
+ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDE4NS4yMTMuMjAuMTEwOjcwMDE=#🇩🇪 🏳️ WLUnlocker Германия | #127
+ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDIxMy4yMDIuMjA4LjE5OTo3MDAx#🇩🇪 🏳️ WLUnlocker Германия | #128
+ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhHQDk0LjE1Ni4yNTAuMTQ4OjcwMDE=#🇩🇪 🏳️ WLUnlocker Германия | #129
+ss://YWVzLTI1Ni1nY206VEV6amZBWXEySWp0dW9TQDE0MS4xNjQuNDUuMTg3OjY2Nzk=#🇩🇪 🏳️ WLUnlocker Германия | #130
+ss://YWVzLTI1Ni1nY206WEtGS2wyclVMaklwNzRAMTAzLjEwNi4yMjguMTc1OjgwMDk=#🇯🇵 🏳️ WLUnlocker Япония | #131
+ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklOQDE0MS4xNjQuNDUuMTg3OjgxMTk=#🇩🇪 🏳️ WLUnlocker Германия | #132
+ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklOQDM4LjE4MC4xNjEuMTIzOjgxMTk=#🇨🇭 🏳️ WLUnlocker Швейцария | #133
+ss://YWVzLTI1Ni1nY206Y2ZlNjg1NzI2ZWVhMmM0YkA0Ni4xNy40My4yODo1MDEyOQ==#🇩🇪 🏳️ WLUnlocker Германия | #134
+ss://YWVzLTI1Ni1nY206YzVmY2RmNzgyOTExMmNiNA==@46.29.163.104:24213#🇷🇺 🏳️ WLUnlocker Россия | #135
+ss://YWVzLTI1Ni1nY206YzgrcTJXeTJrMGwrUVk2Vm5JTmZtSFdtSjZoZm1oWXJhd09mUThTd1hJTT0=@95.182.85.39:53192#🇷🇺 🏳️ WLUnlocker Россия | #136
+ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNAMTMuMjEyLjk3Ljc5Ojgw#🇸🇬 🏳️ WLUnlocker Сингапур | #137
+ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNAMTMuMjUwLjYzLjIzNDo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #138
+ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNANDcuMTI5LjE0My40Njo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #139
+ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNANTQuMTY5LjI0Ni45Mjo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #140
+ss://YWVzLTI1Ni1nY206ZGFkYTEyMDNANTQuMTY5LjIxOS45ODo4MA#🇸🇬 🏳️ WLUnlocker Сингапур | #141
+ss://YWVzLTI1Ni1nY206ZmJhZjMzYmNmZmU1M2NmOUAxNzYuMzIuMzkuOTY6MjMyNDI=#🇷🇺 🏳️ WLUnlocker Россия | #142
+ss://YWVzLTI1Ni1nY206bEdxczk1UWtGSG8yTlZAMTQxLjE2NC40NS4xODc6NTQ5OA==#🇸🇬 🏳️ WLUnlocker Сингапур | #143
+ss://YWVzLTI1Ni1nY206bnNOckVqQXpUUEt3aEhPd2dodWdrUlE1R253aFdQVDRCSG16M1lnZE1mcz0=@95.182.85.39:53192#🇸🇬 🏳️ WLUnlocker Сингапур | #144
