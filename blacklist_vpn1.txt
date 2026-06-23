@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 23.06.09
+# last-update: 23.06.12
 # count: 162
 vless://02af3b31-2696-4b1c-a7d3-19ecf6318f64@84.75.161.19:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=auto.malina24.xyz&fp=chrome&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&sid=5678&type=tcp&headerType=none#🇩🇪 🏴 WLUnlocker Германия | #1
 vless://02af3b31-2696-4b1c-a7d3-19ecf6318f64@84.75.161.19:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=auto.malina24.xyz&fp=qq&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&sid=5678&type=tcp&headerType=none#🇩🇪 🏴 WLUnlocker Германия | #2
