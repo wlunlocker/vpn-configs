@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 25.06.21
+# last-update: 25.06.23
 # count: 45
 vless://b2b8bd00-2e42-4875-8d7b-bcf97093a1d4@2.59.83.87:443?encryption=none&security=reality&type=tcp&sni=fi.sellflow.org&fp=firefox&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&flow=xtls-rprx-vision#🇳🇱 🏴 WLUnlocker Нидерланды | #1
 vless://a7896b5b-1c7d-4148-9429-fcdf949137bf@151.101.7.243:80?mode=auto&path=%2F&security=&encryption=none&host=kakapi.global.ssl.fastly.net&type=xhttp#🇫🇷 🏴 WLUnlocker Франция | #2
