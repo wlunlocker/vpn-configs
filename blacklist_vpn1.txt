@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 26.06.07
+# last-update: 26.06.10
 # count: 104
 vless://5fdf2809-9b94-4c77-bd50-81027af9cef4@104.143.0.175:443?flow=xtls-rprx-vision&fp=firefox&packetencoding=xudp&pbk=vrVQUS7kxjMbHBQGiMS1MO_G2Ib7dEDeJhyPtvHB1n8&security=reality&sid=0831ac40b4eee18c&sni=austria.anotherboring.top&type=tcp#🇺🇸 🏴 WLUnlocker США | #1
 vless://5fdf2809-9b94-4c77-bd50-81027af9cef4@austria.anotherboring.top:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=austria.anotherboring.top&fp=qq&pbk=vrVQUS7kxjMbHBQGiMS1MO_G2Ib7dEDeJhyPtvHB1n8&sid=0831ac40b4eee18c&packetEncoding=xudp#🇺🇸 🏴 WLUnlocker США | #2
