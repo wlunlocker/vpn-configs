@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 26.06.20
+# last-update: 26.06.22
 # count: 193
 vless://44b52b3b-5979-4bfc-9d3e-fc8b8369ef91@bg.janusgate.org:443?security=reality&encryption=none&pbk=nilJ07r1KZ0-KhmRNYeICXGhM9HeG9uxnRaqjYz3fWg&host=Telegram-NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP---NitruVIP&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=&sid=13171b0dd8985179#🇫🇮 🏴 WLUnlocker Финляндия | #1
 vless://b989ca1f-0d70-45aa-bffc-6e13e50f9b4a@161.145.150.6:443?security=tls&type=xhttp&headerType=&path=%2Fone&host=54b6bca2b7deac06.tinfar.ir&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+1000000%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=54b6bca2b7deac06.tinfar.ir&fp=firefox&alpn=h2#🇨🇦 🏴 WLUnlocker Канада | #2
