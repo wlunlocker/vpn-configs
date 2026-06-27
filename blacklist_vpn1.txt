@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 27.06.16
+# last-update: 27.06.18
 # count: 129
 vless://94bcd9a9-33a9-40e4-a6fd-05e30db5b457@20.70.160.45:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=safari&pbk=140jRwI3SEyJezoVv7iFt2VEZOfDVu7CmPblFi2Q6ik&sid=5c333a77#🇺🇸 🏴 WLUnlocker США | #1
 vless://a7896b5b-1c7d-4148-9429-fcdf949137bf@151.101.7.243:80?mode=auto&path=%2F&security=&encryption=none&host=kakapi.global.ssl.fastly.net&type=xhttp#🇫🇷 🏴 WLUnlocker Франция | #2
