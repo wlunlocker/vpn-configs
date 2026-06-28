@@ -1,6 +1,6 @@
 # profile-title: 🌐🏴VPN - ВСЕ СЕРВЕРА
 # profile-update-interval: 1
-# last-update: 28.06.18
+# last-update: 28.06.20
 # кол-во: 1093
 trojan://86957ec0-b213-433b-a43b-51f2175e0ec3@space.byu.id.yxls.eu.cc:443?security=tls&sni=space.byu.id.yxls.eu.cc&fp=chrome&allowInsecure=0&type=ws&path=/au-do#🇦🇺 🏴 WLUnlocker Австралия | #1
 vless://cf30deec-917f-4b1a-bb01-c48527cbc83a@at.fast-cone.com:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=Lq8lVW-_htJisywo8x4xbzaZGI5a7UZyvLjChObY5WQ&sid=80&sni=at.fast-cone.com&spx=/#🇦🇹 🏴 WLUnlocker Австрия | #1
