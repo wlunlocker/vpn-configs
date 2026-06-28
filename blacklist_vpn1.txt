@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 28.06.08
+# last-update: 28.06.11
 # count: 181
 vless://5a28d935-e940-46fe-bc44-229b126e052a@130.94.59.236:443?security=reality&encryption=none&pbk=s0lbZ5BO3ctZjE8DzsXkNL0NvLl6FgLG6532NQzXigo&headerType=&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=google.com&sid=c56d4f1c#🇨🇭 🏴 WLUnlocker Швейцария | #1
 vless://cfb5b3d3-c094-4222-99e8-53faa787c857@193.93.194.120:443?__rand=88e7c4ec&flow=xtls-rprx-vision&fp=firefox&pbk=dgrcO3r5wkEjcsWdEsNtgtWCe9vER6mgADXYclWXVxg&security=reality&sid=8de54d32a8d3fdf9&sni=site.rumedia-cdn.com&type=tcp#🇨🇭 🏴 WLUnlocker Швейцария | #2
