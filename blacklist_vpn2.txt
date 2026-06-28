@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 28.06.19
+# last-update: 28.06.20
 # count: 200
 hysteria2://00dcd873-9211-4d61-ad35-87999906e5c8@fta.fontanvpn.com:443/?insecure=1&sni=fta.fontanvpn.com#🇳🇱 🏳️ WLUnlocker Нидерланды | #1
 hysteria2://00dcd873-9211-4d61-ad35-87999906e5c8@fta.fontanvpn.com:443/?security=tls&sni=fta.fontanvpn.com#🇳🇱 🏳️ WLUnlocker Нидерланды | #2
