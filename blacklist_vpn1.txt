@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 28.06.15
+# last-update: 28.06.17
 # count: 183
 vless://60300afa-3366-4ae3-959a-7b50438acebb@ru-dc.wequ.host:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=ru-dc.wequ.host&fp=edge&pbk=JH077KoB3PWwc8qs7D2SPRWLDS7xKE4JbjDzEoSVvzQ&sid=37164c3e&type=tcp&headerType=none#🇺🇸 🏴 WLUnlocker США | #1
 vless://60300afa-3366-4ae3-959a-7b50438acebb@cz.wequ.ickly.co.uk:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=cz.wequ.ickly.co.uk&fp=qq&pbk=fadYuQJhIBXNeakk7Xzwawmsy-tprz91GzU2oHiXKB0&sid=0f047e2c&type=tcp&headerType=none#🇨🇭 🏴 WLUnlocker Швейцария | #2
