@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 29.06.17
+# last-update: 29.06.19
 # count: 185
 vless://93a96cb4-bf29-4f02-97a1-d1771f325086@64.188.68.182:46925?encryption=none&type=ws&path=/#🇫🇷 🏴 WLUnlocker Франция | #1
 vless://74dd3bb4-8f4f-48d6-9a65-555eb808b9c7@trp.aradart.top:443?type=xhttp&security=reality&path=/&sni=aparat.com&fp=chrome&pbk=dc3O5Dt33E1G0yRQ2QSeu1sHKmdm5qttYU7iX9vaxGY&sid=cf13#🇧🇪 🏴 WLUnlocker Бельгия | #2
