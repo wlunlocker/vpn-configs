@@ -1,6 +1,6 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 30.06.21
-# count: 93
+# last-update: 30.06.23
+# count: 95
 vless://7e544a9d-7667-413b-bbb0-b3bb1aac6d77@www.speedtest.org:443?encryption=none&security=tls&sni=shegeftihaaa.net&insecure=0&allowInsecure=0&type=ws&host=shegeftihaaa.net&path=%2Frsedgws#🇧🇪 🏴 WLUnlocker Бельгия | #1
 vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?&security=tls&sni=sca12.afterdomain.shop&type=grpc&serviceName=&mode=gun#🇮🇹 🏴 WLUnlocker Италия | #2
 vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=sca19.afterdomain.shop&alpn=h2&type=grpc&host=sca19.afterdomain.shop#🇮🇹 🏴 WLUnlocker Италия | #3
@@ -92,5 +92,7 @@ vless://14aedc8e-66d3-4e38-8f03-e7315fcf5b36@193.160.96.223:443?encryption=none&
 vless://14aedc8e-66d3-4e38-8f03-e7315fcf5b36@80.76.35.90:443?encryption=none&type=ws&sni=ee.seaspirit.dpdns.org&security=tls&fp=chrome&host=ee.seaspirit.dpdns.org&path=/?ed=2560#🇨🇦 🏴 WLUnlocker Канада | #89
 vless://f814efd4-b84c-4ec2-9fc5-9a69d9aac87b@151.101.110.219:443?path=/&security=tls&encryption=none&insecure=0&host=bazaryabab.global.ssl.fastly.net&type=ws&allowInsecure=0&sni=ssl.fastly.com#🇨🇦 🏴 WLUnlocker Канада | #90
 vless://f814efd4-b84c-4ec2-9fc5-9a69d9aac87b@140.248.185.253:443?type=ws&security=tls&fp=firefox&sni=ssl.fastly.com&path=/&host=bazaryabab.global.ssl.fastly.net#🇨🇦 🏴 WLUnlocker Канада | #91
-vless://b08562b0-dbc0-47d1-860d-9435133b25c9@47.93.236.249:443?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=cfoo-146.pages.dev&path=Telegram-WangCai2%F0%9F%87%A8%F0%9F%87%B3&security=tls&sni=cfoo-146.pages.dev&type=ws#🇺🇸 🏴 WLUnlocker США | #92
-vless://Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2@47.93.236.249:443/?type=ws&encryption=none&flow=&host=support.zoom.us.yxls.eu.cc&path=%2Fsg-melbi&ed=2560&eh=Sec-WebSocket-Protocol&security=tls&sni=support.zoom.us.yxls.eu.cc#🇺🇸 🏴 WLUnlocker США | #93
+vless://b08562b0-dbc0-47d1-860d-9435133b25c9@47.93.235.180:443?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=cfoo-146.pages.dev&path=Telegram-WangCai2%F0%9F%87%A8%F0%9F%87%B3&security=tls&sni=cfoo-146.pages.dev&type=ws#🇺🇸 🏴 WLUnlocker США | #92
+vless://b08562b0-dbc0-47d1-860d-9435133b25c9@47.93.236.249:443?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=cfoo-146.pages.dev&path=Telegram-WangCai2%F0%9F%87%A8%F0%9F%87%B3&security=tls&sni=cfoo-146.pages.dev&type=ws#🇺🇸 🏴 WLUnlocker США | #93
+vless://Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2@47.93.235.180:443/?type=ws&encryption=none&flow=&host=support.zoom.us.yxls.eu.cc&path=%2Fsg-melbi&ed=2560&eh=Sec-WebSocket-Protocol&security=tls&sni=support.zoom.us.yxls.eu.cc#🇺🇸 🏴 WLUnlocker США | #94
+vless://Telegram%F0%9F%87%A8%F0%9F%87%B3%20%40WangCai2@47.93.236.249:443/?type=ws&encryption=none&flow=&host=support.zoom.us.yxls.eu.cc&path=%2Fsg-melbi&ed=2560&eh=Sec-WebSocket-Protocol&security=tls&sni=support.zoom.us.yxls.eu.cc#🇺🇸 🏴 WLUnlocker США | #95
