@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 29.06.22
+# last-update: 30.06.00
 # count: 184
 vless://123b2710-da1a-48a6-b39b-c050ae5ca386@bez3.stream-room.com:8443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=QHkXBS2ENHV0khgY9VBYi8_9bpfqnUYDcfQN4cW5Qg0&sid=4326&sni=bez3.stream-room.com#🇪🇸 🏴 WLUnlocker Испания | #1
 vless://d9307ab3-1ed0-4b6d-bfd0-e104c7ccc25a@193.176.240.129:8880?type=ws&security=none&fp=firefox&path=/&host=azsv2.ir5ive.ir#🇧🇪 🏴 WLUnlocker Бельгия | #2
