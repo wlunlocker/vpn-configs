@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 30.06.09
+# last-update: 30.06.12
 # count: 184
 vless://203fea15-b8f7-46cf-bd6a-a59811589308@199.232.78.159:80?mode=auto&path=%2F&security=none&encryption=none&host=rostife.global.ssl.fastly.net&type=xhttp#🇧🇪 🏴 WLUnlocker Бельгия | #1
 vless://61c26331-82fc-4589-80b2-65b29bfee7bf@bsnjsjlll.serendpiti.ir:2056?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&pbk=-9Tb3_QgseCyC35nHODuk2kcsp6dSIiFsjOlMUgN7jQ&fp=chrome&security=reality&extra=%7B%22scMaxEachPostBytes%22%3A%2B1000000%2C%2B%22scMaxConcurrentPosts%22%3A%2B100%2C%2B%22scMinPostsIntervalMs%22%3A%2B30%2C%2B%22xPaddingBytes%22%3A%2B%22100-1000%22%2C%2B%22noGRPCHeader%22%3A%2Bfalse%7D&sid=30d1b04664171658&type=xhttp&encryption=none&host=hostname&mode=auto&sni=www.yahoo.com&path=%2Fpath#🇮🇹 🏴 WLUnlocker Италия | #2
