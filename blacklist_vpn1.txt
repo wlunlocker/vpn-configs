@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 01.07.17
+# last-update: 01.07.20
 # count: 99
 vless://6429d1d5-de69-4758-9046-e72861a40cb9@bul.sempai.site:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=bul.sempai.site&fp=chrome&pbk=1khdgzPjogVxzOE8Z1JwjWrWw1PKOcApIHjvEF9Xwhs&type=tcp&headerType=none#🇫🇮 🏴 WLUnlocker Финляндия | #1
 vless://955b3656-fd26-4db4-a1ad-c7994f8d7ace@176.109.85.82:7443?encryption=none&security=reality&sni=5post-gate.x5.ru&fp=chrome&pbk=YvhcuqXRqPigT7_rp9vsV5LAdxXHN8eWB_17SchS_S8&type=grpc&authority=&serviceName=grpc&mode=gun#🇨🇦 🏴 WLUnlocker Канада | #2
