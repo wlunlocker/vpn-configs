@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 02.07.08
+# last-update: 02.07.11
 # count: 134
 vless://d45fba72-a95f-488e-87f6-7c27294cdf50@poland1.azmov.ru:443?type=grpc&headerType=none&security=tls&encryption=none&sni=poland1.azmov.ru&fp=firefox&alpn=h2%2Chttp%2F1.1&serviceName=media.session.poll&insecure=0#🇫🇮 🏴 WLUnlocker Финляндия | #1
 vless://3b715892-8610-4fdc-9086-647b36af5443@fastly.videobazi.com:80?encryption=none&security=none&type=xhttp&headerType=none&path=%2F&host=dutschh.global.ssl.fastly.net&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷 🏴 WLUnlocker Франция | #2
