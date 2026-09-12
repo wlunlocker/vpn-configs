@@ -1,5 +1,5 @@
 # profile-title: 🏴VPN #1 (VLESS)
-# last-update: 12.09.08
+# last-update: 12.09.12
 # count: 85
 vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@austria.moritech.net:443?security=tls&flow=xtls-rprx-vision&type=tcp&headerType=none&host=austria.moritech.net&path=%2F&fp=chrome#🇺🇸 🏴 WLUnlocker США | #1
 vless://cd3bb7d9-7df3-4644-ac05-c260990ac277@austria.moritech.net:443?security=tls&flow=xtls-rprx-vision&type=tcp&headerType=none&host=austria.moritech.net&path=%2F&fp=qq#🇺🇸 🏴 WLUnlocker США | #2
