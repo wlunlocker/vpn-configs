@@ -1,13 +1,13 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 12.09.18
+# last-update: 12.09.21
 # count: 200
 hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-au-002.fastervpn.world:443/?insecure=1&sni=css.rbxcdn.com#🇺🇸 🏳️ WLUnlocker США | #1
 hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-au-002.fastervpn.world:443?insecure=1&sni=speedtest.tinkoff.ru&type=tcp&allowInsecure=1&upmbps=10&downmbps=50#🇺🇸 🏳️ WLUnlocker США | #2
 hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-au-002.fastervpn.world:443?insecure=1&sni=t.me&type=tcp&allowInsecure=1&upmbps=10&downmbps=50#🇺🇸 🏳️ WLUnlocker США | #3
 hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-au-002.fastervpn.world:443?insecure=1&sni=www.bing.com#🇺🇸 🏳️ WLUnlocker США | #4
-hysteria2://df8d55f9-fb51-442d-902a-bf8160dc051b@brb.nnpy.org:11100?insecure=1&sni=www.bing.com#🇸🇪 🏳️ WLUnlocker Швеция | #5
-hysteria2://Krab9Hyst2_Rk7pQ2xL@fr.vpn.legendaah.xyz:36723?insecure=1&sni=127.0.0.1#🇳🇱 🏳️ WLUnlocker Нидерланды | #6
-hysteria2://Krab9Hyst2_Rk7pQ2xL@fr.vpn.legendaah.xyz:36723?insecure=1&sni=fr.vpn.legendaah.xyz#🇳🇱 🏳️ WLUnlocker Нидерланды | #7
+hysteria2://Krab9Hyst2_Rk7pQ2xL@fr.vpn.legendaah.xyz:36723?insecure=1&sni=127.0.0.1#🇳🇱 🏳️ WLUnlocker Нидерланды | #5
+hysteria2://Krab9Hyst2_Rk7pQ2xL@fr.vpn.legendaah.xyz:36723?insecure=1&sni=fr.vpn.legendaah.xyz#🇳🇱 🏳️ WLUnlocker Нидерланды | #6
+hysteria2://41f0d6d3-4a45-4635-8225-2abd2284189b@dg2.mangshe.xyz:2056?insecure=1#🇫🇷 🏳️ WLUnlocker Франция | #7
 hysteria2://f25f19f29ce3fb53a35bf1b35b452a43@129.159.156.109:50160?insecure=1&sni=www.bing.com#🇺🇸 🏳️ WLUnlocker США | #8
 hysteria2://184cdec28da5a09450803c8debcd2cc9@138.3.208.26:50160/?insecure=1&sni=www.bing.com#🇩🇪 🏳️ WLUnlocker Германия | #9
 hysteria2://5d0a6445-a30d-4522-bb1f-94f1d3ad63be@mlxy2.mangshe.xyz:2060?insecure=1&sni=mlxy2.mangshe.xyz#🇸🇪 🏳️ WLUnlocker Швеция | #10
