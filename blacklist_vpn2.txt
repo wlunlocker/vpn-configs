@@ -1,14 +1,14 @@
 # profile-title: 🏴VPN #2 (SS+OTHER)
-# last-update: 06.10.17
+# last-update: 06.10.22
 # count: 200
-hysteria2://bd77bfe8-e0f3-11ec-bd7c-f23c913c8d2b@66133e3a-tmm5c0-tmg311-141tv.hk3.hyhuawei.com:443?insecure=1&sni=66133e3a-tmm5c0-tmg311-141tv.hk3.hyhuawei.com#🇸🇪 🏳️ WLUnlocker Швеция | #1
-hysteria2://19f72087-4591-4d72-930b-2697078ec2be@us3.xiaoliyu.cyou:18333?insecure=1#🇺🇸 🏳️ WLUnlocker США | #2
-hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-hk-004.fastervpn.world:443?insecure=1&sni=vpn-hk-004.fastervpn.world#🇸🇪 🏳️ WLUnlocker Швеция | #3
-hysteria2://19f72087-4591-4d72-930b-2697078ec2be@ru.xiaoliyu.cyou:18333?sni=ru.xiaoliyu.cyou&alpn=h3&insecure=1#🇺🇸 🏳️ WLUnlocker США | #4
-hysteria2://19f72087-4591-4d72-930b-2697078ec2be@ru.xiaoliyu.cyou:18333?sni=ru.xiaoliyu.cyou&insecure=1#🇺🇸 🏳️ WLUnlocker США | #5
-hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?insecure=1#🇺🇸 🏳️ WLUnlocker США | #6
+hysteria2://19f72087-4591-4d72-930b-2697078ec2be@us3.xiaoliyu.cyou:18333?insecure=1#🇺🇸 🏳️ WLUnlocker США | #1
+hysteria2://19f72087-4591-4d72-930b-2697078ec2be@us3.xiaoliyu.cyou:18333?insecure=1&sni=us3.xiaoliyu.cyou#🇺🇸 🏳️ WLUnlocker США | #2
+hysteria2://Hd7N0TU7Ow5ZqaIx@us5.h1cloud.net:25172?insecure=1&pcs=bc0dd20c2f57c91ecb88d0ec4dfe0408eea7e8e54450a6a9ee82cd6e4cab48d7&pinSHA256=bc0dd20c2f57c91ecb88d0ec4dfe0408eea7e8e54450a6a9ee82cd6e4cab48d7&sni=us5.h1cloud.net#🇺🇸 🏳️ WLUnlocker США | #3
+hysteria2://Hd7N0TU7Ow5ZqaIx@us5.h1cloud.net:25172?insecure=1&sni=us5.h1cloud.net#🇺🇸 🏳️ WLUnlocker США | #4
+hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?insecure=1#🇺🇸 🏳️ WLUnlocker США | #5
+hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?security=tls&sni=msk.frkn.org&alpn=h3&insecure=0#🇺🇸 🏳️ WLUnlocker США | #6
 hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?sni=msk.frkn.org&insecure=1#🇺🇸 🏳️ WLUnlocker США | #7
-hysteria2://s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z@77.74.123.108:8443/?sni=grape-test-italy.dynuddns.net#🇨🇦 🏳️ WLUnlocker Канада | #8
+hysteria2://f9e76796-72ba-4af1-9435-a556bd81c140@156.229.160.253:55000?sni=www.bing.com&insecure=1#🇨🇦 🏳️ WLUnlocker Канада | #8
 hysteria2://QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s@162.249.125.133:443?security=tls&obfs=salamander&obfs-password=c1b4086fea89914496c7e10967a419216566&insecure=0&sni=hy2-new.aspidnet.xyz#🇺🇸 🏳️ WLUnlocker США | #9
 hysteria2://cd74c0a406664a5bc0bac098220a2468@ee2.sferavpn.pro:443?obfs-password=44f1c1e2f8b99e792ceed574627a1eb0&sni=ee2.sferavpn.pro&obfs=salamander&seq=you_are_beautiful4036#🇩🇪 🏳️ WLUnlocker Германия | #10
 hysteria2://cd74c0a406664a5bc0bac098220a2468@ee2.sferavpn.pro:443?obfs=salamander&sni=ee2.sferavpn.pro&obfs-password=44f1c1e2f8b99e792ceed574627a1eb0&nonce=iK4oQbQT#🇩🇪 🏳️ WLUnlocker Германия | #11
